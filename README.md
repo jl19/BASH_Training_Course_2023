@@ -1,0 +1,1 @@
+# BASH_Training_Course_2023

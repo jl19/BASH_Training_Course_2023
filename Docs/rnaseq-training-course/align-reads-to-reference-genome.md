@@ -2,8 +2,8 @@
 
 There are several commonly used align/mapping programs for aligning RNAseq read to the genome.
 Hisat2 is a successor of Tophat2 is suitable for align RNAseq reads to the genome.
-> - ###Align reads to a reference genome using HISAT2
-###[Hisat2 manual](http://daehwankimlab.github.io/hisat2/manual/)
+> - ### Align reads to a reference genome using HISAT2
+###[ Hisat2 manual](http://daehwankimlab.github.io/hisat2/manual/)
 
 1. Load hisat 2.2.1 module
 ```  
@@ -15,18 +15,18 @@ First, the genome needed to be indexed before using Hisat2-build or created usin
 ```
 cd /scratch/bbash/jl19/Data_QC/
 
-#create a diretory /mm10
+# create a diretory /mm10
 
 mkdir mm10
 
-#Go to the mm10/ direcotry
+# Go to the mm10/ direcotry
 cd /scratch/bbash/jl19/Data_QC/mm10/
 
-#copy the genome.fa in the mm10 directory
+# copy the genome.fa in the mm10 directory
 
 cp /data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
 
-#Creating index
+# Creating index
 
 hisat2-build -p 16 genome.fa genome
 
@@ -219,9 +219,6 @@ Headers:
     linearFM: Yes
 Total time for call to driver() for forward index: 00:27:10
 [jl19@spectre14 mm10]$ 
-
-  
-
 ```
 A number of files with .ht2 extension would be created. They are the index files
 
@@ -248,8 +245,6 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457555-trimmed.fastq.gz -S SRR74
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457556-trimmed.fastq.gz -S SRR7457556.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559-trimmed.fastq.gz -S SRR7457559.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560-trimmed.fastq.gz -S SRR7457560.sam;
-
-
 ```  
 
 output sam files (e.g. SRR7457551.sam) are located under /scratch/bbash/jl19/Data_QC/
@@ -257,7 +252,7 @@ output sam files (e.g. SRR7457551.sam) are located under /scratch/bbash/jl19/Dat
 Estimate run time is 20 mins for each run.
 
 
-##Converting SAM to BAM using samtools "view"
+## Converting SAM to BAM using samtools "view"
 
 ``` 
 
@@ -273,7 +268,7 @@ samtools view --threads 8 -S -b SRR7457559.sam -o SRR7457559.bam;
 samtools view --threads 8 -S -b SRR7457560.sam -o SRR7457560.bam;
 
 ``` 
-##Sort the bam files
+## Sort the bam files
 ``` 
 samtools sort SRR7457551.bam -o SRR7457551.sorted.bam;
 samtools sort SRR7457552.bam -o SRR7457552.sorted.bam;
@@ -285,7 +280,7 @@ samtools sort SRR7457560.bam -o SRR7457560.sorted.bam;
 
 Bash script can be used to automate the procedure, the jobs can be submitted on Spectre.  This is beyond what this course can include.
 
-##Check the BAM files
+## Check the BAM files
 
 ```
 samtools view SRR7457551.bam  | head

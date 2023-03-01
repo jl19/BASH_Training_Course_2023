@@ -15,14 +15,14 @@
 
 Next-generation sequencing (NGS) is used to determine the order of nucleotides in entire genomes or targeted regions of DNA or RNA.
 
-###The typical NGS process involves:
+### The typical NGS process involves:
 
 * Fragmenting DNA/RNA into multiple pieces
 * Adding adapters
 * Sequencing the libraries
 * Reassembling them to form genomic sequence
 
-###Advantages of NGS:
+### Advantages of NGS:
 
 * Higher sensitivity to detect low-frequency variants
 * Higher genomic coverage
@@ -34,12 +34,12 @@ Next-generation sequencing (NGS) is used to determine the order of nucleotides i
 
 RNA-seq (RNA-sequencing) is a technique that can examine the quantity and sequences of RNA in a sample using next-generation sequencing (NGS). It analyzes the transcriptome, indicating which of the genes encoded in our DNA are turned on or off and to what extent. 
 
-###RNA-Seq Workflow
+### RNA-Seq Workflow
 
 ![RNA-Seq Work Flow ](/Docs/assets/RNA-Seq_work_flow.jpeg)
 
 
-###Perform QC for better downstream analysis (FastQC, FASTQ files)
+### Perform QC for better downstream analysis (FastQC, FASTQ files)
 
 [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
@@ -106,7 +106,7 @@ File Formats:
 | `Mate-pair`    | Each read is two sequences from each end of the same DNA fragment, but the distance between the reads on the original genome sequence is much longer, e.g. 3000-10000 bp
 
 
-##RNA-Seq Applications
+## RNA-Seq Applications
 
 * Differential Expression
 * Isoform switching
@@ -117,11 +117,11 @@ File Formats:
 
 ---------------------------
 
-##Day 1 Practicals
+## Day 1 Practicals
 
 ---------------------------------
 
-###Pre-processing
+### Pre-processing
 
 [Practical 1: Pre-processing](pre-processing-rna.md) 
 
@@ -129,7 +129,7 @@ Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md)
 
 
 -------------------------
-###Alignment (HISAT2, STAR, BWA, Kallisto)
+### Alignment (HISAT2, STAR, BWA, Kallisto)
 
 > Alignment to a reference genome using HISAT2
 
@@ -144,4 +144,4 @@ Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md)
 ----------------------
 
 
-##[Go to Day2 Data Analysis](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/)
+## [Go to Day2 Data Analysis](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/)

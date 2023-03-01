@@ -204,4 +204,4 @@ alt+b — move cursor backward 1 word
 
 ## Reference
 
-![Cheetsheet](http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/)
+[Cheetsheet](https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/)

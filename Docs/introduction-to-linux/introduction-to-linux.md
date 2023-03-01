@@ -59,15 +59,13 @@ Disadvantage
 Up, down, left and right arrows of the keyboard
 
 ![keyboard1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Keyboard1.png)
-![keyboard1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Keyboard1.png)
-
 ![The reference diagram](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/navigate-command-line-1.png)
 ***********************************
 - Completing commands/filenames
 
 Using TAB button to auto-complete commands and filenames
 
-![keyboard2](/Docs/assets/Keyboard2.png)
+![keyboard2](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Keyboard2.png)
 
 ### Exercises in Terminal
 

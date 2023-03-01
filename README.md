@@ -2,7 +2,7 @@
 
 The mission of Bioinformatics Analysis Support Hub (BASH) is to support the implementation of bioinformatics resources for research with College of Life  at the University of Leicester. BASH runs workshops and courses on bioinformatics throughout the year within the University.
 ***
-##
+
 ## 2022-2023 Training Courses
 ***
 

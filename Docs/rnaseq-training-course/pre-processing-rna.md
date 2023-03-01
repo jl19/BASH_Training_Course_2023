@@ -1,4 +1,4 @@
-#RNA Data Pre-processing
+# RNA Data Pre-processing
 
 > - Example data Used:
 
@@ -10,7 +10,7 @@
 > Abstract:Alveolar macrophages were isolated in a murine model of lung transplant to study their role in ischemia reperfusion injury and primary graft dysfunction.
 
   
-###Step 1 - Copy and check the read data files
+### Step 1 - Copy and check the read data files
 
 
 The single end data files can be found on SPECTRE at the following location:
@@ -39,7 +39,6 @@ Use the command below, followed by pressing the tab key to auto-complete, then h
 
 ```
 cd $SC 
-
 ```
 
 The command ‘pwd’ which stands for ‘print working directory’ will tell you the path of your current directory. 
@@ -68,8 +67,6 @@ Use the ‘ls’ (list) command to list the contents of your directory and check
 
 ```
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/. ./
-
-
 ls
 ```
 
@@ -92,7 +89,7 @@ SRR7457560.fastq.gz
 
 Checked the fastq files are copied correctly. 
 
-###Step 2: Assess the quality of the data using FastQC
+### Step 2: Assess the quality of the data using FastQC
 
 FastQC is written by Simon Andrews of Babraham Bioinformatics, is a very popular quality control tool used to provide an overview of basic quality control metrics for raw next generation sequencing data.
 
@@ -117,7 +114,7 @@ module load fastqc/0.11.5
 ```
 [jl19@spectre12 Data_QC]$ module load fastqc/0.11.5
 Loading fastqc/0.11.5
-  Loading requirement: java/1.8
+Loading requirement: java/1.8
 ``` 
 
 Run FastQc software:
@@ -170,12 +167,8 @@ module load skewer/0.2.2
 
 #list skewer USAGE
 skewer --help
-
-
-
 ```
 > - Output:
-
 ```
 Skewer (A fast and accurate adapter trimmer for paired-end reads)
 Version 0.2.2 (updated in April 4, 2016), Author: Hongshan Jiang
@@ -283,7 +276,7 @@ skewer -m any -q 25 -Q 20 -n -z SRR7457560.fastq.gz -o trimmed/SRR7457560;
 > - [SRR7457551.fastq-trimmed_fastqc.html](/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
-###Step 4. Understanding the FastQC Report
+### Step 4. Understanding the FastQC Report
 > - Sequence Length Distribution
 
 In many cases this will produce a simple graph showing a peak only at one size, but for variable length FastQ files this will show the relative amounts of each different size of sequence fragment.

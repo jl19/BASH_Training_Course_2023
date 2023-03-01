@@ -36,7 +36,7 @@ RNA-seq (RNA-sequencing) is a technique that can examine the quantity and sequen
 
 ###RNA-Seq Workflow
 
-![RNA-Seq Work Flow ](/docs/assets/RNA-Seq_work_flow.jpeg)
+![RNA-Seq Work Flow ](/Docs/assets/RNA-Seq_work_flow.jpeg)
 
 
 ###Perform QC for better downstream analysis (FastQC, FASTQ files)

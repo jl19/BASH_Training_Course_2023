@@ -1,4 +1,4 @@
-#RNA-seq (WES) Data Analysis
+# RNA-seq (WES) Data Analysis
 
 ## Course Schedule
 ### Material

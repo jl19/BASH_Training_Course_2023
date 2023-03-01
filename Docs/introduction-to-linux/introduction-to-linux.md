@@ -68,6 +68,7 @@ Using TAB button to auto-complete commands and filenames
 
 ![keyboard2](/Docs/assets/Keyboard2.png)
 
+![keyboard2](Docs/assets/Keyboard2.png)
 
 ### Exercises in Terminal
 

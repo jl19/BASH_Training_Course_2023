@@ -58,7 +58,7 @@ Disadvantage
 
 Up, down, left and right arrows of the keyboard
 
-![keyboard1](./Docs/assets/Keyboard1.png)
+![keyboard1](./assets/Keyboard1.png)
 
 ![The reference diagram](./Docs/assets/navigate-command-line-1.png)
 ***********************************

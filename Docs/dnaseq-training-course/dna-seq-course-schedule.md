@@ -1,4 +1,4 @@
-#DNA-seq (WES) Data Analysis
+# DNA-seq (WES) Data Analysis
 
 ## Course Schedule
 ### Material

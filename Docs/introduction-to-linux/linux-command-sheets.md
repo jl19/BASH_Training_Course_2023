@@ -1,5 +1,5 @@
-#Linux Commands Cheat Sheet
-##File System
+# Linux Commands Cheat Sheet
+## File System
 
 
 ```  

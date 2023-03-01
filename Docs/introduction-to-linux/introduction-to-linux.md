@@ -60,7 +60,7 @@ Up, down, left and right arrows of the keyboard
 
 ![keyboard1](/Docs/assets/Keyboard1.png)
 
-####![The reference diagram](/Docs/assets/navigate-command-line-1.png)
+#### ![The reference diagram](/Docs/assets/navigate-command-line-1.png)
 ***********************************
 - Completing commands/filenames
 
@@ -117,17 +117,12 @@ b  d  f  h  j  l  n  p  r  t  v  x  z
 [jl19@spectre10 ~]$ clear
 
 [jl19@spectre10 ~]$ ls -l/home
-
-
 ```
 
 Absoute path starts with /
 
 ``` 
 [jl19@spectre10 ~]$ cd
-
-
-
 ```
 
 Relative path: relative to working directory
@@ -142,7 +137,6 @@ In Linux, Shell is a program that takes your commands from the keyboard and give
 ```
 [jl19@spectre10 ~]$ echo $SHELL
 /bin/bash
-
 ```
 
 

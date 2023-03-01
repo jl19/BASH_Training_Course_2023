@@ -159,7 +159,7 @@ Analysis complete for SRR7457551.fastq.gz
 
 > - FastQC has a really well documented [manual page](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) with detailed explanations about every plot in the report
 
-###Step 3. Trim the reads
+### Step 3. Trim the reads
 ```
 #load module
 
@@ -268,8 +268,6 @@ skewer -m any -q 25 -Q 20 -n -z SRR7457555.fastq.gz -o trimmed/SRR7457555;
 skewer -m any -q 25 -Q 20 -n -z SRR7457556.fastq.gz -o trimmed/SRR7457556;
 skewer -m any -q 25 -Q 20 -n -z SRR7457559.fastq.gz -o trimmed/SRR7457559;
 skewer -m any -q 25 -Q 20 -n -z SRR7457560.fastq.gz -o trimmed/SRR7457560;
-
-
 ```
 
 > - Run FastQc on command line after trimming

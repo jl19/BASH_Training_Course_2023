@@ -58,10 +58,10 @@ Disadvantage
 
 Up, down, left and right arrows of the keyboard
 
-![keyboard1](./assets/Keyboard1.png)
+![keyboard1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Keyboard1.png)
 ![keyboard1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Keyboard1.png)
 
-![The reference diagram](./assets/navigate-command-line-1.png)
+![The reference diagram](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/navigate-command-line-1.png)
 ***********************************
 - Completing commands/filenames
 

@@ -7,7 +7,7 @@ The mission of Bioinformatics Analysis Support Hub (BASH) is to support the impl
 ***
 
 ### [Introduction to Linux](Docs/introduction-to-linux/introduction-to-linux.md)
-### [RNA-seq (WES) Data Analysis](rnaseq-training-course/rna-seq-course-schedule.md)
+### [RNA-seq (WES) Data Analysis](Docs/rnaseq-training-course/rna-seq-course-schedule.md)
 ### [DNA-seq (WES) Data Analysis](dnaseq-training-course/dna-seq-course-schedule.md)
 ### [Data Analysis using R](introduction-to-r/introduction-to-r-schedule.md)
 

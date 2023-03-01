@@ -17,7 +17,6 @@ wget ftp://ftp.ensembl.org/pub/release-101/fasta/mus_musculus/cdna/Mus_musculus.
 #### Load the kallisto module
 ```
 module load kallisto/0.46.1
-
 ```
 
 #### Kallisto Index
@@ -51,7 +50,6 @@ kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457556 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457556.fastq.gz;
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457559 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457559.fastq.gz;
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457560 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457560.fastq.gz;
-
 ```
 
 output files:
@@ -75,7 +73,6 @@ ENSMUST00000219641.2    3657    3558         45.5654 0.812123
 ENSMUST00000218186.2    2222    2123         22.737  0.679166
 ENSMUST00000218254.2    4111    4012         50.9482 0.805305
 ENSMUST00000219277.2    5052    4953         40.1902 0.514569
-
 ```
 
 

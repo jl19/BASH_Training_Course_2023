@@ -1,4 +1,4 @@
-#Introduction to Linux in HPC
+# Introduction to Linux in HPC
 
 
 Linux is the best-known and most-used open source operating system.
@@ -49,14 +49,16 @@ Advantages
 Disadvantage
 
   - lots of commands to remember
+  
 ***********************************
 ### Navigating the Command line
 ***********************************
+
 - Recalling commands
 
 Up, down, left and right arrows of the keyboard
 
-![keyboard1](/assets/Keyboard1.png)
+![keyboard1](Docs/assets/Keyboard1.png)
 
 ####![The reference diagram](/assets/navigate-command-line-1.png)
 ***********************************
@@ -64,7 +66,7 @@ Up, down, left and right arrows of the keyboard
 
 Using TAB button to auto-complete commands and filenames
 
-![keyboard2](/assets/Keyboard2.png)
+![keyboard2](Docs/assets/Keyboard2.png)
 
 
 ### Exercises in Terminal

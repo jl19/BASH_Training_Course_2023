@@ -100,7 +100,6 @@ you can find the hostname as hostname directly. The Linux command hostname can a
 [jl19@spectre10 ~]$ pwd
 /home/j/jl19
 [jl19@spectre10 ~]$ 
-
 ``` 
 
 ### Directory Structure
@@ -126,7 +125,7 @@ Absoute path starts with /
 Relative path: relative to working directory
  
  
-###Linux and NGS (Next Genearation Sequenceing) Analysis
+### Linux and NGS (Next Genearation Sequenceing) Analysis
  
 Many tools developed for NGS data processing and analysis are based on Unix operating systems such as Linux. Command line tools such as awk, grep, sed are just examples of command line tools are used.
 

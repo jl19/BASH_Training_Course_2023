@@ -1,6 +1,7 @@
 # RNA-seq (WES) Data Analysis
-
+***
 ## Course Outline
+
 ### Material
 
 * Understand the basics of the different NGS technologies
@@ -18,9 +19,9 @@
 
 ***
 
-### Course Structure
+## Course Structure
 
-#### [Day1](rna-seq-wes-data-analysis-day1.md)
+### [Day1](rna-seq-wes-data-analysis-day1.md)
 
 * Understand the basics of the NGS technologies
 * RNA-seq Data Analysis: Steps, Tools and File formats
@@ -29,7 +30,7 @@
 * Pre-processing
 * Align reads to a reference genome
 ***
-#### [Day2](rna-seq-wes-data-analysis-day2.md)
+### [Day2](rna-seq-wes-data-analysis-day2.md)
 
 * Quantitation
 * Differential Expression

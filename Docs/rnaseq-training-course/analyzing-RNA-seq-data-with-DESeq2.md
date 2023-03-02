@@ -207,7 +207,7 @@ sum(res_24h_vs_NaiveOrdered$padj < 0.1, na.rm=TRUE)
 
 plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 ```
-![plotMA](https://jl19.githu.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
+![plotMA](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
 
 ```
 #It is more useful visualize the MA-plot for the shrunken log2 fold changes, which 

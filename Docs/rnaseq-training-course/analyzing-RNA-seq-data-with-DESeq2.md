@@ -1,6 +1,6 @@
-#Analyzing RNA-seq data with DESeq2 using R
+# Analyzing RNA-seq data with DESeq2 using R
 
-###Install required R packages
+### Install required R packages
 ```
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
@@ -30,7 +30,7 @@ dds_txi<- DESeqDataSetFromTximport(txi,
 ```
 
 ##################################################
-###Differential expression analysis############
+### Differential expression analysis############
 ##################################################
 ```
 dds_txi <- DESeq(dds_txi)
@@ -44,11 +44,11 @@ dds_txi <- DESeq(dds_txi)
 # fitting model and testing
 ```
 #############################
-###Result for Navie vs 24h#
+### Result for Navie vs 24h#
 ############################
 
 ```
-#Results
+# Results
 res <- results(dds_txi)
 
 res
@@ -71,7 +71,7 @@ res
 # Zzz3            1326.27       0.559339  0.154486   3.62064 2.93873e-04 1.92334e-03
 ```
 ###########################################
-###Compare two conditions using names#####
+### Compare two conditions using names#####
 ###########################################
 ```
 #Note that we could have specified the coefficient or contrast we want to build a results table for, 
@@ -92,7 +92,7 @@ res_Naive_vs_24h <- results(dds_txi, name="condition_Naive_vs_24h")
 res_Naive_vs_2h <- results(dds_txi, contrast=c("condition","Naive","2h"))
 ```
 #########################
-###Result for Navie vs 2h#
+### Result for Navie vs 2h#
 #########################
 ```
 # log2 fold change (MLE): condition Naive vs 2h 
@@ -114,21 +114,21 @@ res_Naive_vs_2h <- results(dds_txi, contrast=c("condition","Naive","2h"))
 
 ```
 #########################
-###Result for 24 vs 2h#
+### Result for 24 vs 2h#
 #########################
 ```
 res_24h_vs_2h <- results(dds_txi, contrast = c("condition", "24h", "2h"))
 
 ```
 #########################
-###Result for 24 vs Naive#
+### Result for 24 vs Naive#
 #########################
 ```
 res_24h_vs_Naive <- results(dds_txi, contrast=c("condition","24h", "Naive"))
 
 ```
 ###########################
-###Result for 2h vs Navie#
+### Result for 2h vs Navie#
 ###########################
 ```
 res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
@@ -136,7 +136,7 @@ res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
 ```
 
 #########################################################################
-###Log fold change shrinkage for visualization and ranking#############
+### Log fold change shrinkage for visualization and ranking#############
 #########################################################################
 ```
 #Shrinkage of effect size (LFC estimates) is useful for visualization and ranking of genes. 
@@ -148,7 +148,7 @@ res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
 #where the number refers to the order of the coefficient as it appears in resultsNames(dds_txi)
 ```
 ##############################
-###List Results Names########
+### List Results Names########
 ##############################
 ```
 #using resultsNames to list the names of the estimated effects (coefficents) of the model
@@ -178,7 +178,7 @@ resNaive_vs_24h_LFC
 
 ```
 #########################################################################
-###Ordering results using p-values and adjusted p-values  ###########
+### Ordering results using p-values and adjusted p-values  ###########
 #########################################################################
 
 ```
@@ -205,13 +205,11 @@ sum(res_24h_vs_NaiveOrdered$padj < 0.1, na.rm=TRUE)
 
 
 ## 4947
-
 ```
 
-#########################################################################
-###      Exploring and exporting results               ###########
-#########################################################################
-
+########################################
+### Exploring and exporting results ####
+########################################
 ```
 
 ## MA-plot

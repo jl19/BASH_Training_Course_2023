@@ -167,6 +167,7 @@ module load skewer/0.2.2
 skewer --help
 ```
 > - Output:
+> 
 ```
 Skewer (A fast and accurate adapter trimmer for paired-end reads)
 Version 0.2.2 (updated in April 4, 2016), Author: Hongshan Jiang
@@ -260,6 +261,7 @@ log has been saved to "trimmed/SRR7457551-trimmed.log".
 
 ```
 Trimmed other 5 files
+
 ```
 skewer -m any -q 25 -Q 20 -n -z SRR7457552.fastq.gz -o trimmed/SRR7457552;
 skewer -m any -q 25 -Q 20 -n -z SRR7457555.fastq.gz -o trimmed/SRR7457555;

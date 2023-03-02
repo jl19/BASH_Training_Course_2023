@@ -1,6 +1,6 @@
 # RNA-seq (WES) Data Analysis
 
-## Course Schedule
+## Course Outline
 ### Material
 
 * Understand the basics of the different NGS technologies
@@ -8,7 +8,7 @@
 * Align reads to a reference genome
 * Visualize the outputs
 
-
+***
 ### Learning Outcomes
 
 * Understand important aspects of NGS and read alignment for data analysis

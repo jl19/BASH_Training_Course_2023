@@ -293,4 +293,4 @@ SRR7457551.12.1	16	chr19	4104891	60	74M2S	*	0	0	GACATCCGGGCACTGGAGGAGGAGACTGCACG
 
 [Go to Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
 
-[Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)
+## [Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)

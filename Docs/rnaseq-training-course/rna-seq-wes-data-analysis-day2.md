@@ -1,6 +1,6 @@
-#RNA-seq (WES) Data Analysis
+# RNA-seq (WES) Data Analysis
 
-##[Day2](rna-seq-wes-data-analysis-day2.md)
+## [Day2](rna-seq-wes-data-analysis-day2.md)
 
 
 > -  Quantitation
@@ -27,8 +27,8 @@ Normalization and statistical testing to identify differentially expressed genes
 Compare sample groups: differential expression analysis
 
 
-##Visualization of the Outputs
+## Visualization of the Outputs
 
 [Practical 6: Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 
-##[Go to Day1 Data Analysis](/rnaseq-training-course/rna-seq-wes-data-analysis-day1/)
+## [Go to Day1 Data Analysis](rna-seq-wes-data-analysis-day1.md)

@@ -120,13 +120,11 @@ File Formats:
 ## Day 1 Practicals
 
 ---------------------------------
+Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md) 
 
 ### Pre-processing
 
 [Practical 1: Pre-processing](pre-processing-rna.md) 
-
-Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md) 
-
 
 -------------------------
 ### Alignment (HISAT2, STAR, BWA, Kallisto)

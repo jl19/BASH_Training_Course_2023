@@ -16,10 +16,10 @@
 * Perform DE analysis
 * Perform visualization of outputs
 
-***
 
-## RNA-Seq WES Data Analysis
-### [Day1](rna-seq-wes-data-analysis-day1.md)
+
+### Course Structure
+#### [Day1](rna-seq-wes-data-analysis-day1.md)
 
 
 * Understand the basics of the NGS technologies
@@ -31,7 +31,7 @@
 
 
 ***
-### [Day2](rna-seq-wes-data-analysis-day2.md)
+#### [Day2](rna-seq-wes-data-analysis-day2.md)
 
 * Quantitation
 * Differential Expression

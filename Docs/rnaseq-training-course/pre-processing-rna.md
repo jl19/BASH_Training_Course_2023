@@ -25,7 +25,7 @@ The single end data files can be found on SPECTRE at the following location:
 > - SRR7457560.fastq.gz
 
 
-![Screenshot of NoMachine login screen](/assets/NoMachine_Scratchfolder.png)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_Scratchfolder.png)
 
 To copy the fastq data files to your scratch directory so you can use them.  Use the ‘cd’ (change directory) command to move to your scratch directory.  
 ```
@@ -50,7 +50,6 @@ username will come after the /scratch/ part)
 /scratch/bbash/jl19
 
 In order to keep things tidy in your scratch directory it is good practise to create separate directories for the different exercises.  We will now create a ‘Data_QC’ directory in your scratch directory.  The ‘mkdir’ command, short for ‘make directory’ will create a directory with the name you specify.
-
 ```
 mkdir Data_QC
 ```
@@ -84,7 +83,6 @@ SRR7457555.fastq.gz
 SRR7457556.fastq.gz
 SRR7457559.fastq.gz
 SRR7457560.fastq.gz
-
 ```
 
 Checked the fastq files are copied correctly. 
@@ -122,9 +120,9 @@ Run FastQc software:
 ```
 fastqc &
 ```
-![Screenshot of fastqc](/assets/NoMachine_fastqc.png)
+![Screenshot of fastqc](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_fastqc.png)
 
-> - [SRR7457551_fastqc.html](/assets/SRR7457551.fastq.gz.html) will be generated in the folder after the run is completed
+> - [SRR7457551_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq.gz.html) will be generated in the folder after the run is completed
 
 Run FastQc on command line:
 ```  
@@ -271,7 +269,7 @@ skewer -m any -q 25 -Q 20 -n -z SRR7457560.fastq.gz -o trimmed/SRR7457560;
 ```
 
 > - Run FastQc on command line after trimming
-> - [SRR7457551.fastq-trimmed_fastqc.html](/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
+> - [SRR7457551.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report

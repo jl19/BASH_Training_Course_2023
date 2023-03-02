@@ -32,7 +32,6 @@ kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bb
 [build] building target de Bruijn graph ...  done 
 [build] creating equivalence classes ...  done
 [build] target de Bruijn graph has 737461 contigs and contains 101038460 k-mers 
-
 ```
 ####Pseudoaligment using kallisto quantification
 
@@ -79,4 +78,4 @@ ENSMUST00000219277.2    5052    4953         40.1902 0.514569
 > - run_info.json: is a json file containing information about the run
 
 
-[Back to Day 1 Practicals](/blob/main/Docs/rnaseq-training-course/rna-seq-wes-data-analysis-day1/#day-1-practicals)
+[Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)

@@ -291,5 +291,5 @@ Warning: This module will issue a warning if any tile shows a mean Phred score m
 
 [Go to Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
 
-[Back to Day 1 Practicals](Docs/rnaseq-training-course/pre-processing-rna.md)
+[Back to Day 1 Practicals](pre-processing-rna.md)
 

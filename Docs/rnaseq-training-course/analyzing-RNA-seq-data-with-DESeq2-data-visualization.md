@@ -1,11 +1,9 @@
-#Data transformations and visualization
+# Data transformations and visualization
 
 Continued from previous DE analysis
 
-##Count data transformations
+## Count data transformations
 ```
-
-
 #In order to test for differential expression, we operate on raw counts and use discrete 
 #distributions as described in the previous section on differential expression. However for other 
 #downstream analyses – e.g. for visualization or clustering – it might be useful to work with 
@@ -26,7 +24,6 @@ vsd <- vst(dds_txi, blind=FALSE)
 rld <- rlog(dds_txi, blind=FALSE)
 head(assay(vsd), 3)
 
-
 #Effects of transformations on the variance
 
 #the vertical axis in such plots is the square root of the variance over all samples, 
@@ -35,19 +32,14 @@ head(assay(vsd), 3)
 #unreasonable in the case of datasets with many true differences due to the experimental conditions.
 # this gives log2(n + 1)
 
-
 ntd <- normTransform(dds_txi)
 library("vsn")
 meanSdPlot(assay(ntd))
-
 meanSdPlot(assay(vsd))
-
 meanSdPlot(assay(rld))
-
 ```
-################################################################################
-###Data quality assessment by sample clustering and visualization###########
-################################################################################
+### Data quality assessment by sample clustering and visualization
+
 ```
 #Heatmap of the count matrix
 #To explore a count matrix, it is often instructive to look at it as a heatmap. 
@@ -58,8 +50,6 @@ library("pheatmap")
 
 select <- order(rowMeans(counts(dds_txi,normalized=TRUE)),
                 decreasing=TRUE)[1:20]
-
-
 colData(dds_txi)
 
 # the rows/columns of the distance matrix.
@@ -132,32 +122,23 @@ colnames(dds_txi)
 #set rownames = colnames
 rownames(df) <- colnames(dds_txi)
 
-
 pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
-![Heatmap_Condition_ntd](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
-
+![Heatmap_Condition_ntd](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
 
 ```
 pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
-
 ```
-![Heatmap_Condition_vsd](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
-
-
+![Heatmap_Condition_vsd](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
 ```
 pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
 
-![Heatmap_Condition_rld](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
-
-
+![Heatmap_Condition_rld](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
 ```
-
-
 #Heatmap of the sample-to-sample distances
 #Another use of the transformed data is sample clustering. Here, we apply the dist function
 #to the transpose of the transformed count matrix to get sample-to-sample distances.
@@ -178,22 +159,16 @@ pheatmap(sampleDistMatrix,
          clustering_distance_rows=sampleDists,
          clustering_distance_cols=sampleDists,
          col=colors)
-
 ```
+![Samples_Distance_Matrix](/Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
 
-![Samples_Distance_Matrix](/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
+#### Principal component plot of the samples
 
-
-
-######################################################
-####Principal component plot of the samples########
-######################################################
 ```
 #Related to the distance matrix is the PCA plot, which shows the samples in the 2D plane spanned by their first two principal components. This type of plot is useful for visualizing the overall effect of experimental covariates and batch effects.
 
 #plotPCA(vsd, intgroup=c("condition", "type"))
 plotPCA(vsd, intgroup=c("condition"))
-
 
 pcaData <- plotPCA(vsd, intgroup=c("condition"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
@@ -204,12 +179,9 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   coord_fixed()
 
 ```
-![PCA_PC1_2](/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
+![PCA_PC1_2](/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
 
-
-######################################################
-####       Box plot of the samples         ########
-######################################################
+#### Box plot of the samples
 
 ```
 par(mar=c(8,5,2,2))
@@ -220,9 +192,8 @@ boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
 
 ```
 ```
-############################################################
-####Tests of log2 fold change above or below a threshold####
-############################################################
+#### Tests of log2 fold change above or below a threshold
+
 ```
 # It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results 
 #function allow for threshold-based Wald tests: lfcThreshold, which takes a numeric of a non-negative threshold value, 
@@ -238,9 +209,6 @@ boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
 # less - β<−x
 # The four possible values of altHypothesis are demonstrated in the following code and visually by MA-plots in the following figures.
 # 
-
-
-
 par(mfrow=c(2,2),mar=c(2,2,1,1))
 ylim <- c(-2.5,2.5)
 resGA <- results(dds_txi, lfcThreshold=.5, altHypothesis="greaterAbs")
@@ -252,12 +220,10 @@ plotMA(resGA, ylim=ylim); drawLines()
 plotMA(resLA, ylim=ylim); drawLines()
 plotMA(resG, ylim=ylim); drawLines()
 plotMA(resL, ylim=ylim); drawLines()
-
-
 ```
-![Samples_Boxplot](/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
+![Samples_Boxplot](/Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
 
-##[Go to Day2 Practicals](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/#quantification)
+## [Go to Day2 Practicals](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/#quantification)
 
 

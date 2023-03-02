@@ -207,7 +207,7 @@ sum(res_24h_vs_NaiveOrdered$padj < 0.1, na.rm=TRUE)
 
 plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 ```
-![plotMA](/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
+![plotMA](/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
 
 ```
 #It is more useful visualize the MA-plot for the shrunken log2 fold changes, which 
@@ -217,7 +217,7 @@ plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
 ```
 
-![MA_plot_LFC](/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
+![MA_plot_LFC](/Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
 ```
 
 
@@ -246,9 +246,7 @@ ggplot(d, aes(x = condition, y = count, color = condition)) +
   ggtitle("Comparision of 24h, 2h and Naive") +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-
-![24h_2h_Navie](/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
-
+![24h_2h_Navie](/Docs/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
 
 ### Exporting results to CSV files
 ```
@@ -259,7 +257,6 @@ write.csv(as.data.frame(res_24h_vs_NaiveOrdered),
 resSig_24h_vs_NaiveOrdered <- subset(res_24h_vs_NaiveOrdered, padj < 0.05)
 resSig_24h_vs_NaiveOrdered
 ```
-
 ### Data transformations and visualization
 ```
 #Count data transformations
@@ -283,7 +280,6 @@ vsd <- vst(dds_txi, blind=FALSE)
 rld <- rlog(dds_txi, blind=FALSE)
 head(assay(vsd), 3)
 
-
 #Effects of transformations on the variance
 
 #the vertical axis in such plots is the square root of the variance over all samples, 
@@ -291,7 +287,6 @@ head(assay(vsd), 3)
 #root of variance over the mean may seem like the goal of such transformations, this may be 
 #unreasonable in the case of datasets with many true differences due to the experimental conditions.
 # this gives log2(n + 1)
-
 
 ntd <- normTransform(dds_txi)
 library("vsn")
@@ -302,7 +297,6 @@ meanSdPlot(assay(vsd))
 meanSdPlot(assay(rld))
 
 ```
-
 ### Data quality assessment by sample clustering and visualization
 ```
 #Heatmap of the count matrix
@@ -310,12 +304,8 @@ meanSdPlot(assay(rld))
 #Below we show how to produce such a heatmap for various transformations of the data.
 
 library("pheatmap")
-
-
 select <- order(rowMeans(counts(dds_txi,normalized=TRUE)),
                 decreasing=TRUE)[1:20]
-
-
 colData(dds_txi)
 
 # the rows/columns of the distance matrix.
@@ -382,8 +372,6 @@ df <- as.data.frame(colData(dds_txi)[,c("condition","tissue")])
 
 colnames(dds_txi) 
 #[1] "SRR7457551" "SRR7457552" "SRR7457555" "SRR7457556" "SRR7457559" "SRR7457560"
-
-
 #pheatmap A function to draw clustered heatmaps.
 #set rownames = colnames
 rownames(df) <- colnames(dds_txi)
@@ -392,15 +380,14 @@ rownames(df) <- colnames(dds_txi)
 pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
-![Heatmap_Condition_ntd](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
-
+![Heatmap_Condition_ntd](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
 
 ```
 pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 
 ```
-![Heatmap_Condition_vsd](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
+![Heatmap_Condition_vsd](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
 
 
 ```
@@ -408,7 +395,7 @@ pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
 
-![Heatmap_Condition_rld](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
+![Heatmap_Condition_rld](/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
 
 ```
 
@@ -436,7 +423,7 @@ pheatmap(sampleDistMatrix,
 
 ```
 
-![Samples_Distance_Matrix](/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
+![Samples_Distance_Matrix](/Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
 
 ### Principal component plot of the samples
 ```
@@ -455,7 +442,7 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   coord_fixed()
 
 ```
-![PCA_PC1_2](/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
+![PCA_PC1_2](/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
 
 
 
@@ -466,7 +453,7 @@ par(mar=c(8,5,2,2))
 boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
 
 ```
-![Samples_Boxplot](/R_Scripts/Results/Rplot_boxplot.jpeg)
+![Samples_Boxplot](/Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
 
 ```
 ```
@@ -504,7 +491,7 @@ plotMA(resL, ylim=ylim); drawLines()
 
 
 ```
-![Samples_Boxplot](/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
+![Samples_Boxplot](/Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
 
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)

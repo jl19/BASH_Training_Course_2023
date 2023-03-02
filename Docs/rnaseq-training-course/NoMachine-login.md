@@ -9,8 +9,8 @@ Using NoMachine Enterprise Client to connect to SPECTRE from your computer.
 To connect to SPECTRE just double click the ‘Uol HPC.nxs’ file on your desktop, the following screen will appear where you can type in your login details:
 
         
-![Screenshot of NoMachine login screen](/Docs/assets/NoMachine_login.png)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_login.png)
 
 username and password are required to login
 
-![Screenshot of NoMachine login screen](/Docs/assets/HPC_Nomachine_desktop.png)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/HPC_Nomachine_desktop.png)

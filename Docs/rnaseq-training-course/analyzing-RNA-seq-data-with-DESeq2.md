@@ -217,7 +217,7 @@ plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
 ```
 
-![MA_plot_LFC](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
+![MA_plot_LFC](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
 ```
 
 
@@ -246,7 +246,7 @@ ggplot(d, aes(x = condition, y = count, color = condition)) +
   ggtitle("Comparision of 24h, 2h and Naive") +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-![24h_2h_Navie](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
+![24h_2h_Navie](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
 
 ### Exporting results to CSV files
 ```
@@ -380,14 +380,14 @@ rownames(df) <- colnames(dds_txi)
 pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
-![Heatmap_Condition_ntd](https://jl19.githu.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
+![Heatmap_Condition_ntd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
 
 ```
 pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 
 ```
-![Heatmap_Condition_vsd](https://jl19.githu.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
+![Heatmap_Condition_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
 
 
 ```
@@ -395,7 +395,7 @@ pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df)
 ```
 
-![Heatmap_Condition_rld](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
+![Heatmap_Condition_rld](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
 
 ```
 
@@ -423,7 +423,7 @@ pheatmap(sampleDistMatrix,
 
 ```
 
-![Samples_Distance_Matrix](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
+![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
 
 ### Principal component plot of the samples
 ```
@@ -442,7 +442,7 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   coord_fixed()
 
 ```
-![PCA_PC1_2](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
 
 
 
@@ -453,7 +453,7 @@ par(mar=c(8,5,2,2))
 boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
 
 ```
-![Samples_Boxplot](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
 
 ```
 ```
@@ -491,7 +491,7 @@ plotMA(resL, ylim=ylim); drawLines()
 
 
 ```
-![Samples_Boxplot](https://jl19.githu.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
 [Go to Day2 Practical 6](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)

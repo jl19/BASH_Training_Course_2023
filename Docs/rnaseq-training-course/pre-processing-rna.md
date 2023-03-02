@@ -291,7 +291,7 @@ Warning: This module will issue a warning if any tile shows a mean Phred score m
 > - Here is a introduction on how to interpret FastQC report from Babraham Bioiformatics
 [Using FastQC to check the quality of high throughput sequence](https://www.youtube.com/watch?v=bz93ReOv87Y)
 
-[Go to Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
+[Go to Day1 Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
 
 ## [Back to Day 1 Practicals](pre-processing-rna.md)
 

@@ -165,9 +165,11 @@ module load skewer/0.2.2
 
 #list skewer USAGE
 skewer --help
+
 ```
+
 > - Output:
-> 
+
 ```
 Skewer (A fast and accurate adapter trimmer for paired-end reads)
 Version 0.2.2 (updated in April 4, 2016), Author: Hongshan Jiang

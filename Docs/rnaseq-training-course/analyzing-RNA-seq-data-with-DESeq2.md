@@ -11,11 +11,9 @@ install.packages("reshape2")
 library("DESeq2")
 library("ggplot2")
 library("reshape2")
-
 ```
-################################################################
-### Loading data from previous step tximport output###########
-################################################################
+
+### Loading data from previous step tximport output
 
 ```
 ##Construct a DESeqDataSEt from the txi object created in txtimport.R and sample information in samples.
@@ -26,12 +24,9 @@ dds_txi<- DESeqDataSetFromTximport(txi,
                               colData = samples,
                               design = ~ condition)
 #using counts and average transcript lengths from tximport
-
 ```
+### Differential expression analysis
 
-##################################################
-### Differential expression analysis############
-##################################################
 ```
 dds_txi <- DESeq(dds_txi)
 
@@ -43,9 +38,7 @@ dds_txi <- DESeq(dds_txi)
 # final dispersion estimates
 # fitting model and testing
 ```
-#############################
-### Result for Navie vs 24h#
-############################
+### Result for Navie vs 24h
 
 ```
 # Results
@@ -70,9 +63,8 @@ res
 # Zzef1           2635.28       0.178422  0.113657   1.56983 1.16455e-01 2.54259e-01
 # Zzz3            1326.27       0.559339  0.154486   3.62064 2.93873e-04 1.92334e-03
 ```
-###########################################
-### Compare two conditions using names#####
-###########################################
+
+### Compare two conditions using names
 ```
 #Note that we could have specified the coefficient or contrast we want to build a results table for, 
 #using either of the following equivalent commands:
@@ -91,9 +83,8 @@ res_Naive_vs_24h <- results(dds_txi, name="condition_Naive_vs_24h")
 
 res_Naive_vs_2h <- results(dds_txi, contrast=c("condition","Naive","2h"))
 ```
-#########################
-### Result for Navie vs 2h#
-#########################
+### Result for Navie vs 2h
+
 ```
 # log2 fold change (MLE): condition Naive vs 2h 
 # Wald test p-value: condition Naive vs 2h 
@@ -113,31 +104,30 @@ res_Naive_vs_2h <- results(dds_txi, contrast=c("condition","Naive","2h"))
 # Zzz3            1326.27      0.0119787  0.154244  0.0776606  0.938098  0.986018
 
 ```
-#########################
-### Result for 24 vs 2h#
-#########################
+
+### Result for 24 vs 2h
+
 ```
 res_24h_vs_2h <- results(dds_txi, contrast = c("condition", "24h", "2h"))
 
 ```
-#########################
-### Result for 24 vs Naive#
-#########################
+
+### Result for 24 vs Naive
+
 ```
 res_24h_vs_Naive <- results(dds_txi, contrast=c("condition","24h", "Naive"))
 
 ```
-###########################
-### Result for 2h vs Navie#
-###########################
+
+### Result for 2h vs Navie
+
 ```
 res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
-
 ```
 
-#########################################################################
-### Log fold change shrinkage for visualization and ranking#############
-#########################################################################
+
+### Log fold change shrinkage for visualization and ranking
+
 ```
 #Shrinkage of effect size (LFC estimates) is useful for visualization and ranking of genes. 
 #To shrink the LFC, we pass the dds object to the function lfcShrink. Below we specify to use the 
@@ -147,9 +137,9 @@ res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
 #We provide the dds object and the name or number of the coefficient we want to shrink,
 #where the number refers to the order of the coefficient as it appears in resultsNames(dds_txi)
 ```
-##############################
-### List Results Names########
-##############################
+
+### List Results Names
+
 ```
 #using resultsNames to list the names of the estimated effects (coefficents) of the model
 resultsNames(dds_txi)
@@ -175,11 +165,9 @@ resNaive_vs_24h_LFC
 # Zyx             5438.37       0.868430  0.127829 1.60778e-12 5.24942e-11
 # Zzef1           2635.28       0.165588  0.110122 1.16455e-01 2.54259e-01
 # Zzz3            1326.27       0.516176  0.154057 2.93873e-04 1.92334e-03
-
 ```
-#########################################################################
-### Ordering results using p-values and adjusted p-values  ###########
-#########################################################################
+
+### Ordering results using p-values and adjusted p-values  
 
 ```
 res_24h_vs_NaiveOrdered <- res_24h_vs_Naive[order(res_24h_vs_Naive$pvalue),]
@@ -207,9 +195,8 @@ sum(res_24h_vs_NaiveOrdered$padj < 0.1, na.rm=TRUE)
 ## 4947
 ```
 
-########################################
-### Exploring and exporting results ####
-########################################
+### Exploring and exporting results 
+
 ```
 
 ## MA-plot
@@ -234,9 +221,8 @@ plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
 ```
 
 
-#####################################################
-####      Plot counts               ###########
-#####################################################
+
+#### Plot counts    
 
 #It can also be useful to examine the counts of reads for a single gene across the 
 #groups. A simple function for making this plot is plotCounts, which normalizes c
@@ -259,17 +245,12 @@ ggplot(d, aes(x = condition, y = count, color = condition)) +
   theme_bw() +
   ggtitle("Comparision of 24h, 2h and Naive") +
   theme(plot.title = element_text(hjust = 0.5))
-
-
 ```
 
 ![24h_2h_Navie](/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
 
 
-
-#####################################################
-###  Exporting results to CSV files###########
-####################################################
+### Exporting results to CSV files
 ```
 write.csv(as.data.frame(res_24h_vs_NaiveOrdered), 
           file="res_24h_vs_NaiveOrdered_results.csv")
@@ -278,10 +259,8 @@ write.csv(as.data.frame(res_24h_vs_NaiveOrdered),
 resSig_24h_vs_NaiveOrdered <- subset(res_24h_vs_NaiveOrdered, padj < 0.05)
 resSig_24h_vs_NaiveOrdered
 ```
-------------------------
-#########################################################################
-###      Data transformations and visualization       ###########
-#########################################################################
+
+### Data transformations and visualization
 ```
 #Count data transformations
 #In order to test for differential expression, we operate on raw counts and use discrete 
@@ -323,9 +302,8 @@ meanSdPlot(assay(vsd))
 meanSdPlot(assay(rld))
 
 ```
-################################################################################
-###Data quality assessment by sample clustering and visualization###########
-################################################################################
+
+### Data quality assessment by sample clustering and visualization
 ```
 #Heatmap of the count matrix
 #To explore a count matrix, it is often instructive to look at it as a heatmap. 
@@ -432,7 +410,6 @@ pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
 
 ![Heatmap_Condition_rld](/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
 
-
 ```
 
 
@@ -461,11 +438,7 @@ pheatmap(sampleDistMatrix,
 
 ![Samples_Distance_Matrix](/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
 
-
-
-######################################################
-####Principal component plot of the samples########
-######################################################
+### Principal component plot of the samples
 ```
 #Related to the distance matrix is the PCA plot, which shows the samples in the 2D plane spanned by their first two principal components. This type of plot is useful for visualizing the overall effect of experimental covariates and batch effects.
 
@@ -485,9 +458,8 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
 ![PCA_PC1_2](/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
 
 
-######################################################
-####       Box plot of the samples         ########
-######################################################
+
+### Box plot of the samples 
 
 ```
 par(mar=c(8,5,2,2))
@@ -498,9 +470,8 @@ boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
 
 ```
 ```
-############################################################
-####Tests of log2 fold change above or below a threshold####
-############################################################
+
+### Tests of log2 fold change above or below a threshold
 ```
 # It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results 
 #function allow for threshold-based Wald tests: lfcThreshold, which takes a numeric of a non-negative threshold value, 
@@ -536,6 +507,6 @@ plotMA(resL, ylim=ylim); drawLines()
 ![Samples_Boxplot](/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
 
-##[Go to Day2 Practicals](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/#quantification)
+## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)
 
 

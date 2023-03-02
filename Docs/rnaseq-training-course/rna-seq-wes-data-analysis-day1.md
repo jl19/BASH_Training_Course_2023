@@ -144,4 +144,4 @@ Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md)
 ----------------------
 
 
-## [Go to Day2 Data Analysis](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/)
+## [Go to Day2 Data Analysis](rna-seq-wes-data-analysis-day2.md)

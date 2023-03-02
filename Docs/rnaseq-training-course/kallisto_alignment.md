@@ -33,7 +33,7 @@ kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bb
 [build] creating equivalence classes ...  done
 [build] target de Bruijn graph has 737461 contigs and contains 101038460 k-mers 
 ```
-####Pseudoaligment using kallisto quantification
+#### Pseudoaligment using kallisto quantification
 
 ```
 cd /scratch/bbash/jl19/Data_QC/

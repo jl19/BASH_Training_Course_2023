@@ -120,7 +120,7 @@ File Formats:
 ## Day 1 Practicals
 
 ---------------------------------
-Use [NoMachine NX Client to login to SPECTRE](NoMachine-login.md) 
+Please following the instruction from Research Computing of University of Leicester to install the NoMachine NX Client [NoMachine NX Client to login to SPECTRE](NoMachine-login.md) 
 
 ### Pre-processing
 

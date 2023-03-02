@@ -1,6 +1,6 @@
 ## Accessing SPECTRE via NoMachine NX
 
-[Installing the NoMachine Enterprise Client software](https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/nomachine-spectre.aspx)
+[Following the instruction on how to install the NoMachine Enterprise Client software](https://uniofleicester.sharepoint.com/sites/Research-Computing/SitePages/nomachine-spectre.aspx)
 
 ## Opening a connection to SPECTRE
 

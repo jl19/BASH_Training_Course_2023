@@ -8,7 +8,7 @@
 > -  Visualize the output
 
 
-##Quantification
+## Quantification
 
 Genes/Transcripts counting tools can be used to obtain abundance of genes/transcripts 
 
@@ -18,7 +18,7 @@ Genes/Transcripts counting tools can be used to obtain abundance of genes/transc
 
 [Practical 4: Quantification using StringTie](practical-expression-quantification.md)
 
-##Differential Expression Analysis using DESeq2
+## Differential Expression Analysis using DESeq2
 
 Normalization and statistical testing to identify differentially expressed genes.
 

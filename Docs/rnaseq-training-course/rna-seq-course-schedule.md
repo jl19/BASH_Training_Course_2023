@@ -19,8 +19,8 @@
 
 
 ### Course Structure
+***
 #### [Day1](rna-seq-wes-data-analysis-day1.md)
-
 
 * Understand the basics of the NGS technologies
 * RNA-seq Data Analysis: Steps, Tools and File formats
@@ -28,8 +28,6 @@
 * Perform quality control for better downstream analysis
 * Pre-processing
 * Align reads to a reference genome
-
-
 ***
 #### [Day2](rna-seq-wes-data-analysis-day2.md)
 

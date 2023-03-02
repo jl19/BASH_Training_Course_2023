@@ -98,4 +98,4 @@ Import transcript-level estimates of StringTie and Kallisto output for DE analys
 [Tximport from StringTie and Kallisto Output](txtimport_StringTie_Kallisto.md)
 
 
-## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2/#quantification)
+## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2#quantification)

@@ -29,7 +29,6 @@ cp /data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.f
 # Creating index
 
 hisat2-build -p 16 genome.fa genome
-
 ```
 ```
 [jl19@spectre14 mm10]$ hisat2-build -p 16 genome.fa genome
@@ -182,10 +181,7 @@ Getting block 16 of 115
   bucket 3: 20%
   bucket 6: 20%
   bucket 2: 20%
-  
-  
   .......
-  
   .......
 Wrote 1165549977 bytes to primary GFM file: genome.5.ht2
 Wrote 675339278 bytes to secondary GFM file: genome.6.ht2
@@ -221,7 +217,6 @@ Total time for call to driver() for forward index: 00:27:10
 [jl19@spectre14 mm10]$ 
 ```
 A number of files with .ht2 extension would be created. They are the index files
-
 ```
 /scratch/bbash/jl19/Data_QC/mm10/genome.1.ht2
 /scratch/bbash/jl19/Data_QC/mm10/genome.2.ht2
@@ -255,9 +250,7 @@ Estimate run time is 20 mins for each run.
 ## Converting SAM to BAM using samtools "view"
 
 ``` 
-
 module load samtools/1.15
-
 ``` 
 ``` 
 samtools view --threads 8 -S -b SRR7457551.sam -o SRR7457551.bam;
@@ -266,7 +259,6 @@ samtools view --threads 8 -S -b SRR7457555.sam -o SRR7457555.bam;
 samtools view --threads 8 -S -b SRR7457556.sam -o SRR7457556.bam;
 samtools view --threads 8 -S -b SRR7457559.sam -o SRR7457559.bam;
 samtools view --threads 8 -S -b SRR7457560.sam -o SRR7457560.bam;
-
 ``` 
 ## Sort the bam files
 ``` 
@@ -301,4 +293,4 @@ SRR7457551.12.1	16	chr19	4104891	60	74M2S	*	0	0	GACATCCGGGCACTGGAGGAGGAGACTGCACG
 
 [Go to Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
 
-[Back to Day 1 Practicals](/rnaseq-training-course/rna-seq-wes-data-analysis-day1/#day-1-practicals).  
+[Back to Day 1 Practicals](pre-processing-rna.md) 

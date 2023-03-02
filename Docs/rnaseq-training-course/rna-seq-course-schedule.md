@@ -14,7 +14,7 @@
 
 * Understand important aspects of NGS and read alignment for data analysis
 * Perform a read alignment ready for gene/transcripts data analysis
-* Perform DE analysis
+* Perform differentially expressed(DE) gene analysis
 * Perform visualization of outputs
 
 ***
@@ -35,3 +35,4 @@
 * Quantitation
 * Differential Expression
 * Visualize the outputs
+***

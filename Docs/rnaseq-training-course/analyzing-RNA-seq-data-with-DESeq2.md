@@ -493,7 +493,7 @@ plotMA(resL, ylim=ylim); drawLines()
 ```
 ![Samples_Boxplot](/Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
-
+[Go to Day2 Practical 6](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)
 
 

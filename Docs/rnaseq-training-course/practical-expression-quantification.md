@@ -1,4 +1,4 @@
-###StringTie Expression Quantification
+### StringTie Expression Quantification
 
 > - StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. 
 
@@ -9,7 +9,7 @@
 ``` 
 module load stringtie/2.1.1
 ``` 
-####Input files
+#### Input files
 
 > - Required files: sorted BAM and GFF files
 > - Input files: sorted BAM files
@@ -61,7 +61,7 @@ stringtie SRR7457559.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o s
 stringtie SRR7457560.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457560.transcripts.gtf -A SRR7457560_gene_abund.tab;
 
 ```
-####Output files
+#### Output files
 
 > - GTF file: containing the assembled transcripts that match the reference annotation
 
@@ -75,15 +75,14 @@ stringtie SRR7457560.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o s
 > - SRR7457559	stringtie_output/SRR7457559.transcripts.gtf
 > - SRR7457560	stringtie_output/SRR7457560.transcripts.gtf
 
-####Using Python script to process sample list
+#### Using Python script to process sample list
 ```
 python prepDE.py3 stringtie_output/sample_list.txt
-
 ```
 https://nasqar.abudhabi.nyu.edu/deseq2shiny/
 
 
-####Quantification
+#### Quantification
 
 Extract the two columns transcripts ID and gene name information, The information can be found on public avalable databases: e.g. ensembl database
 
@@ -93,10 +92,10 @@ Extract the two columns transcripts ID and gene name information, The informatio
 [extract_script](extract_script.sh)
 
 
-####Tximport 
+#### Tximport 
 
 Import transcript-level estimates of StringTie and Kallisto output for DE analysis
 [Tximport from StringTie and Kallisto Output](txtimport_StringTie_Kallisto.md)
 
 
-##[Go to Day2 Practicals](/rnaseq-training-course/rna-seq-wes-data-analysis-day2/#quantification)
+## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2/#quantification)

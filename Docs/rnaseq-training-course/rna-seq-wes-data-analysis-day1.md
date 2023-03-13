@@ -49,7 +49,12 @@ RNA-seq (RNA-sequencing) is a technique that can examine the quantity and sequen
 
 
 
->  Q = − 10 log 10 P 20 1 in 100 99%
+>  Q = − 10 log 10(e)
+
+Where e is the estimated probability of the base call being wrong.
+
+* Higher Q scores indicate a samller prbability of error.
+* Lower Q scores can results in significant portion of the reads being unusable.  They may also lead to increase false-positive variant calls, resulting in inaccurate conclusions.
 
 For example, if Phred assigns a Q score of 30 (Q30) to a base, this is
 equivalent to the probability of an incorrect base call 1 in 1000 times
@@ -60,15 +65,14 @@ a correct base call) is 99.9%.
 
 |Phred Quality Score          |Probability of Incorrect Base Call |   Base Call Accuracy|
 | ----------- |---------------|--------------------------------------------------|
-|10                            |  1 in 10                       |      90%|
-|20                            |  1 in 100                       |     99%|
+|10                            |  1 in 10                        |       90%|
+|20                            |  1 in 100                       |       99%|
 |30                            |  1 in 1,000                     |     99.9%|
-|40                            |  1 in 10,000                     |    99.99%|
-|50                            |  1 in 100,000                    |    99.999%|
+|40                            |  1 in 10,000                    |     99.99%|
+|50                            |  1 in 100,000                   |    99.999%|
 
 Q20 (99%) will have an incorrect base call probability of 1 in 100, it represents
-every 100 bp sequencing read will likely contain an error. When sequencing quality reaches Q30, virtually all of the reads will be perfect,
-having zero errors and ambiguities. Q30 is considered a
+every 100 bp sequencing read will likely contain an error. When sequencing quality reaches Q30, virtually all of the reads will be perfect, having zero errors and ambiguities. Q30 is considered a
 benchmark for quality in next-generation sequencing. 
 
 ### Pre-processing (FASTQC, Skewer, Trimmomatic)

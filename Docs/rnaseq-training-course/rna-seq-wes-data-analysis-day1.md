@@ -77,6 +77,10 @@ benchmark for quality in next-generation sequencing.
 
 ### Pre-processing (FASTQC, Skewer, Trimmomatic)
 
+####Why trim RNA-Seq data 
+
+Read trimming tools have been developed to remove adapter sequences corresponding to the library adapters present in the FASTQ files and bases with low sequencing quality from sequencing reads such as RNA-seq reads, in order to help read aligners to achieve a better read mapping result.[image](https://user-images.githubusercontent.com/36770921/224789636-e8c4b515-db2e-48cb-a719-f10894b202fe.png)
+
 Use Trimmomatic/Skewer to trim/remove poor quality bases/reads
 
 Use Trimmomatic/Skewer to remove 3' adapter sequences from reads

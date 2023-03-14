@@ -134,6 +134,11 @@ Please following the instruction from Research Computing of University of Leices
 
 [Practical 1: Pre-processing](pre-processing-rna.md) 
 
+In this practical you will learn :
+
+* To import/copy, view and check the quality of the sequencing data
+* To trim the raw reads using trimming tool
+
 -------------------------
 ### Alignment (HISAT2, STAR, BWA, Kallisto)
 
@@ -141,11 +146,15 @@ Please following the instruction from Research Computing of University of Leices
 
 > [Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
 
+In this practical you will learn to align reads to a reference genome using HISAT2, an alignment tool.
+
 --------------
 
 > Alignment to transcriptome using pseudoaligner: Kallisto 
 
 > [Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
+
+In this practical you will learn to use a pseudoalinger tool Kallistol to align and quantify.
 
 ----------------------
 

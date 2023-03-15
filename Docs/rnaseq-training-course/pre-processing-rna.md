@@ -14,7 +14,7 @@
 
 #### Importing raw data files
 
-* Importing from [SRA Explorer] (https://sra-explorer.info/)
+* Importing from [SRA Explorer](https://sra-explorer.info/)
 * Using SRA study number to search
 * Select required datasets
 * Goes to saved datasets
@@ -27,7 +27,10 @@
 * Select corresponding study
 * Select required data/samples to download
 ***********
-The single end data files can be found on SPECTRE at the following location:
+
+#### Coping raw data files
+
+The example raw data (single end data) files can also be copied from SPECTRE at the following location:
 
 /data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/
 

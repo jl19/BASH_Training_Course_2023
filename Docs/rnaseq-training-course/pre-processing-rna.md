@@ -108,7 +108,7 @@ Checked the fastq files are copied correctly.
 
 FastQC is written by Simon Andrews of Babraham Bioinformatics, is a very popular quality control tool used to provide an overview of basic quality control metrics for raw next generation sequencing data.
 
-To check software installed on SPECTRE using the following command:
+To check software installed (available) on SPECTRE using the following command:
 
 ```
 module ava

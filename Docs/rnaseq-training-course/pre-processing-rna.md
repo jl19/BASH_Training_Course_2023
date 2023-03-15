@@ -3,7 +3,7 @@
 > - Example data Used:
 
 > Bioproject PRJNA450151
-> SRA Study: SRP151689
+> SRA Study Number: SRP151689
 
 > Title: Mus musculus Transcriptome or Gene expression
 
@@ -12,7 +12,21 @@
   
 ### Step 1 - Import/Copy and check the read data files
 
+#### Importing raw data files
 
+* Importing from [SRA Explorer] (https://sra-explorer.info/)
+* Using SRA study number to search
+* Select required datasets
+* Goes to saved datasets
+* Dataset could be downloaded using Raw FastQ Download URLs or Bash script for downloading FastQ files
+
+*********
+* Imprting from [The European Nucleotide Archive (ENA)
+](https://www.ebi.ac.uk/ena/browser/).
+* Using SRA study number to search
+* Select corresponding study
+* Select required data/samples to download
+***********
 The single end data files can be found on SPECTRE at the following location:
 
 /data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/

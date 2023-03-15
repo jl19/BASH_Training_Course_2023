@@ -10,7 +10,7 @@
 > Abstract:Alveolar macrophages were isolated in a murine model of lung transplant to study their role in ischemia reperfusion injury and primary graft dysfunction.
 
   
-### Step 1 - Copy and check the read data files
+### Step 1 - Import/Copy and check the read data files
 
 
 The single end data files can be found on SPECTRE at the following location:

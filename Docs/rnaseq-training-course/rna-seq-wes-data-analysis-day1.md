@@ -137,7 +137,7 @@ Please following the instruction from Research Computing of University of Leices
 In this practical you will learn :
 
 * To import/copy, view and check the quality of the sequencing data
-* To trim the raw reads using trimming tool
+* To trim the raw reads using a trimming tool
 
 -------------------------
 ### Alignment (HISAT2, STAR, BWA, Kallisto)

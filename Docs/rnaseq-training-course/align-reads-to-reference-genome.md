@@ -269,7 +269,25 @@ samtools sort SRR7457556.bam -o SRR7457556.sorted.bam;
 samtools sort SRR7457559.bam -o SRR7457559.sorted.bam;
 samtools sort SRR7457560.bam -o SRR7457560.sorted.bam;
 ``` 
+## Index sorted bam files
+``` 
+samtools index SRR7457551.sorted.bam;
+samtools index SRR7457552.sorted.bam;
+samtools index SRR7457555.sorted.bam;
+samtools index SRR7457556.sorted.bam;
+samtools index SRR7457559.sorted.bam;
+samtools index SRR7457560.sorted.bam;
+``` 
+## Index files are generated
 
+``` 
+SRR7457551.sorted.bam.bai;
+SRR7457552.sorted.bam.bai;
+SRR7457555.sorted.bam.bai;
+SRR7457556.sorted.bam.bai;
+SRR7457559.sorted.bam.bai;
+SRR7457560.sorted.bam.bai;
+``` 
 Bash script can be used to automate the procedure, the jobs can be submitted on Spectre.  This is beyond what this course can include.
 
 ## Check the BAM files

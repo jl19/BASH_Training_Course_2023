@@ -328,10 +328,10 @@ igv
 
 Here are the examples of bam files
 
-![igv SRR747551.bam SRR7457556155.bam screenshot 1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv001.jpeg)
-![igv SRR747551.bam SRR7457556155.bam screenshot 2](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv002.jpeg)
-![igv SRR747551.bam SRR7457556155.bam screenshot 3](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv003.jpeg)
-![igv SRR747551.bam SRR7457556155.bam screenshot 4](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv004.jpeg)
+![igv SRR747551.bam SRR7457556155.bam screenshot 1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv001.jpg)
+![igv SRR747551.bam SRR7457556155.bam screenshot 2](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv002.jpg)
+![igv SRR747551.bam SRR7457556155.bam screenshot 3](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv003.jpg)
+![igv SRR747551.bam SRR7457556155.bam screenshot 4](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv004.jpg)
                                                               
 [Go to Day1 Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
 

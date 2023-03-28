@@ -326,8 +326,13 @@ Loading igv/2.3.82
 igv
 ``` 
 
+Here are the examples of bam files
 
-
+[igv SRR747551.bam SRR7457556155.bam screenshot 1](assets/igv001.jpeg)
+[igv SRR747551.bam SRR7457556155.bam screenshot 2](assets/igv002.jpeg)
+[igv SRR747551.bam SRR7457556155.bam screenshot 3](assets/igv003.jpeg)
+[igv SRR747551.bam SRR7457556155.bam screenshot 4](assets/igv004.jpeg)
+                                                              
 [Go to Day1 Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
 
 ## [Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)

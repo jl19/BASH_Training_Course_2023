@@ -125,12 +125,12 @@ RNA-Seq alignment is the process of aligning the short reads genearted from RNA 
 
 The output of RNA-Seq alignment is a file that lists the location and quality of each read which can be used for downstream analysis e.g. gene expression quatification and differential gene expression analysis etc.
 
-There are several types of alignment algorithms used for RNASeq alignment, including:
+There are several types of alignment algorithms used for RNASeq alignment
 
 |Alignment Tool Name| Description|
 | ----------- | ------------------------------------ |
-|[Burrows-Wheeler Aligner (BWA)]((https://github.com/lh3/bwa)|a widely used algorithm that utilizes the Burrows-Wheeler transform to index the reference genome and align the reads|
-|[TopHat](https://ccb.jhu.edu/software/tophat/index.shtml)|a splice-aware alignment algorithm that can detect spliced alignments and map reads across splice junctions|
+|[Burrows-Wheeler Aligner (BWA)]((https://github.com/lh3/bwa) |a widely used algorithm that utilizes the Burrows-Wheeler transform to index the reference genome and align the reads|
+|[TopHat](https://ccb.jhu.edu/software/tophat/index.shtml) |a splice-aware alignment algorithm that can detect spliced alignments and map reads across splice junctions|
 |[STAR](https://github.com/alexdobin/STAR) |a fast and accurate alignment algorithm that can align reads to both the genome and transcriptome simultaneously|
 |[HISAT2](http://daehwankimlab.github.io/hisat2/) |a newer splice-aware alignment algorithm that uses a hierarchical indexing strategy to improve speed and accuracy|
 |[Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)| a fast and memory-efficient algorithm that aligns reads to the reference genome using a seed-and-extend approach|

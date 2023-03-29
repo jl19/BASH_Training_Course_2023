@@ -126,22 +126,15 @@ RNA-Seq alignment is the process of aligning the short reads genearted from RNA 
 The output of RNA-Seq alignment is a file that lists the location and quality of each read which can be used for downstream analysis e.g. gene expression quatification and differential gene expression analysis etc.
 
 There are several types of alignment algorithms used for RNASeq alignment, including:
-|Phred Quality Score          |Probability of Incorrect Base Call |   Base Call Accuracy|
-| ----------- |---------------|--------------------------------------------------|
-|10                            |  1 in 10                        |       90%|
-|20                            |  1 in 100                       |       99%|
-|30                            |  1 in 1,000                     |     99.9%|
-|40                            |  1 in 10,000                    |     99.99%|
-|50                            |  1 in 100,000                   |    99.999%|
 
 |Alignment Tool Name| Description|
 | ----------- | ------------------------------------ |
-|![Burrows-Wheeler Aligner (BWA)]((https://github.com/lh3/bwa) |a widely used algorithm that utilizes the Burrows-Wheeler transform to index the reference genome and align the reads.|
-|![TopHat](https://ccb.jhu.edu/software/tophat/index.shtml)|a splice-aware alignment algorithm that can detect spliced alignments and map reads across splice junctions|
-|![STAR](https://github.com/alexdobin/STAR) |a fast and accurate alignment algorithm that can align reads to both the genome and transcriptome simultaneously|
-|![HISAT2](http://daehwankimlab.github.io/hisat2/) |a newer splice-aware alignment algorithm that uses a hierarchical indexing strategy to improve speed and accuracy|
-|![Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)| a fast and memory-efficient algorithm that aligns reads to the reference genome using a seed-and-extend approach|
-|![Subread](https://subread.sourceforge.net/)| an alignment algorithm that uses an efficient seed-and-vote strategy to align reads to the reference genome|
+|[Burrows-Wheeler Aligner (BWA)]((https://github.com/lh3/bwa)|a widely used algorithm that utilizes the Burrows-Wheeler transform to index the reference genome and align the reads|
+|[TopHat](https://ccb.jhu.edu/software/tophat/index.shtml)|a splice-aware alignment algorithm that can detect spliced alignments and map reads across splice junctions|
+|[STAR](https://github.com/alexdobin/STAR) |a fast and accurate alignment algorithm that can align reads to both the genome and transcriptome simultaneously|
+|[HISAT2](http://daehwankimlab.github.io/hisat2/) |a newer splice-aware alignment algorithm that uses a hierarchical indexing strategy to improve speed and accuracy|
+|[Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)| a fast and memory-efficient algorithm that aligns reads to the reference genome using a seed-and-extend approach|
+|[Subread](https://subread.sourceforge.net/)| an alignment algorithm that uses an efficient seed-and-vote strategy to align reads to the reference genome|
 
 Each of these algorithms has its own strengths and weaknesses, and the choice of algorithm depends on factors such as the size of the reference genome, the sequencing technology used, and the research question being addressed.
 

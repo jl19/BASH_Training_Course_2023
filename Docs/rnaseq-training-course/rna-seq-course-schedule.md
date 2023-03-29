@@ -29,7 +29,7 @@
 * Perform quality control for better downstream analysis
 * Pre-processing
 * Align reads to a reference genome
-* 
+
 ***
 
 ### [Day2](rna-seq-wes-data-analysis-day2.md)
@@ -37,5 +37,5 @@
 * Quantitation
 * Differential Expression
 * Visualize the outputs
-* 
+
 ***

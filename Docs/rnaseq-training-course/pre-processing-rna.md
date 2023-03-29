@@ -21,7 +21,7 @@
 * Dataset could be downloaded using Raw FastQ Download URLs or Bash script for downloading FastQ files
 
 *********
-* Imprting from [The European Nucleotide Archive (ENA)
+* Importing from [The European Nucleotide Archive (ENA)
 ](https://www.ebi.ac.uk/ena/browser/).
 * Using SRA study number to search
 * Select corresponding study

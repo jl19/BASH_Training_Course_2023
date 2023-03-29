@@ -135,6 +135,7 @@ There are several types of alignment algorithms used for RNASeq alignment, inclu
 |50                            |  1 in 100,000                   |    99.999%|
 
 |Alignment Tool Name| Description|
+| ----------- | ------------------------------------ |
 |![Burrows-Wheeler Aligner (BWA)]((https://github.com/lh3/bwa) |a widely used algorithm that utilizes the Burrows-Wheeler transform to index the reference genome and align the reads.|
 |![TopHat](https://ccb.jhu.edu/software/tophat/index.shtml)|a splice-aware alignment algorithm that can detect spliced alignments and map reads across splice junctions|
 |![STAR](https://github.com/alexdobin/STAR) |a fast and accurate alignment algorithm that can align reads to both the genome and transcriptome simultaneously|

@@ -151,12 +151,14 @@ Pseudoaligner is suitable for larger dataset due to its speed but it is not suit
 
 ## RNA-Seq Applications
 
-* Differential Expression
-* Isoform switching
-* New genes and transcripts
-* New Transcriptiomes
-* Variants Detection
-* Allele-specific expression
+|Appkication| Description|
+| ----------- | ------------------------------------ |
+|Gene Differential Expression|used to compare gene expression levels between different conditions, such as healthy versus diseased tissue, or treated versus untreated cells in order to explore the molecular mechanisms underlying different biological processes|
+|Transcriptome annotation| To identify and annotate novel transcripts, including alternative splicing events and non-coding RNAs in order to understand the complexity of the transcriptome and its functional implications|
+|Functional genomics|To identify genes involved in specific biological processes, such as stress response or cell differentiation. This can help researchers identify potential drug targets or therapeutic strategies for specific diseases|
+|Biomarker discovery| To identify biomarkers, or molecular signatures, associated with specific diseases or conditions. This is useful for  developing diagnostic tools and identifying potential targets for personalized therapies|
+
+
 
 ---------------------------
 

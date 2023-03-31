@@ -169,7 +169,7 @@ Please following the instruction from Research Computing of University of Leices
 
 ### Pre-processing
 
-[Practical 1: Pre-processing](pre-processing-rna.md) 
+> [Practical 1: Pre-processing](pre-processing-rna.md) 
 
 In this practical you will learn :
 

@@ -195,5 +195,4 @@ In this practical you will learn to use a pseudoalinger tool Kallistol to align 
 
 ----------------------
 
-
 ## [Go to Day2 Data Analysis](rna-seq-wes-data-analysis-day2.md)

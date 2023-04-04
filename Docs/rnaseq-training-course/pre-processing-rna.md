@@ -26,6 +26,7 @@
 * Using SRA study number to search
 * Select corresponding study
 * Select required data/samples to download
+
 ***********
 
 #### Coping raw data files

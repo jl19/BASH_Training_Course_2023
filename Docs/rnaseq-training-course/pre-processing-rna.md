@@ -1,4 +1,4 @@
-# RNA Data Pre-processing
+# RNA-Seq Data Pre-processing
 
 > - Example data Used:
 

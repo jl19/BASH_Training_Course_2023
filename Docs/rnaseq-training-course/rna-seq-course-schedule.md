@@ -35,7 +35,7 @@
 ### [Day2](rna-seq-wes-data-analysis-day2.md)
 
 * Quantitation
-* Differential Expression
+* Differential expression
 * Visualize the outputs
 
 ***

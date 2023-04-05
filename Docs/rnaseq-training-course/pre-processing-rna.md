@@ -15,7 +15,7 @@
 #### Importing raw data files
 
 * Importing from [SRA Explorer](https://sra-explorer.info/)
-* Using SRA study number to search
+* Using SRA study number (SRP151689) to search
 * Select required datasets
 * Goes to saved datasets
 * Dataset could be downloaded using Raw FastQ Download URLs or Bash script for downloading FastQ files
@@ -23,7 +23,7 @@
 *********
 * Importing from [The European Nucleotide Archive (ENA)
 ](https://www.ebi.ac.uk/ena/browser/).
-* Using SRA study number to search
+* Using SRA study number (SRP151689) search
 * Select corresponding study
 * Select required data/samples to download
 

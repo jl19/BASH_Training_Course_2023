@@ -24,7 +24,7 @@
 ### [Day1](rna-seq-wes-data-analysis-day1.md)
 
 * Understand the basics of the NGS technologies
-* RNA-Seq Data Analysis: Steps, Tools and File formats
+* RNA-Seq Data Analysis: Steps, tools and file formats
 * RNA-Seq applications
 * Perform quality control for better downstream analysis
 * Pre-processing
@@ -35,7 +35,7 @@
 ### [Day2](rna-seq-wes-data-analysis-day2.md)
 
 * Quantitation
-* Differential expression
+* Perform differential expression analysis
 * Visualize the outputs
 
 ***

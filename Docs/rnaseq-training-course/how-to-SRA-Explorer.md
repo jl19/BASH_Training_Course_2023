@@ -13,7 +13,7 @@
 
 * Copy the script and run it on HPC
 
-#How to Import from The European Nucleotide Archive (ENA)
+# How to Import from The European Nucleotide Archive (ENA)
 
 
 Importing from [The European Nucleotide Archive (ENA)

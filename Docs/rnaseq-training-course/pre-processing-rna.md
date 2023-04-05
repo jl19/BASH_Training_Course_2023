@@ -27,7 +27,7 @@
 * Select corresponding study
 * Select required data/samples to download
 
-[Offline how to can be found here](https://jl19.github.io/BASH_Training_Course_2023/Docs/rnaseq-training-course/how-to-SRA-Explorer.md)
+[Offline HOW TO can be found here](https://jl19.github.io/BASH_Training_Course_2023/Docs/rnaseq-training-course/how-to-SRA-Explorer.md)
 
 ***********
 

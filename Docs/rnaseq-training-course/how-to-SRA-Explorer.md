@@ -19,10 +19,10 @@
 Importing from [The European Nucleotide Archive (ENA)
 
 * Using SRA study number (SRP151689) search
-![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRA_explorer_01.jpg)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/ebi_ena_search_result_01.jpg)
 
 * Select corresponding study
-![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRA_explorer_01.jpg)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/ebi_ena_search_result_02.jpg)
 
 * Select required data/samples to download
-![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRA_explorer_01.jpg)
+![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/ebi_ena_search_result_03.jpg)

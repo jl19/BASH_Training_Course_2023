@@ -119,6 +119,27 @@ just add it to end of abbr def.
 
 >:warning: Don't indent these, doesn't seem to work
 
+> :memo: **Memo Admonition**
+use blockquotes
+with emoji indicators for
+admonition memos, callout etc..
+
+---
+
+> :boom:
+Title title like above is optional
+
+---
+
+> :bulb: See [the section about blocks](blocks.md#cheatsheet)
+for the list of emojis that can be used.
+Memo Admonition
+
+use blockquotes with emoji indicators for admonition memos, callout etc..
+
+Title title like above is optional
+
+See the section about blocks for the list of emojis that can be used.
 
 
 

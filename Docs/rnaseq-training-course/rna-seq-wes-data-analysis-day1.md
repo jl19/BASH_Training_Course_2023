@@ -111,6 +111,16 @@ File Formats:
     > - under lists
 
 
+> :bulb: if your editor gets confused by
+not having and enclosing * then
+just add it to end of abbr def.
+
+---
+
+>:warning: Don't indent these, doesn't seem to work
+
+
+
 
 | File      | Description                          |
 | ----------- | ------------------------------------ |

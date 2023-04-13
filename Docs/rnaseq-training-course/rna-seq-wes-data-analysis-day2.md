@@ -14,7 +14,7 @@ Read counting is an important setp in quantifying gene expression levels from RN
 
 |Name|Description|
 |----|----|
-|[HTSeq](https://htseq.readthedocs.io/en/master/index.html)HTSeq is a Python-based tool for counting reads mapped to features such as genes or exons. It can be used with a wide range of annotation formats and can handle single-end or paired-end reads.|
+|[HTSeq](https://htseq.readthedocs.io/en/master/index.html) HTSeq is a Python-based tool for counting reads mapped to features such as genes or exons. It can be used with a wide range of annotation formats and can handle single-end or paired-end reads.|
 |FeatureCounts|featureCounts is part of the Subread package. It can count reads mapped to genes, exons, or other features and can handle both single-end and paired-end reads.|
 |Salmon|Salmon is a lightweight alignment-free tool that quantifies transcript expression using k-mer-based mapping. It can accurately quantify transcript expression even for lowly expressed transcripts and can handle reads from multiple sequencing platforms.|
 |Kallisto|Kallisto is another alignment-free tool that quantifies transcript expression using pseudoalignment. It is fast and memory-efficient and can handle large-scale RNA-Seq datasets.|

@@ -16,7 +16,7 @@ Genes/Transcripts counting tools can be used to obtain abundance of genes/transc
 
 * Kallisto
 
-> :boom: Practical 4: Quantification using StringTie](practical-expression-quantification.md)
+> :boom: [Practical 4: Quantification using StringTie](practical-expression-quantification.md)
 
 ## Differential Expression Analysis using DESeq2
 

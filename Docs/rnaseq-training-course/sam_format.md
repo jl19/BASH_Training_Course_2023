@@ -20,8 +20,8 @@ Each record starts with its identifier and is followed by tab-separated tags.
 
 Each tag in the header consists of a two-character identifier, followed by ':', followed by the value.
 
-|Record Name	|Tag 1 |Description | Tag2 | Description
-| ----------- |---------------|----------- |---------------|
+|Record Name	|Tag 1 |Description | Tag2 | Description|
+| ----------- |---------------|----------- |---------------|--------|
 |@HD	|VN|	SAM version|SO	|sort order|
 |@SQ	|SN|	the reference sequence names| LN| sequence lengths|
 

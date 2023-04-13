@@ -29,11 +29,25 @@ Read counting is an important setp in quantifying gene expression levels from RN
 
 
 
-## Differential Expression Analysis using DESeq2
+## Differential Expression Analysis 
+
+Differentially expressed gene expression analysis (DE analysis) is a technique used to compare the gene/transcript expression levels of different samples or groups of samples. The goal of DE analysis is to identify genes that show significant changes in expression between the compared conditions.
+
+DE analysis typically involves the following steps:
+
+|Process|Description|
+|----|----|
+|Data preprocessing|Raw gene expression data is processed to remove systematic biases and normalize the data|
+|Statistical analysis|Statistical tests are performed to identify genes that are differentially expressed between the conditions being compared. Commonly used tests include t-tests, ANOVA, and the Wilcoxon rank-sum test|
+|Multiple testing correction| Since thousands of genes are typically analyzed in a single experiment, statistical corrections are applied to adjust for the increased probability of false positives due to multiple comparisons|
+|Functional analysis| Genes that are identified as differentially expressed are often analyzed to determine their biological functions and pathways|
+
+DE analysis can provide insight into the molecular mechanisms underlying various biological processes and diseases. It is widely used in areas such as cancer research, drug discovery, and personalized medicine.
 
 There are several software tools available for differential gene expression analysis. The choice of tool depends on various factors, such as the type and size of the data, the level of expertise of the user, and the availability of computational resources. Here are some commonly used tools for DE analysis:
 
 |Tool Name|Description|
+|----|----|
 |[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) | A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
 
 |[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)| Another popular R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a flexible method for modeling gene expression data|
@@ -48,8 +62,7 @@ There are several software tools available for differential gene expression anal
 
 |[Cuffdiff2](https://chipster.csc.fi/manual/cuffdiff2.html)| A package that is specifically designed for RNA-seq data and provides a method for identifying differentially expressed genes and isoforms|
 
-
-Normalization and statistical testing to identify differentially expressed genes.
+> Differential Expression analysis using DESeq2
 
 > :boom: [Practical 5: Differential Expression analysis using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
 

@@ -3,12 +3,12 @@
 
 ## [Day1](rna-seq-wes-data-analysis-day1.md)
 >:memo:
-> -  Understand the basics of the NGS technologies     
-> -  RNA-seq Data Analysis: Steps, Tools and File formats
-> -  RNA-seq applications
-> -  Perform quality control for better downstream analysis
-> -  Pre-processing
-> -  Align reads to a reference genome
+  > -  Understand the basics of the NGS technologies     
+  > -  RNA-seq Data Analysis: Steps, Tools and File formats
+  > -  RNA-seq applications
+  > -  Perform quality control for better downstream analysis
+  > -  Pre-processing
+  > -  Align reads to a reference genome
 
 
 ## Understand the basics of NGS technologies

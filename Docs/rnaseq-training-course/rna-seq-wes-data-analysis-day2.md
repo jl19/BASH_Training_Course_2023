@@ -49,17 +49,11 @@ There are several software tools available for differential gene expression anal
 |Tool Name|Description|
 |----|----|
 |[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) | A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
-
 |[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)| Another popular R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a flexible method for modeling gene expression data|
-
 |[limma](https://bioconductor.org/packages/release/bioc/html/limma.html)| A Bioconductor package that is widely used for microarray data analysis. It provides a comprehensive framework for preprocessing, normalization, and statistical analysis of microarray data|
-
 |[limma voom](https://ucdavis-bioinformatics-training.github.io/2018-June-RNA-Seq-Workshop/thursday/DE.html)| A Bioconductor package that provides a transformation method for RNA-seq data to allow for the application of linear models for statistical analysis|
-
 |[NOISeq](https://bioconductor.org/packages/release/bioc/html/NOISeq.html)| A non-parametric method that is suitable for small sample sizes and can be used with both RNA-seq and microarray data|
-
 |[DEGseq](https://bioconductor.org/packages/release/bioc/html/DEGseq.html)| A package that can be used with both RNA-seq and microarray data and provides a method for identifying differentially expressed genes based on negative binomial distribution|
-
 |[Cuffdiff2](https://chipster.csc.fi/manual/cuffdiff2.html)| A package that is specifically designed for RNA-seq data and provides a method for identifying differentially expressed genes and isoforms|
 
 > Differential Expression analysis using DESeq2
@@ -69,7 +63,20 @@ There are several software tools available for differential gene expression anal
 Compare sample groups: differential expression analysis
 
 
-## Visualization of the Outputs
+## Visualization of the DE Outputs
+
+Visualization of differential gene expression (DE) analysis output is an essential tool in the DE data analysis, it helps to understand the results and identify patterns in the data. Some commonly used visualization techniques for DE analysis output:
+
+|Plot Name|Description|
+|----|----|
+|Volcano plots|A volcano plot is a scatter plot that shows the fold change of each gene on the x-axis and the statistical significance on the y-axis. Genes that are significantly differentially expressed are plotted above a threshold (e.g., p-value < 0.05) and are colored by their log-fold change|
+|Heatmaps| Heatmaps are graphical representations of gene expression data that use color-coded rectangles to represent the expression level of each gene across different conditions or samples. Heatmaps can help to identify groups of genes that have similar expression patterns|
+|MA plots| An MA plot is a scatter plot that shows the log-intensity ratio (M-value) on the y-axis and the average log-intensity (A-value) on the x-axis. It is a useful tool for visualizing the differences in gene expression between conditions|
+|PCA plots| A PCA (principal component analysis) plot is a dimensionality reduction technique that can be used to visualize the overall patterns of gene expression across multiple samples or conditions. It can help to identify any clustering or separation of samples based on gene expression patterns|
+|Pathway enrichment plots| Pathway enrichment analysis identifies the biological pathways that are significantly affected by differential gene expression. Pathway enrichment plots can help to visualize the pathways that are affected by differential gene expression and the genes that are involved in these pathways|
+
+Visualization can be acheived using various software tools such as R/Bioconductor packages (e.g., ggplot2, pheatmap, PCAtools), Python packages (e.g., Matplotlib, Seaborn), and web-based tools (e.g., WEBGestalt GSEA, DAVID). 
+
 
 > :boom: [Practical 6: Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 

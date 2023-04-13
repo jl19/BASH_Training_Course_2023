@@ -14,9 +14,18 @@ r003    16  ref 29  30  6H5M    *   0   0   TAGGC   *
 r001    83  ref 37  30  9M  =   7   -39 CAGCGCCAT   *
   
 ```
-  SAM files are TSV (tab-separated-values) files and begin with an optional header. The header consists of multiple lines, starting with an '@' character, each line is a record. Each record starts with its identifier and is followed by tab-separated tags. Each tag in the header consists of a two-character identifier, followed by ':', followed by the value.
+SAM files are TSV (tab-separated-values) files and begin with an optional header. The header consists of multiple lines, starting with an '@' character, each line is a record. 
 
-If present, the @HD record must be the first record and specifies the SAM version (tag VN) used in this file and the sort order (SO). The optional @SQ header records give the reference sequence names (tag SN) and lengths (tag LN). There also are other header record types.
+Each record starts with its identifier and is followed by tab-separated tags. 
+
+Each tag in the header consists of a two-character identifier, followed by ':', followed by the value.
+
+|Record Name	|Tag 1 |Description | Tag2 | Description
+| ----------- |---------------|----------- |---------------|
+|@HD	|VN|	SAM version|SO	|sort order|
+|@SQ	|SN|	the reference sequence names| LN| sequence lengths|
+
+There also are other header record types.
 
 The optional header section is followed by the alignment records. The alignment records are again tab-separated. There are 11 mandatory columns.
 
@@ -36,25 +45,7 @@ The optional header section is followed by the alignment records. The alignment 
 |11|	QUAL|	string|	*	|The ASCII PHRED-encoded base qualities.|
 
 
-
-Notes:
-  
-*  The SAM standard talks about “queries”. In the context of read mapping, where the format originates, queries are reads.
-* The SAM standard talks about “templates” and “segments”. In the case of paired-end and mate-pair mapping the template consists of two segments, each is one read. The template length is the insert size.
-* Paired-end reads are stored as two alignments records with the same QNAME. The first and second mate are discriminated by the FLAG values.
-* When the FLAG indicates that SEQ is reverse-complemented, then QUAL is reversed.
-* Positions in the SAM file are 1-based. When read into a BamAlignmentRecord (see below), the positions become 0-based.
-* The qualities must be stored as ASCII PRED-encoded qualities.
-* The query and reference names must not contain whitespace. It is common to trim query and reference ids at the first space.
-* There are many ambiguities, recommendations, and some special cases in the formats that we do not describe here. We recommend that you follow this tutorial, start working with the SAM and BAM formats and later read the SAM specification “on demand” when you need it.
-
-The 11 mandatory columns are followed by an arbitrary number of optional tags. Tags have a two-character identifier followed by ":${TYPE}:", followed by the tag’s value.
-
 BAM files store their header as plain-text SAM headers. However, they additionally store the name and length information about the reference sequences. This information is mandatory since in BAM, the alignment records only contain the numeric ids of the reference sequences. Thus, the name is stored outside the record in the header.
-
-A First Working Example
-The following example shows an example of a program that reads the file with the path example.sam and prints its contents back to the user on stdout. If you want to try out this program then create a file with the sample SAM content from above and adjust the path "example.sam" in the program below to the path to your SAM file (e.g. "path/to/my_example.sam").
-
 
 > :memo: **title**
 

@@ -16,7 +16,7 @@ Genes/Transcripts counting tools can be used to obtain abundance of genes/transc
 
 * Kallisto
 
-[Practical 4: Quantification using StringTie](practical-expression-quantification.md)
+> :boom: Practical 4: Quantification using StringTie](practical-expression-quantification.md)
 
 ## Differential Expression Analysis using DESeq2
 
@@ -29,6 +29,6 @@ Compare sample groups: differential expression analysis
 
 ## Visualization of the Outputs
 
-[Practical 6: Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
+> :boom: [Practical 6: Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 
 ## [Go to Day1 Data Analysis](rna-seq-wes-data-analysis-day1.md)

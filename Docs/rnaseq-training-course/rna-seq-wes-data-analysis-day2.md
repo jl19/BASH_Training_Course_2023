@@ -38,7 +38,7 @@ DE analysis typically involves the following steps:
 |Process|Description|
 |----|----|
 |Data preprocessing|Raw gene expression data is processed to remove systematic biases and normalize the data|
-|Statistical analysis|Statistical tests are performed to identify genes that are differentially expressed between the conditions being compared. Commonly used tests include t-tests, ANOVA, and the Wilcoxon rank-sum test|
+|Statistical analysis|Statistical tests are performed to identify genes that are differentially expressed between the conditions being compared. Commonly used tests include [t-tests](https://www.scribbr.com/statistics/t-test/), [ANOVA](https://www.scribbr.com/statistics/one-way-anova/), and the [Wilcoxon rank-sum test](https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_nonparametric/bs704_nonparametric4.html)|
 |Multiple testing correction| Since thousands of genes are typically analyzed in a single experiment, statistical corrections are applied to adjust for the increased probability of false positives due to multiple comparisons|
 |Functional analysis| Genes that are identified as differentially expressed are often analyzed to determine their biological functions and pathways|
 
@@ -48,7 +48,7 @@ There are several software tools available for differential gene expression anal
 
 |Tool Name|Description|
 |----|----|
-|[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) | A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
+|[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) | A widely used [R/Bioconductor package](https://www.bioconductor.org/) for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
 |[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)| Another popular R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a flexible method for modeling gene expression data|
 |[limma](https://bioconductor.org/packages/release/bioc/html/limma.html)| A Bioconductor package that is widely used for microarray data analysis. It provides a comprehensive framework for preprocessing, normalization, and statistical analysis of microarray data|
 |[limma voom](https://ucdavis-bioinformatics-training.github.io/2018-June-RNA-Seq-Workshop/thursday/DE.html)| A Bioconductor package that provides a transformation method for RNA-seq data to allow for the application of linear models for statistical analysis|

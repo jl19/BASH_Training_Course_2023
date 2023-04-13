@@ -63,7 +63,7 @@ There are several software tools available for differential gene expression anal
 Compare sample groups: differential expression analysis
 
 
-## Visualization of the DE Outputs
+## Visualization of DE Outputs
 
 Visualization of differential gene expression (DE) analysis output is an essential tool in the DE data analysis, it helps to understand the results and identify patterns in the data. Some commonly used visualization techniques for DE analysis output:
 
@@ -78,6 +78,6 @@ Visualization of differential gene expression (DE) analysis output is an essenti
 Visualization can be acheived using various software tools such as R/Bioconductor packages (e.g., ggplot2, pheatmap, PCAtools), Python packages (e.g., Matplotlib, Seaborn), and web-based tools (e.g., WEBGestalt GSEA, DAVID). 
 
 
-> :boom: [Practical 6: Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
+> :boom: [Practical 6: Visualization of DE Output](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 
 ## [Go to Day1 Data Analysis](rna-seq-wes-data-analysis-day1.md)

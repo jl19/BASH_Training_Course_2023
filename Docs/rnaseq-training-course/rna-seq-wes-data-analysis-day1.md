@@ -1,4 +1,4 @@
-# RNA-seq (WES) Data Analysis
+# RNA-seq Data Analysis
 
 
 ## [Day1](rna-seq-wes-data-analysis-day1.md)

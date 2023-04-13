@@ -46,9 +46,7 @@ RNA-seq (RNA-sequencing) refers to analyze the transcriptome of biological sampl
 
 *  Base calling accuracy, measured by the Phred quality score (Q score), is the most common metric used to assess the accracy of a sequencing platform.  It indicates the probablity that a given base is called incorrectly by the sequencer.
 
-
-
->  Q = − 10 log 10(e)
+> :bulb: >  Q = − 10 log 10(e)
 
 Where e is the estimated probability of the base call being wrong.
 

@@ -82,7 +82,7 @@ Use Trimmomatic/Skewer to trim/remove poor quality bases/reads
 
 Use Trimmomatic/Skewer to remove 3' adapter sequences from reads
 
-> Pre-processing Tools:
+>:bulb: Pre-processing Tools:
 
 |Tool Name                                              | Description                                                   |
 |--------------------|-----------------------|
@@ -123,7 +123,7 @@ RNA-Seq alignment is the process of aligning the short reads genearted from RNA 
 
 The output of RNA-Seq alignment is a file that lists the location and quality of each read which can be used for downstream analysis e.g. gene expression quatification and differential gene expression analysis etc.
 
-> Commonly Used Alignment Tools
+>:bulb: Commonly Used Alignment Tools
 
 |Alignment Tool Name| Description|
 | ----------- | ------------------------------------ |

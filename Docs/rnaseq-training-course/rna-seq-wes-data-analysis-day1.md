@@ -105,42 +105,6 @@ File Formats:
 | [VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)       | .vcf          | Variant information, Variant Call Format| txt file for variants calls incluing SNP, indels, CNV
 |[GFF/GTF](https://www.ensembl.org/info/website/upload/gff.html)    | .gff, .gtf    | annotation data | General Transfer/Feature Format annotation file
 
-> :memo: **title**
-    >
-    > - list under lists
-    > - under lists
-
-
-> :bulb: if your editor gets confused by
-not having and enclosing * then
-just add it to end of abbr def.
-
----
-
->:warning: Don't indent these, doesn't seem to work
-
-> :memo: **Memo Admonition**
-use blockquotes
-with emoji indicators for
-admonition memos, callout etc..
-
----
-
-> :boom:
-Title title like above is optional
-
----
-
-> :bulb: See [the section about blocks](blocks.md#cheatsheet)
-for the list of emojis that can be used.
-Memo Admonition
-
-use blockquotes with emoji indicators for admonition memos, callout etc..
-
-Title title like above is optional
-
-See the section about blocks for the list of emojis that can be used.
-
 
 
 | File      | Description                          |

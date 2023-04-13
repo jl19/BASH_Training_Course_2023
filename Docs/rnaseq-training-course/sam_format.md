@@ -20,16 +20,6 @@ If present, the @HD record must be the first record and specifies the SAM versio
 
 The optional header section is followed by the alignment records. The alignment records are again tab-separated. There are 11 mandatory columns.
 
-|Phred Quality Score          |Probability of Incorrect Base Call |   Base Call Accuracy|
-| ----------- |---------------|--------------------------------------------------|
-|10                            |  1 in 10                       |      90%|
-|20                            |  1 in 100                       |     99%|
-|30                            |  1 in 1,000                     |     99.9%|
-|40                            |  1 in 10,000                     |    99.99%|
-|50                            |  1 in 100,000                    |    99.999%|
-
-
-
 
 |Col|	Field	Type|	N/A Value	|Description|
 | ----------- |---------------|------------------------|--------------------------|
@@ -67,23 +57,24 @@ The following example shows an example of a program that reads the file with the
 
 
 > :memo: **title**
+
     >
-    > - list under lists
-    > - under lists
+    > -  list under lists
+    > -  under lists
 
 > :memo: **title**
     >
-    > - list under lists
-    > - under lists
+    > -  list under lists
+    > -  under lists
 
 
-> :bulb: if your editor gets confused by
+    > :bulb: if your editor gets confused by
 not having and enclosing * then
 just add it to end of abbr def.
 
 ---
 
->:warning: Don't indent these, doesn't seem to work
+> :warning: Don't indent these, doesn't seem to work
 
 > :memo: **Memo Admonition**
 use blockquotes
@@ -97,7 +88,7 @@ Title title like above is optional
 
 ---
 
-> :bulb: See [the section about blocks](blocks.md#cheatsheet)
+    > :bulb: See [the section about blocks](blocks.md#cheatsheet)
 for the list of emojis that can be used.
 Memo Admonition
 

@@ -23,7 +23,7 @@ Read counting is an important setp in quantifying gene expression levels from RN
 |[Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)|Cufflinks is a popular tool for transcriptome assembly and quantification that can identify novel transcripts and splice variants. It can also quantify expression levels of known transcripts and is useful for gene fusions and other complex transcript structures.|
 
 
-### Here we use StringTie as an example for quantification.
+>  Here we use StringTie as an example for quantification.
 
 > :boom: [Practical 4: Quantification using StringTie](practical-expression-quantification.md)
 
@@ -33,8 +33,8 @@ Read counting is an important setp in quantifying gene expression levels from RN
 
 There are several software tools available for differential gene expression analysis. The choice of tool depends on various factors, such as the type and size of the data, the level of expertise of the user, and the availability of computational resources. Here are some commonly used tools for DE analysis:
 
-| Tool Name|Description|
-|[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) |A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
+|Tool Name|Description|
+|[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) | A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
 
 |[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)| Another popular R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a flexible method for modeling gene expression data|
 

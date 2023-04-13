@@ -10,7 +10,7 @@ nav:
        - 'Introduction to R': 'introduction-to-r/introduction-to-r-schedule.md'
 
 theme:
-  name: material
+  name: readthedocs
   highlightjs: true
   palette:
     primary: blue grey

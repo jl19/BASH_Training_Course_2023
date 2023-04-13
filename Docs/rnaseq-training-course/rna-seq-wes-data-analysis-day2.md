@@ -22,7 +22,7 @@ Genes/Transcripts counting tools can be used to obtain abundance of genes/transc
 
 Normalization and statistical testing to identify differentially expressed genes.
 
-[Practical 5: Differential Expression analysis using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
+> :boom: [Practical 5: Differential Expression analysis using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
 
 Compare sample groups: differential expression analysis
 

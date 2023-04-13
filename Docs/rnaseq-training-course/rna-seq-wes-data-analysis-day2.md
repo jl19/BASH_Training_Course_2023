@@ -23,15 +23,31 @@ Read counting is an important setp in quantifying gene expression levels from RN
 |[Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)|Cufflinks is a popular tool for transcriptome assembly and quantification that can identify novel transcripts and splice variants. It can also quantify expression levels of known transcripts and is useful for gene fusions and other complex transcript structures.|
 
 
-Genes/Transcripts counting tools can be used to obtain abundance of genes/transcripts 
-
-* StringTie 
-
-* Kallisto
+### Here we use StringTie as an example for quantification.
 
 > :boom: [Practical 4: Quantification using StringTie](practical-expression-quantification.md)
 
+
+
 ## Differential Expression Analysis using DESeq2
+
+There are several software tools available for differential gene expression analysis. The choice of tool depends on various factors, such as the type and size of the data, the level of expertise of the user, and the availability of computational resources. Here are some commonly used tools for DE analysis:
+
+| Tool Name|Description|
+|[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) |A widely used R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a robust method for normalization and variance stabilization|
+
+|[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)| Another popular R/Bioconductor package for differential gene expression analysis. It is suitable for RNA-seq data and provides a flexible method for modeling gene expression data|
+
+|[limma](https://bioconductor.org/packages/release/bioc/html/limma.html)| A Bioconductor package that is widely used for microarray data analysis. It provides a comprehensive framework for preprocessing, normalization, and statistical analysis of microarray data|
+
+|[limma voom](https://ucdavis-bioinformatics-training.github.io/2018-June-RNA-Seq-Workshop/thursday/DE.html)| A Bioconductor package that provides a transformation method for RNA-seq data to allow for the application of linear models for statistical analysis|
+
+|[NOISeq](https://bioconductor.org/packages/release/bioc/html/NOISeq.html)| A non-parametric method that is suitable for small sample sizes and can be used with both RNA-seq and microarray data|
+
+|[DEGseq](https://bioconductor.org/packages/release/bioc/html/DEGseq.html)| A package that can be used with both RNA-seq and microarray data and provides a method for identifying differentially expressed genes based on negative binomial distribution|
+
+|[Cuffdiff2](https://chipster.csc.fi/manual/cuffdiff2.html)| A package that is specifically designed for RNA-seq data and provides a method for identifying differentially expressed genes and isoforms|
+
 
 Normalization and statistical testing to identify differentially expressed genes.
 

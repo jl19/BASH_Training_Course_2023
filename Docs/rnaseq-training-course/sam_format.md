@@ -58,14 +58,15 @@ The following example shows an example of a program that reads the file with the
 
 > :memo: **title**
 
-    >
+    
     > -  list under lists
     > -  under lists
 
-> :memo: **title**
-    >
-    > -  list under lists
-    > -  under lists
+        > :memo: **title**
+    
+    
+            > -  list under lists
+            > -  under lists
 
 
     > :bulb: if your editor gets confused by
@@ -74,9 +75,10 @@ just add it to end of abbr def.
 
 ---
 
-> :warning: Don't indent these, doesn't seem to work
+        > :warning: Don't indent these, doesn't seem to work
 
-> :memo: **Memo Admonition**
+        > :memo: **Memo Admonition**
+        
 use blockquotes
 with emoji indicators for
 admonition memos, callout etc..
@@ -84,11 +86,13 @@ admonition memos, callout etc..
 ---
 
 > :boom:
+> 
 Title title like above is optional
 
 ---
 
     > :bulb: See [the section about blocks](blocks.md#cheatsheet)
+    
 for the list of emojis that can be used.
 Memo Admonition
 

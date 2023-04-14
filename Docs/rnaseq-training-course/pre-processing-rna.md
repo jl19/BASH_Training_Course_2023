@@ -293,7 +293,7 @@ skewer -m any -q 25 -Q 20 -n -z SRR7457560.fastq.gz -o trimmed/SRR7457560;
 ```
 
 > - Run FastQc on command line after trimming
-> - [SRR7457551.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
+> :bulb: [SRR7457551.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report

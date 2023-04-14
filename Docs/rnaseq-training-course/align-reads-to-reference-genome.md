@@ -2,14 +2,14 @@
 
 There are several commonly used align/mapping programs for aligning RNAseq read to the genome.
 Hisat2 is a successor of Tophat2 is suitable for align RNAseq reads to the genome.
-> - ### Align reads to a reference genome using HISAT2
+## Align reads to a reference genome using HISAT2
 ### [Hisat2 manual](http://daehwankimlab.github.io/hisat2/manual/)
 
-1. Load hisat 2.2.1 module
+### Load hisat 2.2.1 module
 ```  
 module load hisat2/2.2.1
 ```  
-2. Creating HISAT2 indexes
+### Creating HISAT2 indexes
 
 First, the genome needed to be indexed before using Hisat2-build or created using the index generatering script:make_mm10.sh
 ```

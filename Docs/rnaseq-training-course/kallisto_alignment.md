@@ -1,4 +1,4 @@
-# Pseudoalignment using kallisto
+# Pseudoalignment Using kallisto
 
 kallisto is a program for quantifying abundances of transcripts from bulk and single-cell RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads.
 It is based on the novel idea of pseudoalignment for rapidly determining the compatibility of reads with targets, without the need for alignment.
@@ -6,20 +6,20 @@ It is based on the novel idea of pseudoalignment for rapidly determining the com
 
 kallisto is fast and also can be used as quantification tool.
 
-### Download the cDNA reference and build a index file.
+## Download the cDNA reference and build a index file.
 
-#### Download the cDNA reference
+### Download the cDNA reference
 ```
 cd /scratch/bbash/jl19/Data_QC/mm10/
 
 wget ftp://ftp.ensembl.org/pub/release-101/fasta/mus_musculus/cdna/Mus_musculus.GRCm38.cdna.all.fa.gz
 ```
-#### Load the kallisto module
+### Load the kallisto module
 ```
 module load kallisto/0.46.1
 ```
 
-#### Kallisto Index
+### Kallisto Index
 
 ```
 kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bbash/jl19/Data_QC/mm10/Mus_musculus.GRCm39.cdna.all.fa.gz' 
@@ -33,7 +33,7 @@ kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bb
 [build] creating equivalence classes ...  done
 [build] target de Bruijn graph has 737461 contigs and contains 101038460 k-mers 
 ```
-#### Pseudoaligment using kallisto quantification
+### Pseudoaligment using kallisto quantification
 
 ```
 cd /scratch/bbash/jl19/Data_QC/

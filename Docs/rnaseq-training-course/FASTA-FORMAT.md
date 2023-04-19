@@ -79,7 +79,7 @@ The accepted amino acid codes are:
    | C |CYS |cystine    |                    R |ARG |arginine|
    | D |ASP |aspartate  |                    S |SER |serine|
   |  E| GLU |glutamate  |                    T |THR |threonine|
-  |  F |PHE |phenylalanine |                 U  |   selenocysteine|
+  |  F |PHE |phenylalanine |                 U  |   |selenocysteine|
   |  G |GLY |glycine   |                     V |VAL |valine|
   |  H |HIS |histidine  |                    W| TRP |tryptophan|
   |  I |ILE |isoleucine |                    Y |TYR| tyrosine|

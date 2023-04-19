@@ -1,7 +1,7 @@
 # FASTA Format
 
 ## FASTA format description 
-(more information available from [NCBI](https://blast.ncbi.nlm.nih.gov/doc/blast-topics/))
+more information available from [NCBI](https://blast.ncbi.nlm.nih.gov/doc/blast-topics/)
 
 FASTA stands for "Fast All" or "FastA", which is a popular format for representing nucleotide or protein sequences and their associated metadata. The FASTA format was introduced by David J. Lipman and William R. Pearson in 1985 as a simple and efficient way to search sequence databases using sequence similarity.
 
@@ -68,13 +68,13 @@ The nucleic acid codes are:
 |R -->| G A (purine)  |      H --> |A C T|
 |Y -->| T C (pyrimidine) |   V --> |G C A|
 |K -->| G T (keto)  |        N --> |A G C T (any)|
-                                  -  gap of indeterminate length
+                                  -  gap of indeterminate length|
                                   
                                   
 The accepted amino acid codes are:
 |Code| Abbreation|Amino Acid|Code|Abbreation|Amino Acid|
-    |---|----|---|----|----|----|
-    |A |ALA |alanine |                        P| PRO |proline|
+|---|----|---|----|----|----|
+ |A |ALA |alanine |   P| PRO |proline|
    | B| ASX |aspartate or asparagine |       Q |GLN |glutamine|
    | C |CYS |cystine    |                    R |ARG |arginine|
    | D |ASP |aspartate  |                    S |SER |serine|

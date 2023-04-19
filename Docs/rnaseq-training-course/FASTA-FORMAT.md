@@ -35,7 +35,14 @@ When a protein sequence is obtained from the GenBank database, the sequence iden
 ```
 >gi|129361|sp|P01013|OVAX_CHICK GENE X PROTEIN (OVALBUMIN-RELATED)
 ```
-"gi" indicates that the protein sequence is from the GenBank database, "129361" is the numerical identifier of the record, and the rest of the information provides details about the protein's origin, function, and other properties. However, note that the use of "gi" identifiers in FASTA format is less common now, as NCBI has phased out the use of "gi" identifiers in favor of accession numbers.
+
+|Name|Description|
+|---|----|
+|gi| indicates that the protein sequence is from the GenBank database|
+|129361| It is the numerical identifier of the record|
+|sp| indicates the Swiss Port ID|
+|P01013|Accession Number of Protein| 
+|However, note that the use of "gi" identifiers in FASTA format is less common now, as NCBI has phased out the use of "gi" identifiers in favor of accession numbers.|
 
 ```
 >sp|P69905|TBA1A_HUMAN Tubulin alpha-1A chain OS=Homo sapiens GN=TUBA1A PE=1 SV=2
@@ -49,7 +56,10 @@ MEEGEFSEARED
 
 When a protein sequence is obtained from Swiss-Prot, the sequence identifier in the FASTA format is usually prefixed with "sp|" followed by the accession number of the protein. For example, in the above FASTA format sequence identifier:
 
-"sp" indicates that the protein sequence is from Swiss-Prot, "P69905" is the accession number of the protein, and the rest of the information provides details about the protein's origin, function, and other properties.
+|Name|Description|
+|---|----|
+|sp|I indicates that the protein sequence is from Swiss-Prot|
+|P69905| It is the accession number of the protein| 
 
 Sequences are expected to be represented in the standard IUB/IUPAC amino acid and nucleic acid codes, with these exceptions:
 lower-case letters are accepted and are mapped into upper-case;

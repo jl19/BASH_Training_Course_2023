@@ -5,7 +5,7 @@ more information available from [NCBI](https://blast.ncbi.nlm.nih.gov/doc/blast-
 
 FASTA stands for "Fast All" or "FastA", which is a popular format for representing nucleotide or protein sequences and their associated metadata. The FASTA format was introduced by David J. Lipman and William R. Pearson in 1985 as a simple and efficient way to search sequence databases using sequence similarity.
 
-FASTA format is a text-based format for representing either nucleotide sequences or protein sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (">") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.
+FASTA format is a text-based format for representing either nucleotide sequences or protein sequences, in which base pairs or amino acids are represented using single-letter codes. 
 An example sequence in FASTA format is:
 
 FASTA format is characterized by its two-line structure. 

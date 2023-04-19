@@ -1,6 +1,6 @@
 # FASTA Format
 
-## FASTA format description (more information available from [NCBI(https://blast.ncbi.nlm.nih.gov/doc/blast-topics/)]
+## FASTA format description (more information available from [NCBI(https://blast.ncbi.nlm.nih.gov/doc/blast-topics/)])
 
 FASTA stands for "Fast All" or "FastA", which is a popular format for representing nucleotide or protein sequences and their associated metadata. The FASTA format was introduced by David J. Lipman and William R. Pearson in 1985 as a simple and efficient way to search sequence databases using sequence similarity.
 
@@ -25,6 +25,7 @@ CGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCG
 |Name|Description|
 |---|----|
 |gi| GenInfo Identifier|It is a unique numerical identifier assigned to a nucleotide or protein sequence record in the GenBank database. |
+|sp| Swiss-Prot|It is a high-quality, manually annotated protein sequence database maintained by the Swiss Institute of Bioinformatics (SIB). |
 
 The GenBank database is a comprehensive collection of publicly available DNA and protein sequences maintained by the National Center for Biotechnology Information (NCBI).
 
@@ -44,10 +45,6 @@ PYNATLSVHQLVENTDETYCIDNEALYDICFRTLKLAVNMVPFPRNVKEISFVDWCPTGFK
 VGINYQPPTVVPGGDLAKVQRAVCMLSNTTAIAEAWARLDHKFDLMYAKRAFVHWYVGEG
 MEEGEFSEARED
 ```
-|Name|Description|
-|---|----|
-|sp| Swiss-Prot|It is a high-quality, manually annotated protein sequence database maintained by the Swiss Institute of Bioinformatics (SIB). |
-
 
 When a protein sequence is obtained from Swiss-Prot, the sequence identifier in the FASTA format is usually prefixed with "sp|" followed by the accession number of the protein. For example, in the above FASTA format sequence identifier:
 

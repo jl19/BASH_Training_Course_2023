@@ -1,6 +1,7 @@
 # FASTA Format
 
-## FASTA format description (more information available from [NCBI(https://blast.ncbi.nlm.nih.gov/doc/blast-topics/)])
+## FASTA format description 
+(more information available from [NCBI](https://blast.ncbi.nlm.nih.gov/doc/blast-topics/))
 
 FASTA stands for "Fast All" or "FastA", which is a popular format for representing nucleotide or protein sequences and their associated metadata. The FASTA format was introduced by David J. Lipman and William R. Pearson in 1985 as a simple and efficient way to search sequence databases using sequence similarity.
 
@@ -72,17 +73,17 @@ The nucleic acid codes are:
                                   
 The accepted amino acid codes are:
 |Code| Abbreation|Amino Acid|Code|Abbreation|Amino Acid|
-    |---|----|---|----|
-    |A |ALA |alanine |                       | P| PRO |proline|
-   | B| ASX |aspartate or asparagine |      |  Q |GLN |glutamine|
-   | C |CYS |cystine    |                   |  R |ARG |arginine|
-   | D |ASP |aspartate  |                   |  S |SER |serine|
-  |  E| GLU |glutamate  |                  |   T |THR |threonine|
-  |  F |PHE |phenylalanine |                |  U  |   selenocysteine|
-  |  G |GLY |glycine   |                   |   V |VAL |valine|
-  |  H |HIS |histidine  |                  |   W| TRP |tryptophan|
-  |  I |ILE |isoleucine |                  |   Y |TYR| tyrosine|
-  |  K| LYS |lysine   |                     |  Z |GLX |glutamate or glutamine|
- |   L |LEU |leucine   |                   |   X  |   any|
- |   M |MET| methionine |                  |   *  |   translation stop|
-  |  N |ASN |asparagine   |                |   -   |  gap of indeterminate length|
+    |---|----|---|----|----|----|
+    |A |ALA |alanine |                        P| PRO |proline|
+   | B| ASX |aspartate or asparagine |       Q |GLN |glutamine|
+   | C |CYS |cystine    |                    R |ARG |arginine|
+   | D |ASP |aspartate  |                    S |SER |serine|
+  |  E| GLU |glutamate  |                    T |THR |threonine|
+  |  F |PHE |phenylalanine |                 U  |   selenocysteine|
+  |  G |GLY |glycine   |                     V |VAL |valine|
+  |  H |HIS |histidine  |                    W| TRP |tryptophan|
+  |  I |ILE |isoleucine |                    Y |TYR| tyrosine|
+  |  K| LYS |lysine   |                      Z |GLX |glutamate or glutamine|
+ |   L |LEU |leucine   |                     X  |   any|
+ |   M |MET| methionine |                    *  |   translation stop|
+  |  N |ASN |asparagine   |                  -   |  gap of indeterminate length|

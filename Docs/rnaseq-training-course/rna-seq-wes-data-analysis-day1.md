@@ -44,21 +44,19 @@ RNA-Seq (RNA-sequencing) refers to analyze the transcriptome of biological sampl
 
 * To identify potential issues before data analysis
 
-*  Base calling accuracy, measured by the Phred quality score (Q score), is the most common metric used to assess the accracy of a sequencing platform.  It indicates the probablity that a given base is called incorrectly by the sequencer.
+*  Base calling accuracy, measured by the Phred quality score (Q score), is the most common metric used to assess the accuracy of a sequencing platform.  It indicates the probablity that a given base is called incorrectly by the sequencer.
 
 >:bulb:  Q = − 10 log 10(e)
 
 Where e is the estimated probability of the base call being wrong.
 
-* Higher Q scores indicate a samller prbability of error.
+* Higher Q scores indicate a smaller prbability of error.
 * Lower Q scores can results in significant portion of the reads being unusable.  They may also lead to increase false-positive variant calls, resulting in inaccurate conclusions.
 
-For example, if Phred assigns a Q score of 30 (Q30) to a base, this is
-equivalent to the probability of an incorrect base call 1 in 1000 times
+For example, if Phred assigns a Q score of 30 (Q30) to a base, this is equivalent to the probability of an incorrect base call 1 in 1000 times
 (see Table below). 
 
-This means that the base call accuracy (i.e., the probability of
-a correct base call) is 99.9%. 
+This means that the base call accuracy (i.e., the probability of a correct base call) is 99.9%. 
 
 |Phred Quality Score          |Probability of Incorrect Base Call |   Base Call Accuracy|
 | ----------- |---------------|--------------------------------------------------|
@@ -68,9 +66,7 @@ a correct base call) is 99.9%.
 |40                            |  1 in 10,000                    |     99.99%|
 |50                            |  1 in 100,000                   |    99.999%|
 
-Q20 (99%) will have an incorrect base call probability of 1 in 100, it represents
-every 100 bp sequencing read will likely contain an error. When sequencing quality reaches Q30, virtually all of the reads will be perfect, having zero errors and ambiguities. Q30 is considered a
-benchmark for quality in next-generation sequencing. 
+Q20 (99%) will have an incorrect base call probability of 1 in 100, it represents every 100 bp sequencing read will likely contain an error. When sequencing quality reaches Q30, virtually all of the reads will be perfect, having zero errors and ambiguities. Q30 is considered a benchmark for quality in next-generation sequencing. 
 
 ### Pre-processing (FASTQC, Skewer, Trimmomatic)
 
@@ -84,14 +80,14 @@ Use Trimmomatic/Skewer to remove 3' adapter sequences from reads
 
 >:bulb: Pre-processing Tools:
 
-|Tool Name                                              | Description                                                   |
+|Tool Name  | Description   |
 |--------------------|-----------------------|
 |[Skewer](https://github.com/relipmoc/skewer)                   | A fast and sensitive trimmer for illumina paired-end sequences.|
 |[Trimmomatic](https://github.com/usadellab/Trimmomatic)|Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.|
 |[fastx_toolkit](http://hannonlab.cshl.edu/fastx_toolkit/)|The FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing.
 |[cutadapt](https://cutadapt.readthedocs.io/en/stable/)|Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.
 
-File Formats:
+Here are the common file formats in NGS:
 
 
 | File Name   |File Extension | File Type  | Description                                      |                       

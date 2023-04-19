@@ -68,7 +68,7 @@ The nucleic acid codes are:
 |R -->| G A (purine)  |      H --> |A C T|
 |Y -->| T C (pyrimidine) |   V --> |G C A|
 |K -->| G T (keto)  |        N --> |A G C T (any)|
-                                  -  gap of indeterminate length|
+| - | gap of indeterminate length|
                                   
                                   
 The accepted amino acid codes are:

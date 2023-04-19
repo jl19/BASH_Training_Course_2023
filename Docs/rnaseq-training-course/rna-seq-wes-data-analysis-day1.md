@@ -29,10 +29,10 @@ Next-generation sequencing (NGS) is used to determine the order of nucleotides i
 * To be able to sequence hundreds to thousands of genes or gene regions simultaneously 
 * Higher sample throughput
 
-## RNA-seq Data Analysis: Steps, Tools and File formats
+## RNA-Seq Data Analysis: Steps, Tools and File formats
 
 
-RNA-seq (RNA-sequencing) refers to analyze the transcriptome of biological sample using next-generation sequencing (NGS) technologies. It can  be used to quantify the abundance of RNA as well as identify alternative splicing events, gene fusion etc. It can also be applied in detect non-coding RNAs e.g. mcroRNAs and long non-coding RNA.
+RNA-Seq (RNA-sequencing) refers to analyze the transcriptome of biological sample using next-generation sequencing (NGS) technologies. It can  be used to quantify the abundance of RNA as well as identify alternative splicing events, gene fusion etc. It can also be applied in detect non-coding RNAs e.g. microRNAs and long non-coding RNA.
 ### RNA-Seq Workflow
 
 ![RNA-Seq Work Flow ](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/RNA-Seq_work_flow.jpeg)

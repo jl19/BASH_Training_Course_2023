@@ -30,6 +30,7 @@ CGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCG
 |129361| It is the numerical identifier of the record|
 |sp| indicates the Swiss Port ID|
 |P01013|Accession Number of Protein| 
+
 However the use of "gi" identifiers in FASTA format is less common now, as NCBI has phased out the use of "gi" identifiers in favor of accession numbers.
 
 

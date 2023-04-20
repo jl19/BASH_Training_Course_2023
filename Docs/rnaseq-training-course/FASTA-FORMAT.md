@@ -12,7 +12,7 @@ FASTA format is characterized by its two-line structure.
 |The first line |starts with a ">" symbol, followed by a unique identifier for the sequence, and then optional additional information about the sequence separated by space. |
 |The second line |It contains the actual sequence of nucleotides or protein, with no spaces or line breaks.|
 
-Here are examples of a FASTA-formatted sequence:
+Here are examples of FASTA-formatted sequences:
 ```
 >gi|123456|ref|NM_001234.5| Homo sapiens mRNA for example gene, transcript variant 1, complete cds
 ATGGCGACGCTGCGCGCGCTGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCG
@@ -30,7 +30,7 @@ CGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCGCG
 |129361| It is the numerical identifier of the record|
 |sp| indicates the Swiss Port ID|
 |P01013|Accession Number of Protein| 
-|However, note that the use of "gi" identifiers in FASTA format is less common now, as NCBI has phased out the use of "gi" identifiers in favor of accession numbers.|
+However the use of "gi" identifiers in FASTA format is less common now, as NCBI has phased out the use of "gi" identifiers in favor of accession numbers.
 
 
 The GenBank database is a comprehensive collection of publicly available DNA and protein sequences maintained by the National Center for Biotechnology Information (NCBI).

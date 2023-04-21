@@ -93,7 +93,7 @@ Here are the common file formats in NGS:
 | File Name   |File Extension | File Type  | Description                                      |                       
 | ----------- | --------------|------------|--------------------------------------------------|
 | [Fasta](FASTA-FORMAT.md)| .fasta, .fa   |sequences   |txt file for nucleotie or peptie sequences       |
-| [Fastq](https://en.wikipedia.org/wiki/FASTQ_format)     | .fastq, .fq   |read data   |txt file storing both sequence and its quality scores |
+| [Fastq](https://learn.gencore.bio.nyu.edu/ngs-file-formats/fastq-format/)     | .fastq, .fq   |read data   |txt file storing both sequence and its quality scores |
 | [SAM](https://en.wikipedia.org/wiki/SAM_(file_format))       | .sam          |short read alignment|sequence alignment file                   |
 | [BAM](https://en.wikipedia.org/wiki/Binary_Alignment_Map)      |.bam           | binary SAM |
 | [VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)       | .vcf          | Variant information, Variant Call Format| txt file for variants calls incluing SNP, indels, CNV

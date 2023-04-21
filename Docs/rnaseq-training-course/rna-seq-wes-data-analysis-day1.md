@@ -94,10 +94,10 @@ Here are the common file formats in NGS:
 | ----------- | --------------|------------|--------------------------------------------------|
 | [Fasta](FASTA-FORMAT.md)| .fasta, .fa   |sequences   |txt file for nucleotie or peptie sequences       |
 | [Fastq](https://learn.gencore.bio.nyu.edu/ngs-file-formats/fastq-format/)     | .fastq, .fq   |read data   |txt file storing both sequence and its quality scores |
-| [SAM](https://en.wikipedia.org/wiki/SAM_(file_format))       | .sam          |short read alignment|sequence alignment file                   |
-| [BAM](https://en.wikipedia.org/wiki/Binary_Alignment_Map)      |.bam           | binary SAM |
-| [VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf)       | .vcf          | Variant information, Variant Call Format| txt file for variants calls incluing SNP, indels, CNV
-|[GFF/GTF](https://www.ensembl.org/info/website/upload/gff.html)    | .gff, .gtf    | annotation data | General Transfer/Feature Format annotation file
+| [SAM](https://learn.gencore.bio.nyu.edu/ngs-file-formats/sambam-format/)       | .sam          |short read alignment|sequence alignment file         |
+| [BAM](https://learn.gencore.bio.nyu.edu/ngs-file-formats/sambam-format/)      |.bam           | binary SAM |
+| [VCF](https://learn.gencore.bio.nyu.edu/ngs-file-formats/vcf-format/)       | .vcf          | Variant information, Variant Call Format| txt file for variants calls incluing SNP, indels, CNV
+|[GFF/GTF](https://learn.gencore.bio.nyu.edu/ngs-file-formats/gff3-format/)   | .gff, .gtf    | annotation data | General Transfer/Feature Format annotation file
 
 
 

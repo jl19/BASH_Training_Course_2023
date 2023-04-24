@@ -103,8 +103,8 @@ Here are the common file formats in NGS:
 
 | File      | Description                          |
 | ----------- | ------------------------------------ |
-| `Single-end`       | Each  read is a single sequence from one end of a DNA fragment (single fastq file). The fragment is usually 200-800bp long, with the amount being read can be chosen between 50 and 300 bp  |
-| `Paired-end`       | Each read is two sequences (a pair) from each end of the same DNA fragment. The distance between the reads on the original genome sequence is equal to the length of the DNA fragment that was sequenced, usually 200-800 bp |
+| [Single-end](Single-end-read.md )    | Each  read is a single sequence from one end of a DNA fragment (single fastq file). The fragment is usually 200-800bp long, with the amount being read can be chosen between 50 and 300 bp  |
+| [Paired-end](Paired-end-read.md )         | Each read is two sequences (a pair) from each end of the same DNA fragment. The distance between the reads on the original genome sequence is equal to the length of the DNA fragment that was sequenced, usually 200-800 bp |
 | `Mate-pair`    | Each read is two sequences from each end of the same DNA fragment, but the distance between the reads on the original genome sequence is much longer, e.g. 3000-10000 bp
 
 

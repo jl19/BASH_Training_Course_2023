@@ -18,13 +18,10 @@ The insert, the bit of DNA from our organism of interest, from element 1 we hav
 Elements 1 and 2, as well as the RD1 sequencing primer, are required by most sequencing technologies. 
 
 
-![image](https://user-images.githubusercontent.com/36770921/234013776-e605bbe1-c6c6-447f-ab87-854a7001fff0.png)
-
-
-![image](https://user-images.githubusercontent.com/36770921/234012589-8512d3f6-b132-45cb-a169-d082cd2e83b4.png)
 
 # Paired-End Read
 paired-end sequencing generates reads from both ends of the fragment. Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
+
 ![Paired-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Paired-End-Read.jpg)
 
 

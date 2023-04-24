@@ -6,7 +6,7 @@ A DNA library is a collection of DNA fragments that are specially prepared for
 
 ![Single-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Single-End-Read.jpg)
 
-Single-end reads refer to a type of sequencing where only one end of a DNA fragment is sequenced. 
+Single-end reads refer to a type of sequencing where only one end of a DNA fragment is sequenced. It reads in one direction from 5' prime end to 3' prime end.
 
 Single-end sequencing has advantages in terms of cost, simplicity, and data analysis. It requires less sequencing depth and is easier to analyze, but may not provide as much information about the sequence as paired-end sequencing. 
 
@@ -21,7 +21,7 @@ Elements 1 and 2, as well as the Read 1 sequencing primer, are required by mos
 
 ## Paired-End Read
 
-Paired-end sequencing generates reads from both ends of the fragment. Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
+Paired-end sequencing generates reads from both ends of the fragment. The sequence first carried out from 5' prime to 3' prime direction, after turn around chemistry, it the sequence from 3' prime to 5' prime direction.  Two reads are read towards the middle of the insert.  Read 1 and read 2 normally are the same length.  Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
 
 ![Paired-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Paired-End-Read.jpg)
 
@@ -33,3 +33,11 @@ In addition to these advantages, paired-end sequencing also enables the identifi
 
 However, paired-end sequencing is typically more expensive and generates more data than single-end sequencing, which may require more extensive computational resources for data analysis.
 
+
+|Application| Type| Description|
+|----|----|----|
+|SNP Detection| Either|Coverage depth is key|
+|Indel or Stucture Variant Detection| PE|Analysis methods are base on PE data|
+|De Novo Genome or Transcriptome Assembly|PE| PE info is used in assembly process|
+|RNA-Seq (Expression)| Single or Paired-End| PE needed for identification of novel transcripts and gene structure characterization|
+|Small RNA Differential Expression| Single Read|PE will result in high overlap|

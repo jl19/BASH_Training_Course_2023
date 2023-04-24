@@ -21,7 +21,7 @@ Elements 1 and 2, as well as the Read 1 sequencing primer, are required by mos
 
 ## Paired-End Read
 
-Paired-end sequencing generates reads from both ends of the fragment. The sequence first carried out from 5' prime to 3' prime direction, after turn around chemistry, it the sequence from 3' prime to 5' prime direction.  Two reads are read towards the middle of the insert.  Read 1 and read 2 normally are the same length.  Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
+Paired-end (PE) sequencing generates reads from both ends of the fragment. The sequence first carried out from 5' prime to 3' prime direction, after turn around chemistry, it the sequence from 3' prime to 5' prime direction.  Two reads are read towards the middle of the insert.  Read 1 and read 2 normally are the same length.  Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
 
 ![Paired-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Paired-End-Read.jpg)
 
@@ -33,11 +33,12 @@ In addition to these advantages, paired-end sequencing also enables the identifi
 
 However, paired-end sequencing is typically more expensive and generates more data than single-end sequencing, which may require more extensive computational resources for data analysis.
 
+## Single Reads and Paired-End Reads Application
 
 |Application| Type| Description|
 |----|----|----|
-|SNP Detection| Either|Coverage depth is key|
-|Indel or Stucture Variant Detection| PE|Analysis methods are base on PE data|
-|De Novo Genome or Transcriptome Assembly|PE| PE info is used in assembly process|
+|SNP Detection| Single Read or Paired-End Read|Coverage depth is key|
+|Indel or Stucture Variant Detection| Paired-End Read|Analysis methods are base on PE data|
+|De Novo Genome or Transcriptome Assembly|Paired-End Read| PE info is used in assembly process|
 |RNA-Seq (Expression)| Single or Paired-End| PE needed for identification of novel transcripts and gene structure characterization|
 |Small RNA Differential Expression| Single Read|PE will result in high overlap|

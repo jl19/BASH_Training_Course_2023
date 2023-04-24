@@ -1,6 +1,9 @@
-# Single-End Read
+# DNA Library Preparation
+A DNA library is a collection of DNA fragments that are specially prepared for sequencing. We are not going to get into the gory details of how libraries are prepared. All you need to know is that the end result of library prep is a bunch of DNA fragments that are made up of DNA from the organism you’re working with flanked by artificial DNA, which is added by you during library prep, which allows your DNA to stick to a solid surface and be sequenced on a sequencing machine. These artificial pieces of DNA are called adapters. 
 
-## 
+## Single-End Read
+
+
 ![Single-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Single-End-Read.jpg)
 
 Single-end reads refer to a type of sequencing where only one end of a DNA fragment is sequenced. 
@@ -8,19 +11,17 @@ Single-end reads refer to a type of sequencing where only one end of a DNA fragm
 Single-end sequencing has advantages in terms of cost, simplicity, and data analysis. It requires less sequencing depth and is easier to analyze, but may not provide as much information about the sequence as paired-end sequencing. 
 
 
-DNA Library Preparation
-A DNA library is a collection of DNA fragments that are specially prepared for sequencing. We are not going to get into the gory details of how libraries are prepared. All you need to know is that the end result of library prep is a bunch of DNA fragments that are made up of DNA from the organism you’re working with flanked by artificial DNA, which is added by you during library prep, which allows your DNA to stick to a solid surface and be sequenced on a sequencing machine. These artificial pieces of DNA are called adapters. 
-
-Several common adapter layouts are pictured below. The most basic adapter layout allows for single end sequencing. Elements 1 and 2 are the terminal parts of the adapter and are what bind to oligos, small pieces of DNA, present on a solid surface. These elements are also necessary for fragment amplification. 
+The most basic adapter layout allows for single end sequencing. Elements 1 and 2 are the terminal parts of the adapter and are what bind to oligos, small pieces of DNA, present on a solid surface. These elements are also necessary for fragment amplification. 
 
 The insert, the bit of DNA from our organism of interest, from element 1 we have a priming segment for read 1. The priming segment is recognized by a sequencing primer, which initiates the sequencing by synthesis process. 
 
-Elements 1 and 2, as well as the RD1 sequencing primer, are required by most sequencing technologies. 
+Elements 1 and 2, as well as the Read 1 sequencing primer, are required by most sequencing technologies. 
 
 
 
-# Paired-End Read
-paired-end sequencing generates reads from both ends of the fragment. Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
+## Paired-End Read
+
+Paired-end sequencing generates reads from both ends of the fragment. Paired-end sequencing provides more information about the sequence and allows for the detection of structural variations in the genome.
 
 ![Paired-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Paired-End-Read.jpg)
 

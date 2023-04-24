@@ -42,3 +42,4 @@ However, paired-end sequencing is typically more expensive and generates more da
 |De Novo Genome or Transcriptome Assembly|Paired-End Read| PE info is used in assembly process|
 |RNA-Seq (Expression)| Single or Paired-End| PE needed for identification of novel transcripts and gene structure characterization|
 |Small RNA Differential Expression| Single Read|PE will result in high overlap|
+Adapted from Illumina

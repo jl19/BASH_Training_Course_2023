@@ -126,7 +126,7 @@ module load 'modulename'
 The FastQC software can be accessed on SPECTRE by using the following command
 
 ```
-module load fastqc/0.11.5
+module load fastqc/0.12.1
 ```
 ```
 [jl19@spectre12 Data_QC]$ module load fastqc/0.11.5

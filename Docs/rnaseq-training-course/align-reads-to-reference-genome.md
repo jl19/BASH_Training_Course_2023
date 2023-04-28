@@ -237,7 +237,9 @@ Output Files:A number of files with .ht2 extension would be created. They are th
 
 
 For alignment, only mm10/genome is required.
-```  
+
+``` 
+[jl19@spectre13 Data_QC] 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457552_24_hours-trimmed.fastq.gz -S SRR7457552_24_hours-trimmed.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457561_24_hours-trimmed.fastq.gz -S SRR7457561_24_hours-trimmed.sam;
@@ -252,10 +254,23 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559_control-trimmed.fastq.gz 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz -S SRR7457560_control-trimmed.sam;
 
 ```  
+```  
 
-output sam files (e.g. SRR7457551.sam) are located under /scratch/bbash/jl19/Data_QC/
+[jl19@spectre13 Data_QC]$ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
+29108478 reads; of these:
+  29108478 (100.00%) were unpaired; of these:
+    1092767 (3.75%) aligned 0 times
+    25615613 (88.00%) aligned exactly 1 time
+    2400098 (8.25%) aligned >1 times
+96.25% overall alignment rate
+[jl19@spectre13 Data_QC]$ 
+```  
 
-Estimate run time is 20 mins for each run.
+output sam files (e.g. SRR7457551_24_hours-trimmed.sam) are located under /scratch/bbash/jl19/Data_QC/
+
+Estimate run time is 20 mins for each run.  Here we only need to run one file.  The rest of the 11 sam files can be copied from the following location.
+
+All *.
 
 
 ## Converting SAM to BAM using samtools "view"

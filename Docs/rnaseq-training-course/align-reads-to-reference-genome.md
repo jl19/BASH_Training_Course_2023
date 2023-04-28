@@ -24,7 +24,7 @@ cd /scratch/bbash/jl19/Data_QC/mm10/
 
 # copy the genome.fa in the mm10 directory
 
-cp /data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
 
 # Creating index
 

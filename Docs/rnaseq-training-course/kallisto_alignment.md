@@ -43,12 +43,20 @@ mkdir kallisto_output
 cd kallisto_output
 ```
 ```
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457551 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457551.fastq.gz;
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457552 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457552.fastq.gz;
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457555 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457555.fastq.gz;
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457556 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457556.fastq.gz;
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457559 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457559.fastq.gz;
-kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457560 -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457560.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457551_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457551_24_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457552_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457552_24_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457561_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457561_24_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457562_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457562_24_hours-trimmed.fastq.gz;
+
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457553_2_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457553_2_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457554_2_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457554_2_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457555_2_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457555_2_hours-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457556_2_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457556_2_hours-trimmed.fastq.gz;
+
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457557_control-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457557_control-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457558_control-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457558_control-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457559_control-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457559_control-trimmed.fastq.gz;
+kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457560_control-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/SRR7457560_control-trimmed.fastq.gz;
 ```
 
 output files:

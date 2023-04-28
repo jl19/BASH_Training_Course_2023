@@ -155,7 +155,7 @@ fastqc &
 ```
 ![Screenshot of fastqc](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/fastqc.jpg)
 
-> :bulb: [SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant_fastqc.html) will be generated in the folder after the run is completed
+> :bulb: [SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant_fastqc.gz.html) will be generated in the folder after the run is completed
 
 Run FastQc on command line:
 ```  

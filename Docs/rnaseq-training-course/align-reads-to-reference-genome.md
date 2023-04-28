@@ -29,7 +29,11 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.f
 # Creating index
 
 hisat2-build -p 16 genome.fa genome
+
+
 ```
+Time Required: 27mins
+
 ```
 [jl19@spectre14 mm10]$ hisat2-build -p 16 genome.fa genome
 Settings:
@@ -216,7 +220,7 @@ Headers:
 Total time for call to driver() for forward index: 00:27:10
 [jl19@spectre14 mm10]$ 
 ```
-A number of files with .ht2 extension would be created. They are the index files
+Output Files:A number of files with .ht2 extension would be created. They are the index files
 ```
 /scratch/bbash/jl19/Data_QC/mm10/genome.1.ht2
 /scratch/bbash/jl19/Data_QC/mm10/genome.2.ht2
@@ -234,12 +238,19 @@ A number of files with .ht2 extension would be created. They are the index files
 
 For alignment, only mm10/genome is required.
 ```  
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551-trimmed.fastq.gz -S SRR7457551.sam;
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457552-trimmed.fastq.gz -S SRR7457552.sam;
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457555-trimmed.fastq.gz -S SRR7457555.sam;
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457556-trimmed.fastq.gz -S SRR7457556.sam;
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559-trimmed.fastq.gz -S SRR7457559.sam;
-hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560-trimmed.fastq.gz -S SRR7457560.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457552_24_hours-trimmed.fastq.gz -S SRR7457552_24_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457561_24_hours-trimmed.fastq.gz -S SRR7457561_24_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457562_24_hours-trimmed.fastq.gz -S SRR7457562_24_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457553_2_hours-trimmed.fastq.gz -S SRR7457553_2_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457554_2_hours-trimmed.fastq.gz -S SRR7457554_2_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457555_2_hours-trimmed.fastq.gz -S SRR7457555_2_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457556_2_hours-trimmed.fastq.gz -S SRR7457556_2_hours-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457557_control-trimmed.fastq.gz -S SRR7457557_control-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457558_control-trimmed.fastq.gz -S SRR7457558_control-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559_control-trimmed.fastq.gz -S SRR7457559_control-trimmed.sam;
+hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz -S SRR7457560_control-trimmed.sam;
+
 ```  
 
 output sam files (e.g. SRR7457551.sam) are located under /scratch/bbash/jl19/Data_QC/
@@ -253,40 +264,67 @@ Estimate run time is 20 mins for each run.
 module load samtools/1.15
 ``` 
 ``` 
-samtools view --threads 8 -S -b SRR7457551.sam -o SRR7457551.bam;
-samtools view --threads 8 -S -b SRR7457552.sam -o SRR7457552.bam;
-samtools view --threads 8 -S -b SRR7457555.sam -o SRR7457555.bam;
-samtools view --threads 8 -S -b SRR7457556.sam -o SRR7457556.bam;
-samtools view --threads 8 -S -b SRR7457559.sam -o SRR7457559.bam;
-samtools view --threads 8 -S -b SRR7457560.sam -o SRR7457560.bam;
+#24 hours
+samtools view --threads 8 -S -b SRR7457551_24_hours-trimmed.sam -o SRR7457551_24_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457552_24_hours-trimmed.sam -o SRR7457552_24_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457561_24_hours-trimmed.sam -o SRR7457561_24_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457562_24_hours-trimmed.sam -o SRR7457562_24_hours-trimmed.bam;
+
+#2 hours
+samtools view --threads 8 -S -b SRR7457553_2_hours-trimmed.sam -o SRR7457553_2_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457554_2_hours-trimmed.sam -o SRR7457554_2_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457555_2_hours-trimmed.sam -o SRR7457555_2_hours-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457556_2_hours-trimmed.sam -o SRR7457556_2_hours-trimmed.bam;
+
+#Control
+samtools view --threads 8 -S -b SRR7457557_control-trimmed.sam -o SRR7457557_control-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457558_control-trimmed.sam -o SRR7457558_control-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457559_control-trimmed.sam -o SRR7457559_control-trimmed.bam;
+samtools view --threads 8 -S -b SRR7457560_control-trimmed.sam -o SRR7457560_control-trimmed.bam;
 ``` 
 ## Sort the bam files
 ``` 
-samtools sort SRR7457551.bam -o SRR7457551.sorted.bam;
-samtools sort SRR7457552.bam -o SRR7457552.sorted.bam;
-samtools sort SRR7457555.bam -o SRR7457555.sorted.bam;
-samtools sort SRR7457556.bam -o SRR7457556.sorted.bam;
-samtools sort SRR7457559.bam -o SRR7457559.sorted.bam;
-samtools sort SRR7457560.bam -o SRR7457560.sorted.bam;
+samtools sort SRR7457551_24_hours-trimmed.bam -o SRR7457551_24_hours-trimmed.sorted.bam;
+samtools sort SRR7457552_24_hours-trimmed.bam -o SRR7457552_24_hours-trimmed.sorted.bam;
+samtools sort SRR7457561_24_hours-trimmed.bam -o SRR7457561_24_hours-trimmed.sorted.bam;
+samtools sort SRR7457562_24_hours-trimmed.bam -o SRR7457562_24_hours-trimmed.sorted.bam;
+
+samtools sort SRR7457553_2_hours-trimmed.bam -o SRR7457553_2_hours-trimmed.sorted.bam;
+samtools sort SRR7457554_2_hours-trimmed.bam -o SRR7457554_2_hours-trimmed.sorted.bam;
+samtools sort SRR7457555_2_hours-trimmed.bam -o SRR7457555_2_hours-trimmed.sorted.bam;
+samtools sort SRR7457556_2_hours-trimmed.bam -o SRR7457556_2_hours-trimmed.sorted.bam;
+
+samtools sort SRR7457557_control-trimmed.bam -o SRR7457557_control-trimmed.sorted.bam;
+samtools sort SRR7457558_control-trimmed.bam -o SRR7457558_control-trimmed.sorted.bam;
+samtools sort SRR7457559_control-trimmed.bam -o SRR7457559_control-trimmed.sorted.bam;
+samtools sort SRR7457560_control-trimmed.bam -o SRR7457560_control-trimmed.sorted.bam;
+
 ``` 
 ## Index sorted bam files
 ``` 
-samtools index SRR7457551.sorted.bam;
-samtools index SRR7457552.sorted.bam;
-samtools index SRR7457555.sorted.bam;
-samtools index SRR7457556.sorted.bam;
-samtools index SRR7457559.sorted.bam;
-samtools index SRR7457560.sorted.bam;
+samtools index SRR7457551_24_hours-trimmed.sorted.bam;
+samtools index SRR7457551_24_hours-trimmed.sorted.bam;
+samtools index SRR7457551_24_hours-trimmed.sorted.bam;
+samtools index SRR7457562_24_hours-trimmed.sorted.bam;
+
+samtools index SRR7457553_2_hours-trimmed.sorted.bam;
+samtools index SRR7457554_2_hours-trimmed.sorted.bam;
+samtools index SRR7457555_2_hours-trimmed.sorted.bam;
+samtools index SRR7457556_2_hours-trimmed.sorted.bam;
+
+samtools index SRR7457557_control-trimmed.sorted.bam;
+samtools index SRR7457558_control-trimmed.sorted.bam;
+samtools index SRR7457559_control-trimmed.sorted.bam;
+samtools index SRR7457560_control-trimmed.sorted.bam;
 ``` 
 ## Index files are generated
 
 ``` 
-SRR7457551.sorted.bam.bai;
-SRR7457552.sorted.bam.bai;
-SRR7457555.sorted.bam.bai;
-SRR7457556.sorted.bam.bai;
-SRR7457559.sorted.bam.bai;
-SRR7457560.sorted.bam.bai;
+SRR7457551_24_hours-trimmed.sorted.bam.bai;
+SRR7457552_24_hours-trimmed.sorted.bam.bai;
+....
+
+SRR7457560_control-trimmed.sorted.bam.bai;
 ``` 
 Bash script can be used to automate the procedure, the jobs can be submitted on Spectre.  This is beyond what this course can include.
 
@@ -296,18 +334,18 @@ Bash script can be used to automate the procedure, the jobs can be submitted on 
 samtools view SRR7457551.bam  | head
 ``` 
 ``` 
-[jl19@spectre14 Data_QC]$ samtools view SRR7457551.bam  | head
-SRR7457551.2.1	16	chr15	100644892	60	74M	*	0	0GCTGGTTCTGGATTAGAAGAGGCGTCTGGGGAGGCCCTGGGGCTGCACAGCTGTGAAGAACCCTCTGGAGAGCC	??????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:74	YT:Z:UU	NH:i:1
-SRR7457551.3.1	4	*	0	0	*	*	0	0	CCGTCCCGGATGGCCTTGGCGACAATGAACTCTGCATCTTCTGGGCTATCCAGCTGCAGCTTCTGGGAGATGTCGG	????????????????????????????????????????????????????????????????????????????	YT:Z:UU
-SRR7457551.1.1	16	chr15	99409657	60	75M	*	0	0AAGGTGCCGGCCGCCCTGCCTGCCCGGTGCCTCCCACTGACCTGAGCTTACTAAGGGATGGCAGCAGCTCCCCAG	???????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:75	YT:Z:UU	NH:i:1
-SRR7457551.5.1	4	*	0	0	*	*	0	0	GTCAGGGTTACCATGGCAACTGCATCATGGTTGGTAATTTTATATGTCCGACACCAAGAAATATGTCAGGGTTACC	????????????????????????????????????????????????????????????????????????????	YT:Z:UU
-SRR7457551.6.1	0	chr9	50915472	60	73M	*	0	0GCTGTGCATCAGTCGAAGAACCTGCTCATTAAATTCTCCAATGGACGGCTCGTTTTCCTGTTCTTGTGGGTAG	?????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:73	YT:Z:UU	NH:i:1
-SRR7457551.7.1	16	chr1	184731976	60	74M	*	0	0CCCCGACGCCGGCGTGCAGGATGTCCGCGATGCAGAAAGAGGGTTTCTTGACAGCGGCTGGGTCCAGGGCGAAG	??????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:74	YT:Z:UU	NH:i:1
-SRR7457551.4.1	0	chr4	21776279	60	39M4023N33M	*	00	GAAGCTCCTGCGTGTGGAAGCTGCGGCCCGGCGGGCGGGTAAATAACAGATGCGGGTAAAAGATCCATCAAA????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:72	YT:Z:UU	XS:A:+	NH:i:1
-SRR7457551.8.1	16	chr11	49683203	60	76M	*	0	0CCATGATGGACAGTAGCCGTATAACTGCCGGGTCGCATATTTATCACAAAGAACATTATAGCACATGACAGAAAAC	????????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:76	YT:Z:UU	NH:i:1
-SRR7457551.9.1	0	chr5	120484110	60	76M	*	0	0GTGCTCCCCTCTGGGGTCTTGGGTCTCCCAGTGGATTGACTGGTGGAACCCACACATCCGTAAGTCAGGAGAGAGG	????????????????????????????????????????????????????????????????????????????	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:76	YT:Z:UU	NH:i:1
-SRR7457551.12.1	16	chr19	4104891	60	74M2S	*	0	0	GACATCCGGGCACTGGAGGAGGAGACTGCACGCATGCTAGCGCAGCGTATGGCTAAGTGCAACACTGGCAGTGAAG	????????????????????????????????????????????????????????????????????????????	AS:i:-2	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:74	YT:Z:UU	NH:i:1
-``` 
+[jl19@spectre13 trimmed]$ samtools view SRR7457551_24_hours-trimmed.fastq.gz | head 
+SRR7457551.1	4	*	0	0	*	*	0	0	CTGGGGAGCTGCTGCCATCCCTTAGTAAGCTCAGGTCAGTGGGAGGCACCGGGCAGGCAGGGCGGCCGGCACCTT	AAAAAEEAEE6EEEAE/EEEA/EEA/EEEEEEEEE/AEEEA//E//E6A/AEAEEEEEEEAEEE/<EAEEEE<AE
+SRR7457551.2	4	*	0	0	*	*	0	0	GGCTCTCCAGAGGGTTCTTCACAGCTGTGCAGCCCCAGGGCCTCCCCAGACGCCTCTTCTAATCCAGAACCAGC	AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEAEEEEEEEEEEEEEEAEEEEEEEEEE/<EE/EEE
+SRR7457551.3	4	*	0	0	*	*	0	0	CCGTCCCGGATGGCCTTGGCGACAATGAACTCTGCATCTTCTGGGCTATCCAGCTGCAGCTTCTGGGAGATGTCGG	A/AA//AEEEEEE//EEEE<EEEEEEEEEAEEEEEAEEEE/EEEEEEE//<EAEE/AEEEEEAEE/E/EEEEE<EE
+SRR7457551.4	4	*	0	0	*	*	0	0	GAAGCTCCTGCGTGTGGAAGCTGCGGCCCGGCGGGCGGGTAAATAACAGATGCGGGTAAAAGATCCATCAAA	AAAAAEEEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+SRR7457551.5	4	*	0	0	*	*	0	0	GTCAGGGTTACCATGGCAACTGCATCATGGTTGGTAATTTTATATGTCCGACACCAAGAAATATGTCAGGGTTACC	AAAAAEEEEEEAEEEEE//EEEAEE//AAE/EE/EEEEEE/EEEEAE/AEAE/AA//AE/A/AAAE<AA<//EEEE
+SRR7457551.6	4	*	0	0	*	*	0	0	GCTGTGCATCAGTCGAAGAACCTGCTCATTAAATTCTCCAATGGACGGCTCGTTTTCCTGTTCTTGTGGGTAG	AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEE
+SRR7457551.7	4	*	0	0	*	*	0	0	CTTCGCCCTGGACCCAGCCGCTGTCAAGAAACCCTCTTTCTGCATCGCGGACATCCTGCACGCCGGCGTCGGGG	AAAAAEEAEEE/EEEEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEE/EEEEEEEEAEEEEEEEEEEEEAE
+SRR7457551.8	4	*	0	0	*	*	0	0	GTTTTCTGTCATGTGCTATAATGTTCTTTGTGATAAATATGCGACCCGGCAGTTATACGGCTACTGTCCATCATGG	AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+SRR7457551.9	4	*	0	0	*	*	0	0	GTGCTCCCCTCTGGGGTCTTGGGTCTCCCAGTGGATTGACTGGTGGAACCCACACATCCGTAAGTCAGGAGAGAGG	6AAAAAEEEEEEAEEEEEEEEEEEEEEE</AEEAEEEEEEEEE/EEE/AE//E/AE/<<EE/EEAEAEEEEE/EA<
+SRR7457551.10	4	*	0	0	*	*	0	0	GGACAGGCGGAAGCTGAGAGCACAGAAATGACCAGGCCCTACATAAAGAGGCTGTCCTTCACCCTCCTGGACTCC	AAAAAEEEEEEEEEEEEEEEE/EEEEEEEE/EAEEEEEEEEEEEE6EEEEEEEEEEAEEEEE6EEEEEE6<AE/A
+[jl19@spectre13 trimmed]$ 
 
 ## View BAM files using IGV
 

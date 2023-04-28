@@ -36,12 +36,18 @@ The example raw data (single end data) files can also be copied from SPECTRE at 
 
 /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/
 
-> - SRR7457551.fastq.gz
-> - SRR7457552.fastq.gz
-> - SRR7457555.fastq.gz
-> - SRR7457556.fastq.gz
-> - SRR7457559.fastq.gz
-> - SRR7457560.fastq.gz
+> - SRR7457557_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+> - SRR7457558_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+> - SRR7457559_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+> - SRR7457560_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+> - SRR7457553_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+> - SRR7457554_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+> - SRR7457555_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+> - SRR7457556_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+> - SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+> - SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+> - SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+> - SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 
 
 ![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_Scratchfolder.png)
@@ -110,7 +116,6 @@ SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_afte
 SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 
-
 ```
 
 Checked the fastq files are copied correctly. 
@@ -150,7 +155,7 @@ fastqc &
 ```
 ![Screenshot of fastqc](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_fastqc.png)
 
-> :bulb: [SRR7457551_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq.gz.html) will be generated in the folder after the run is completed
+> :bulb: [SRR7457551_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz FastQC Report.html) will be generated in the folder after the run is completed
 
 Run FastQc on command line:
 ```  
@@ -316,7 +321,7 @@ skewer -m any -q 25 -Q 20 -n -z  SRR7457562_RNA-Seq_of_mus_musculus_adult_male_a
 
 > - Run FastQc on command line after trimming
 
-> :bulb: [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
+> :bulb: [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours-trimmed.fastq.gz.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report

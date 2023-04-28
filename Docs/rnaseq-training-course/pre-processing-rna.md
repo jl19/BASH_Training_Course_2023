@@ -34,7 +34,7 @@
 
 The example raw data (single end data) files can also be copied from SPECTRE at the following location:
 
-/data/bioinf/Teaching/2022_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/
+/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/
 
 > - SRR7457551.fastq.gz
 > - SRR7457552.fastq.gz
@@ -87,21 +87,30 @@ Use the ‘ls’ (list) command to list the contents of your directory and check
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/. ./
 ls
 ```
+Time Requied: 20s
 
 > NOTE: The ‘.’ at the end of the command tells ‘cp’ to copy everything in the Data_QC directory.  The ‘.’ tells the ‘cp’ command to copy the fastq files to the current location i.e. your Data_QC directory.
 
-The ‘cp’ command copied 6 fastq.gz files as follow:
+The ‘cp’ command copied 12 fastq.gz files as follow:
 
 
 ```
 [jl19@spectre12 Data_QC]$ls
 
-SRR7457551.fastq.gz
-SRR7457552.fastq.gz
-SRR7457555.fastq.gz
-SRR7457556.fastq.gz
-SRR7457559.fastq.gz
-SRR7457560.fastq.gz
+SRR7457557_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+SRR7457558_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+SRR7457559_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+SRR7457560_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz
+SRR7457553_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+SRR7457554_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+SRR7457555_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+SRR7457556_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz
+SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+
+
 ```
 
 Checked the fastq files are copied correctly. 
@@ -129,8 +138,8 @@ The FastQC software can be accessed on SPECTRE by using the following command
 module load fastqc/0.12.1
 ```
 ```
-[jl19@spectre12 Data_QC]$ module load fastqc/0.11.5
-Loading fastqc/0.11.5
+[jl19@spectre12 Data_QC]$ module load fastqc/0.12.1
+Loading fastqc/0.12.1
 Loading requirement: java/1.8
 ``` 
 
@@ -145,39 +154,35 @@ fastqc &
 
 Run FastQc on command line:
 ```  
-[jl19@spectre12 Data_QC]$ fastqc SRR7457551.fastq.gz 
+[jl19@spectre12 Data_QC]$ fastqc SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxHeapSize=2048m
-Started analysis of SRR7457551.fastq.gz
-Approx 5% complete for SRR7457551.fastq.gz
-Approx 10% complete for SRR7457551.fastq.gz
-Approx 15% complete for SRR7457551.fastq.gz
-Approx 20% complete for SRR7457551.fastq.gz
-Approx 25% complete for SRR7457551.fastq.gz
-Approx 30% complete for SRR7457551.fastq.gz
-Approx 35% complete for SRR7457551.fastq.gz
-Approx 40% complete for SRR7457551.fastq.gz
-Approx 45% complete for SRR7457551.fastq.gz
-Approx 50% complete for SRR7457551.fastq.gz
-Approx 55% complete for SRR7457551.fastq.gz
-Approx 60% complete for SRR7457551.fastq.gz
-Approx 65% complete for SRR7457551.fastq.gz
-Approx 70% complete for SRR7457551.fastq.gz
-Approx 75% complete for SRR7457551.fastq.gz
-Approx 80% complete for SRR7457551.fastq.gz
-Approx 85% complete for SRR7457551.fastq.gz
-Approx 90% complete for SRR7457551.fastq.gz
-Approx 95% complete for SRR7457551.fastq.gz
-Analysis complete for SRR7457551.fastq.gz
+[jl19@spectre13 Data_QC]$ fastqc SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+application/gzip
+Started analysis of SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+Approx 5% complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+Approx 10% complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+Approx 15% complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+Approx 20% complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+Approx 25% complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+....
+Analysis complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 [jl19@spectre12 Data_QC]$ 
 
 
-#output file: SRR7457551_fastqc.zip
+#output file: SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant_fastqc.zip
 ```
-
+Time taken around 2.5 mins
 > - FastQC has a really well documented [manual page](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) with detailed explanations about every plot in the report
 
 ### Step 3. Trim the reads
+
+
 ```
+#make diretory for trimmed files
+
+mkdir trimmed
+
 #load module
 
 module load skewer/0.2.2
@@ -248,10 +253,11 @@ EXAMPLES:
 > - Perform Trimming
 
 ```
-skewer -m any -q 25 -Q 20 -n -z SRR7457551.fastq.gz -o trimmed/SRR7457551
+skewer -m any -q 25 -Q 20 -n -z SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457551_24_hours
 ```
 
 ```
+[jl19@spectre13 Data_QC_May2023]$ skewer -m any -q 25 -Q 20 -n -z SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457551_24_hours
 .--. .-.
 : .--': :.-.
 `. `. : `'.' .--. .-..-..-. .--. .--.
@@ -265,35 +271,52 @@ Parameters used:
 -- mean quality threshold (-Q):		20
 -- end quality threshold (-q):		25
 -- minimum read length allowed after trimming (-l):	18
--- file format (-f):		Unknown format (auto detected)
+-- file format (-f):		Sanger/Illumina 1.8+ FASTQ (auto detected)
 -- minimum overlap length for adapter detection (-k):	3
-Thu Jan 19 13:56:19 2023 >> started
-|=================================================>| (258.48%)
-Thu Jan 19 14:05:49 2023 >> done (569.396s)
+Fri Apr 28 11:47:57 2023 >> started
+|=================================================>| (100.00%)
+Fri Apr 28 11:58:57 2023 >> done (659.910s)
 29763084 reads processed; of these:
     7663 ( 0.03%) degenerative reads filtered out
-       2 ( 0.00%) short reads filtered out after trimming by size control
-  642486 ( 2.16%) empty reads filtered out after trimming by size control
-29112933 (97.82%) reads available; of these:
-  342225 ( 1.18%) trimmed reads available after processing
-28770708 (98.82%) untrimmed reads available after processing
-log has been saved to "trimmed/SRR7457551-trimmed.log".
+    4107 ( 0.01%) reads filtered out by quality control
+       8 ( 0.00%) short reads filtered out after trimming by size control
+  642828 ( 2.16%) empty reads filtered out after trimming by size control
+29108478 (97.80%) reads available; of these:
+ 2790093 ( 9.59%) trimmed reads available after processing
+26318385 (90.41%) untrimmed reads available after processing
+log has been saved to "trimmed/SRR7457551_24_hours-trimmed.log".
+[jl19@spectre13 Data_QC_May2023]$ 
 
 
 ```
+
+Time Required:11 mins
 Trimmed other 5 files
 
 ```
-skewer -m any -q 25 -Q 20 -n -z SRR7457552.fastq.gz -o trimmed/SRR7457552;
-skewer -m any -q 25 -Q 20 -n -z SRR7457555.fastq.gz -o trimmed/SRR7457555;
-skewer -m any -q 25 -Q 20 -n -z SRR7457556.fastq.gz -o trimmed/SRR7457556;
-skewer -m any -q 25 -Q 20 -n -z SRR7457559.fastq.gz -o trimmed/SRR7457559;
-skewer -m any -q 25 -Q 20 -n -z SRR7457560.fastq.gz -o trimmed/SRR7457560;
+#trim_fastq_file.sh
+#!/usr/bin/env bash
+
+skewer -m any -q 25 -Q 20 -n -z  SRR7457557_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz -o trimmed/SRR7457557_control;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457558_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz -o trimmed/SRR7457558_control;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457559_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz -o trimmed/SRR7457559_control;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457560_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages.fastq.gz -o trimmed/SRR7457560_control;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457553_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457553_2_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457554_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457554_2_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457555_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457555_2_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457556_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_2_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457556_2_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457551_24_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457552_24_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457561_24_hours;
+skewer -m any -q 25 -Q 20 -n -z  SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457562_24_hours;
+
+
+
 ```
 
 > - Run FastQc on command line after trimming
 
-> :bulb: [SRR7457551.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
+> :bulb: [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours.fastq-trimmed_fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report

@@ -432,11 +432,35 @@ All *.bam, *.sorted.bam and *.bai files can be copied from server.
 ``` 
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/bam_files/. ./
 ``` 
+
+## Check Stats for a BAM file
+``` 
+[jl19@spectre13 Data_QC]$ samtools flagstat SRR7457551_24_hours-trimmed.bam
+33862078 + 0 in total (QC-passed reads + QC-failed reads)
+29108478 + 0 primary
+4753600 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+32769311 + 0 mapped (96.77% : N/A)
+28015711 + 0 primary mapped (96.25% : N/A)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (N/A : N/A)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (N/A : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+[jl19@spectre13 Data_QC_May2023]$ samtools flagstat SRR7457551_24_hours-trimmed.bam
+33862078 + 0 in total (QC-passed reads + QC-failed reads)
+``` 
 ## Check the BAM files
 
 ```
 samtools view SRR7457551.bam  | head
 ``` 
+
 ``` 
 [jl19@spectre13 trimmed]$ samtools view SRR7457551_24_hours-trimmed.fastq.gz | head 
 SRR7457551.1	4	*	0	0	*	*	0	0	CTGGGGAGCTGCTGCCATCCCTTAGTAAGCTCAGGTCAGTGGGAGGCACCGGGCAGGCAGGGCGGCCGGCACCTT	AAAAAEEAEE6EEEAE/EEEA/EEA/EEEEEEEEE/AEEEA//E//E6A/AEAEEEEEEEAEEE/<EAEEEE<AE
@@ -462,7 +486,7 @@ It can be downloaded as a desktop application or use as a web application.  It i
 module load igv/2.3.82
 
 Loading igv/2.3.82
-  Loading requirement: java/1.8
+Loading requirement: java/1.8
 
 #run igv
 igv

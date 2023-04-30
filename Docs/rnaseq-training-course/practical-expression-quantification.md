@@ -141,11 +141,32 @@ https://nasqar.abudhabi.nyu.edu/deseq2shiny/
 
 Extract the two columns transcripts ID and gene name information.  The information can be found on public avalable databases: e.g. ensembl database
 
-> Extract the two columns from the Mus_musculus.GRCm39.cdna.all.fa.gz which located at /scratch/bbash/jl19/Data_QC_May2023/mm10
+> Extract the two columns from the Mus_musculus.GRCm38.cdna.all.fa.gz which located at /scratch/bbash/jl19/Data_QC_May2023/mm10
 > Extract all transcriptnames (1st) and genenames (4th) from  sequence names and write to a file.   
-[extract_script](extract_script.sh)
 
+[extract_transcriptname_genename](extract_script.sh)
 
+```
+gunzip -c Mus_musculus.GRCm38.cdna.all.fa.gz| \
+grep '>' |
+awk '{FS= " "}BEGIN{ print "TXNAME,GENEID"};{print substr($1,2) "," substr($4,6)};' > tx2gene.mm.GRCm38.cdna.csv 
+```
+
+Output file: tx2gene.mm.GRCm38.cdna.csv 
+
+```
+TXNAME,GENEID
+ENSMUST00000177564.1,ENSMUSG00000096176.1
+ENSMUST00000196221.1,ENSMUSG00000096749.2
+ENSMUST00000179664.1,ENSMUSG00000096749.2
+ENSMUST00000178537.1,ENSMUSG00000095668.1
+ENSMUST00000178862.1,ENSMUSG00000094569.1
+ENSMUST00000179520.1,ENSMUSG00000094028.1
+ENSMUST00000179883.1,ENSMUSG00000094552.1
+ENSMUST00000195858.1,ENSMUSG00000096420.2
+ENSMUST00000179932.1,ENSMUSG00000096420.2
+ENSMUST00000180001.1,ENSMUSG00000095656.1
+```
 #### Tximport 
 
 Import transcript-level estimates of StringTie and Kallisto output for DE analysis

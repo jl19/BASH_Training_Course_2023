@@ -34,10 +34,12 @@ The regular options include a reference annotation (-G) and an output file name 
 > - Download gencode.vM10.annotation.gff3.gz from  https://www.gencodegenes.org/mouse/release_M10.html
 
 
-The file also can be copied from 
+The file also can be copied from the server and unzip the file
 
 ```
-cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/gencode.vM10.annotation.gff3.gz ./
+cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/gencode.vM10.annotation.gff3.gz ./mm10
+
+gunzip mm10/gencode.vM10.annotation.gff3.gz
 
 ```
 > - Reference annotation transcripts (-G)
@@ -48,16 +50,9 @@ When the -e option is used, the reference annotation file -G is a required input
 
 With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
 
+-A <gene_abund.tab>	Gene abundances will be reported (tab delimited format) in the output file with the given name.
+
 ---------
->  Generate gtf and t_data.ctab under the sample name folder
-
->  stringtie_output/SRR7457551/
-
-> - e_data.ctab
-> - e2t.ctab
-> - i_data.ctab
-> - i2t.ctab
-> - t_data.ctab
 
 ```
 #stringtie_quantification.sh
@@ -87,20 +82,57 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 
 > - GTF file: containing the assembled transcripts that match the reference annotation
 
+>  Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
+
+>  stringtie_output/SRR7457551_24_hours/
+
+    > - SRR7457551_24_hours-trimmed.transcripts.gtf
+    > - e_data.ctab
+    > - e2t.ctab
+    > - i_data.ctab
+    > - i2t.ctab
+    > - t_data.ctab
+
+stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
+
+### Time Required to run each file: 1.5min
+
+g
+
 ### Prepare Sample list file as follow:
 >  Sample_list.txt
 
-> - SRR7457551	stringtie_output/SRR7457551.transcripts.gtf
-> - SRR7457552	stringtie_output/SRR7457552.transcripts.gtf
-> - SRR7457555	stringtie_output/SRR7457555.transcripts.gtf
-> - SRR7457556	stringtie_output/SRR7457556.transcripts.gtf
-> - SRR7457559	stringtie_output/SRR7457559.transcripts.gtf
-> - SRR7457560	stringtie_output/SRR7457560.transcripts.gtf
+> - SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf
+> - SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf
+> - SRR7457561_24_hours	stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf
+> - SRR7457562_24_hours	stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf
+
+> - SRR7457553_2_hours	stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf
+> - SRR7457554_2_hours	stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf
+> - SRR7457555_2_hours	stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf
+> - SRR7457556_2_hours	stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf
+
+> - SRR7457557_control	stringtie_output/SRR7457557_control-trimmed.transcripts.gtf
+> - SRR7457558_control	stringtie_output/SRR7457558_control-trimmed.transcripts.gtf
+
+> - SRR7457559_control	stringtie_output/SRR7457559_control-trimmed.transcripts.gtf
+> - SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
+
 
 #### Using Python script to process sample list
 ```
-python prepDE.py3 stringtie_output/sample_list.txt
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.pye  ./stringtie_output
+
+cd stringtie_output
 ```
+```
+python prepDE.py3 sample_list.txt
+```
+
+Two files are generated:
+1. gene_count_matrix.csv
+2. transcript_count_matrix.csv
+
 https://nasqar.abudhabi.nyu.edu/deseq2shiny/
 
 

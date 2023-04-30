@@ -103,21 +103,20 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 ### Prepare Sample list file as follow:
 >  Sample_list.txt
 
-> - SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf
-> - SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf
-> - SRR7457561_24_hours	stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf
-> - SRR7457562_24_hours	stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf
+> SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf
+> SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf
+> SRR7457561_24_hours	stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf
+> SRR7457562_24_hours	stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf
 
-> - SRR7457553_2_hours	stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf
-> - SRR7457554_2_hours	stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf
-> - SRR7457555_2_hours	stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf
-> - SRR7457556_2_hours	stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf
+> SRR7457553_2_hours	stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf
+> SRR7457554_2_hours	stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf
+> SRR7457555_2_hours	stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf
+> SRR7457556_2_hours	stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf
 
-> - SRR7457557_control	stringtie_output/SRR7457557_control-trimmed.transcripts.gtf
-> - SRR7457558_control	stringtie_output/SRR7457558_control-trimmed.transcripts.gtf
-
-> - SRR7457559_control	stringtie_output/SRR7457559_control-trimmed.transcripts.gtf
-> - SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
+> SRR7457557_control	stringtie_output/SRR7457557_control-trimmed.transcripts.gtf
+> SRR7457558_control	stringtie_output/SRR7457558_control-trimmed.transcripts.gtf
+> SRR7457559_control	stringtie_output/SRR7457559_control-trimmed.transcripts.gtf
+> SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
 
 
 #### Using Python script to process sample list

@@ -11,10 +11,13 @@
 
 #check the directory you are in by pwd command
 [jl19@spectre13 Data_DC]$ pwd
-/scratch/bbash/jl19/Data_QC_May2023
+/scratch/bbash/jl19/Data_QC
 
-#make "stringtie_output" directory 
-
+#if it is already in /scratch/bbash/jl19/Data_QC and make "stringtie_output" directory, if not 
+``` 
+cd /scratch/bbash/jl19/Data_QC
+``` 
+``` 
 [jl19@spectre13 Data_QC]$ mkdir stringtie_output
 
 ``` 
@@ -138,10 +141,9 @@ https://nasqar.abudhabi.nyu.edu/deseq2shiny/
 
 #### Quantification
 
-Extract the two columns transcripts ID and gene name information, The information can be found on public avalable databases: e.g. ensembl database
+Extract the two columns transcripts ID and gene name information.  The information can be found on public avalable databases: e.g. ensembl database
 
-> Extract the two columns from the Mus_musculus.GRCm39.cdna.all.fa.gz
-
+> Extract the two columns from the Mus_musculus.GRCm39.cdna.all.fa.gz which located at /scratch/bbash/jl19/Data_QC_May2023/mm10
 > Extract all transcriptnames (1st) and genenames (4th) from  sequence names and write to a file.   
 [extract_script](extract_script.sh)
 

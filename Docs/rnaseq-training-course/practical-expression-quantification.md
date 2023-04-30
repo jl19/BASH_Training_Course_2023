@@ -53,7 +53,7 @@ When the -e option is used, the reference annotation file -G is a required input
 
 With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
 
--A <gene_abund.tab>	Gene abundances will be reported (tab delimited format) in the output file with the given name.
+> - gene_abund.tab (-A)	Gene abundances will be reported (tab delimited format) in the output file with the given name.
 
 ---------
 

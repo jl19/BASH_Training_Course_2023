@@ -452,8 +452,6 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trim
 0 + 0 singletons (N/A : N/A)
 0 + 0 with mate mapped to a different chr
 0 + 0 with mate mapped to a different chr (mapQ>=5)
-[jl19@spectre13 Data_QC_May2023]$ samtools flagstat SRR7457551_24_hours-trimmed.bam
-33862078 + 0 in total (QC-passed reads + QC-failed reads)
 ``` 
 ## Check the BAM files
 

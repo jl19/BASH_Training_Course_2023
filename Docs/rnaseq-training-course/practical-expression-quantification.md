@@ -83,11 +83,9 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 ```
 #### Output files
 
-> - GTF file: containing the assembled transcripts that match the reference annotation
+1. Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
 
->  Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
-
->  stringtie_output/SRR7457551_24_hours/
+    >  stringtie_output/SRR7457551_24_hours/
 
     > - SRR7457551_24_hours-trimmed.transcripts.gtf
     > - e_data.ctab
@@ -96,7 +94,7 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
     > - i2t.ctab
     > - t_data.ctab
 
-stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
+2. stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
 
 ### Time Required to run each file: 1.5min
 

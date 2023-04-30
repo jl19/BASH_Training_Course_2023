@@ -96,9 +96,9 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 
 2. stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
 
-### Time Required to run each file: 1.5min
+### Time Required to run each file
 
-g
+1.5min
 
 ### Prepare Sample list file as follow:
 >  Sample_list.txt

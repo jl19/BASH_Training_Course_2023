@@ -12,7 +12,7 @@
 #check the directory you are in by pwd command
 [jl19@spectre13 Data_DC]$ pwd
 /scratch/bbash/jl19/Data_QC
-
+```
 #if it is already in /scratch/bbash/jl19/Data_QC and make "stringtie_output" directory, if not 
 ``` 
 cd /scratch/bbash/jl19/Data_QC

@@ -296,7 +296,8 @@ log has been saved to "trimmed/SRR7457551_24_hours-trimmed.log".
 ```
 
 Time Required:11 mins
-Trimmed other 5 files
+
+Continue to trim other raw data files using bash script.
 
 ```
 #trim_fastq_file.sh
@@ -315,9 +316,10 @@ skewer -m any -q 25 -Q 20 -n -z  SRR7457552_RNA-Seq_of_mus_musculus_adult_male_a
 skewer -m any -q 25 -Q 20 -n -z  SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457561_24_hours;
 skewer -m any -q 25 -Q 20 -n -z  SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457562_24_hours;
 
-
-
 ```
+All trimmed files can be copied from server.
+
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/. ./
 
 > - Run FastQc on command line after trimming
 

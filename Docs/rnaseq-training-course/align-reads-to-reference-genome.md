@@ -273,29 +273,106 @@ Estimate run time is 20 mins for each run.  Here we only need to run one file.  
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/sam/. ./
 
 
+## Samtools
+
+Samtools is a set of utilities that manipulate alignments in the SAM (Sequence Alignment/Map), BAM, and CRAM formats. It converts between the formats, does sorting, merging and indexing, and can retrieve reads in any regions swiftly.
+
+``` 
+[jl19@spectre13 Data_QC_May2023]$ samtools
+
+Program: samtools (Tools for alignments in the SAM format)
+Version: 1.15 (using htslib 1.15)
+
+Usage:   samtools <command> [options]
+
+Commands:
+  -- Indexing
+     dict           create a sequence dictionary file
+     faidx          index/extract FASTA
+     fqidx          index/extract FASTQ
+     index          index alignment
+
+  -- Editing
+     calmd          recalculate MD/NM tags and '=' bases
+     fixmate        fix mate information
+     reheader       replace BAM header
+     targetcut      cut fosmid regions (for fosmid pool only)
+     addreplacerg   adds or replaces RG tags
+     markdup        mark duplicates
+     ampliconclip   clip oligos from the end of reads
+
+  -- File operations
+     collate        shuffle and group alignments by name
+     cat            concatenate BAMs
+     consensus      produce a consensus Pileup/FASTA/FASTQ
+     merge          merge sorted alignments
+     mpileup        multi-way pileup
+     sort           sort alignment file
+     split          splits a file by read group
+     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
+     fastq          converts a BAM to a FASTQ
+     fasta          converts a BAM to a FASTA
+     import         Converts FASTA or FASTQ files to SAM/BAM/CRAM
+
+  -- Statistics
+     bedcov         read depth per BED region
+     coverage       alignment depth and percent coverage
+     depth          compute the depth
+     flagstat       simple stats
+     idxstats       BAM index stats
+     phase          phase heterozygotes
+     stats          generate stats (former bamcheck)
+     ampliconstats  generate amplicon specific stats
+
+  -- Viewing
+     flags          explain BAM flags
+     head           header viewer
+     tview          text alignment viewer
+     view           SAM<->BAM<->CRAM conversion
+     depad          convert padded BAM to unpadded BAM
+     samples        list the samples in a set of SAM/BAM/CRAM files
+
+  -- Misc
+     help [cmd]     display this help message or help for [cmd]
+     version        detailed version information
+``` 
+
+
 ## Converting SAM to BAM using samtools "view"
 
 ``` 
 module load samtools/1.15
 ``` 
+
 ``` 
+
+Options:
+ -b        Output in the BAM format.
+ -o FILE   Output to FILE
+
+ ```                 
+                 
+ ``` 
 #24 hours
-samtools view --threads 8 -S -b SRR7457551_24_hours-trimmed.sam -o SRR7457551_24_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457552_24_hours-trimmed.sam -o SRR7457552_24_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457561_24_hours-trimmed.sam -o SRR7457561_24_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457562_24_hours-trimmed.sam -o SRR7457562_24_hours-trimmed.bam;
+samtools view --threads 8  -b SRR7457551_24_hours-trimmed.sam -o SRR7457551_24_hours-trimmed.bam;
+
+#time take for each command 1min 11 sec
+
+samtools view --threads 8 -b SRR7457552_24_hours-trimmed.sam -o SRR7457552_24_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457561_24_hours-trimmed.sam -o SRR7457561_24_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457562_24_hours-trimmed.sam -o SRR7457562_24_hours-trimmed.bam;
 
 #2 hours
-samtools view --threads 8 -S -b SRR7457553_2_hours-trimmed.sam -o SRR7457553_2_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457554_2_hours-trimmed.sam -o SRR7457554_2_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457555_2_hours-trimmed.sam -o SRR7457555_2_hours-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457556_2_hours-trimmed.sam -o SRR7457556_2_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457553_2_hours-trimmed.sam -o SRR7457553_2_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457554_2_hours-trimmed.sam -o SRR7457554_2_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457555_2_hours-trimmed.sam -o SRR7457555_2_hours-trimmed.bam;
+samtools view --threads 8 -b SRR7457556_2_hours-trimmed.sam -o SRR7457556_2_hours-trimmed.bam;
 
 #Control
-samtools view --threads 8 -S -b SRR7457557_control-trimmed.sam -o SRR7457557_control-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457558_control-trimmed.sam -o SRR7457558_control-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457559_control-trimmed.sam -o SRR7457559_control-trimmed.bam;
-samtools view --threads 8 -S -b SRR7457560_control-trimmed.sam -o SRR7457560_control-trimmed.bam;
+samtools view --threads 8 -b SRR7457557_control-trimmed.sam -o SRR7457557_control-trimmed.bam;
+samtools view --threads 8 -b SRR7457558_control-trimmed.sam -o SRR7457558_control-trimmed.bam;
+samtools view --threads 8 -b SRR7457559_control-trimmed.sam -o SRR7457559_control-trimmed.bam;
+samtools view --threads 8 -b SRR7457560_control-trimmed.sam -o SRR7457560_control-trimmed.bam;
 ``` 
 ## Sort the bam files
 ``` 
@@ -315,8 +392,16 @@ samtools sort SRR7457559_control-trimmed.bam -o SRR7457559_control-trimmed.sorte
 samtools sort SRR7457560_control-trimmed.bam -o SRR7457560_control-trimmed.sorted.bam;
 
 ``` 
+
+Sorting output:
+``` 
+[jl19@spectre13 Data_QC]$ samtools sort SRR7457551_24_hours-trimmed.bam -o SRR7457551_24_hours-trimmed.sorted.bam;
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+``` 
+
 ## Index sorted bam files
 ``` 
+#Time for index each bam file: 20s
 samtools index SRR7457551_24_hours-trimmed.sorted.bam;
 samtools index SRR7457551_24_hours-trimmed.sorted.bam;
 samtools index SRR7457551_24_hours-trimmed.sorted.bam;
@@ -343,6 +428,10 @@ SRR7457560_control-trimmed.sorted.bam.bai;
 ``` 
 Bash script can be used to automate the procedure, the jobs can be submitted on Spectre.  This is beyond what this course can include.
 
+All *.bam, *.sorted.bam and *.bai files can be copied from server.
+``` 
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/bam_files/. ./
+``` 
 ## Check the BAM files
 
 ```

@@ -1,4 +1,4 @@
-# Align reads to the Genome
+# Align Reads to the Genome
 
 There are several commonly used align/mapping programs for aligning RNAseq read to the genome.
 Hisat2 is a successor of Tophat2 is suitable for align RNAseq reads to the genome.

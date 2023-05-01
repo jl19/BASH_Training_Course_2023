@@ -32,10 +32,9 @@ Both alignment files must be sorted by genomic location. The generic command lin
 
 #### Option parameters for Stringtie
 
+> - B option, it returns a Ballgown input table file, which contains coverage data for all transcripts.
 > - Output file name (-o)
-
 > - Reference annotation transcripts (-G)
-
 > - Expression estimation mode (-e)
 
 * When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the "reference" transcripts provided in the -G file.
@@ -83,7 +82,7 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 
 > - Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
 
-    >  stringtie_output/SRR7457551_24_hours/
+    > - stringtie_output/SRR7457551_24_hours/
 
     > - SRR7457551_24_hours-trimmed.transcripts.gtf
     > - e_data.ctab

@@ -31,11 +31,6 @@ library(readr) # Fast readr of files.
 library(rhdf5) # read/convert kalisto output files.  
 
 
-
-#################################
-##Import from kallisto Output##
-#################################
-
 #set working directory
 dir <- "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583"
 
@@ -259,6 +254,4 @@ countData
 
 #Write the counts to a file
 write.csv(countData,file="countData_kallisto.csv")
-
-
 ``` 

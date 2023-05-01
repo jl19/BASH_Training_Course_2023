@@ -1,4 +1,4 @@
-### StringTie Expression Quantification
+## StringTie Expression Quantification
 
 > - StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. 
 
@@ -20,9 +20,9 @@ cd /scratch/bbash/jl19/Data_QC
 [jl19@spectre13 Data_QC]$ mkdir stringtie_output
 ``` 
 
-#### Input files
+### Input files
 
-> - Required files: sorted BAM and GFF files
+#### Required files: sorted BAM and GFF files
 > - Input files: sorted BAM files
 > - General Feature Format (GFF)/General Transer Format(GTF):  Gene Annotation on the reference.
 
@@ -32,8 +32,9 @@ Both alignment files must be sorted by genomic location. The generic command lin
 
 The regular options include a reference annotation (-G) and an output file name (-o), so a more realistic command line example would look like this:
 
-> - Download gencode.vM10.annotation.gff3.gz from  https://www.gencodegenes.org/mouse/release_M10.html
+#### Download gencode.vM10.annotation.gff3.gz 
 
+The file can be downloaded from  https://www.gencodegenes.org/mouse/release_M10.html
 
 The file also can be copied from the server and unzip the file
 
@@ -42,13 +43,16 @@ cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genc
 
 gunzip mm10/gencode.vM10.annotation.gff3.gz
 ```
+
+#### Option parameters for Stringtie
+
 > - Reference annotation transcripts (-G)
 
 > - Expression estimation mode (-e)
 
-When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the "reference" transcripts provided in the -G file.
+* When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the "reference" transcripts provided in the -G file.
 
-With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
+* With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
 
 > - gene_abund.tab (-A)	Gene abundances will be reported (tab delimited format) in the output file with the given name.
 
@@ -75,9 +79,9 @@ stringtie SRR7457558_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 stringtie SRR7457559_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457559_control-trimmed.transcripts.gtf -A SRR7457559_control-trimmed_gene_abund.tab;
 stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457560_control-trimmed.transcripts.gtf -A SRR7457560_control-trimmed_gene_abund.tab;
 ```
-#### Output files
+### Output files
 
-1. Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
+> - Generate gtf (containing the assembled transcripts that match the reference annotation) and t_data.ctab under the sample name folder
 
     >  stringtie_output/SRR7457551_24_hours/
 
@@ -88,7 +92,7 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
     > - i2t.ctab
     > - t_data.ctab
 
-2. stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
+> - stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
 
 ### Time Required to run each file
 
@@ -114,7 +118,7 @@ SRR7457559_control	stringtie_output/SRR7457559_control-trimmed.transcripts.gtf
 SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
 ```
 
-#### Using Python script to process sample list
+### Using Python script to process sample list
 ```
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.pye  ./stringtie_output
 
@@ -131,7 +135,7 @@ Two files are generated:
 https://nasqar.abudhabi.nyu.edu/deseq2shiny/
 
 
-#### Quantification
+### Quantification
 
 Extract the two columns transcripts ID and gene name information.  The information can be found on public avalable databases: e.g. ensembl database
 
@@ -161,7 +165,7 @@ ENSMUST00000195858.1,ENSMUSG00000096420.2
 ENSMUST00000179932.1,ENSMUSG00000096420.2
 ENSMUST00000180001.1,ENSMUSG00000095656.1
 ```
-#### Tximport 
+### Tximport 
 
 Import transcript-level estimates of StringTie and Kallisto output for DE analysis
 [Tximport from StringTie and Kallisto Output](txtimport_StringTie_Kallisto.md)

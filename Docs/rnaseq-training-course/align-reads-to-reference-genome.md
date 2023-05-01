@@ -220,7 +220,7 @@ Headers:
 Total time for call to driver() for forward index: 00:27:10
 [jl19@spectre14 mm10]$ 
 ```
-Output Files:A number of files with .ht2 extension would be created. They are the index files
+> - Output Files: A number of files with .ht2 extension would be created. They are the index files
 ```
 /scratch/bbash/jl19/Data_QC/mm10/genome.1.ht2
 /scratch/bbash/jl19/Data_QC/mm10/genome.2.ht2
@@ -266,7 +266,7 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz 
 [jl19@spectre13 Data_QC]$ 
 ```  
 
-> Output files: sam files (e.g. SRR7457551_24_hours-trimmed.sam) are located under /scratch/bbash/jl19/Data_QC/
+> - Output files: sam files (e.g. SRR7457551_24_hours-trimmed.sam) are located under /scratch/bbash/jl19/Data_QC/
 
 Estimate run time is 20 mins for each run.  Here we only need to run one file.  The rest of the 11 sam files can be copied from the following location.
 

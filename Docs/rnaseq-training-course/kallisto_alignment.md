@@ -47,15 +47,12 @@ kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bb
 Time Required: 3min40sec
 
 ### Pseudoaligment using kallisto quantification
-
 ```
 cd /scratch/bbash/jl19/Data_QC/
 ```
-
 or cd .. if in already in the directory  of /scratch/bbash/jl19/Data_QC/mm10/
 ```
 cd ..
-
 ```
 ```
 mkdir kallisto_output 
@@ -100,9 +97,6 @@ output files from kallisto:
 
 > - abundance.h5: a HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length information length. This file can be read in by sleuth
 > - abundance.tsv: is a plaintext file of the abundance estimates. It does not contains bootstrap estimates. Please use the --plaintext mode to output plaintext abundance estimates. Alternatively, kallisto h5dump can be used to output an HDF5 file to plaintext. The first line contains a header for each column, including estimated counts, TPM, effective length.
-
-
-
 ```
 target_id            length  eff_length est_counts  tpm
 ENSMUST00000178537.2    12      4.16231      0       0

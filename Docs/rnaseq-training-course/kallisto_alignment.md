@@ -42,7 +42,6 @@ kallisto index -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx '/scratch/bb
 [build] building target de Bruijn graph ...  done 
 [build] creating equivalence classes ...  done
 [build] target de Bruijn graph has 738750 contigs and contains 101004965 k-mers 
-
 ```
 Time Required: 3min40sec
 

@@ -12,7 +12,7 @@
 [jl19@spectre13 Data_DC]$ pwd
 /scratch/bbash/jl19/Data_QC
 ```
-#if it is already in /scratch/bbash/jl19/Data_QC and make "stringtie_output" directory, if not 
+If it is already in /scratch/bbash/jl19/Data_QC and make "stringtie_output" directory, if not 
 ``` 
 cd /scratch/bbash/jl19/Data_QC
 ``` 
@@ -30,7 +30,20 @@ Both alignment files must be sorted by genomic location. The generic command lin
 
 > - stringtie [-o <output.gtf>] --mix [other_options]  [short_read_alns.bam]  [long_read_alns.bam]
 
-The regular options include a reference annotation (-G) and an output file name (-o), so a more realistic command line example would look like this:
+#### Option parameters for Stringtie
+
+> - Output file name (-o)
+
+> - Reference annotation transcripts (-G)
+
+> - Expression estimation mode (-e)
+
+* When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the "reference" transcripts provided in the -G file.
+
+* With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
+
+> - gene_abund.tab (-A)	Gene abundances will be reported (tab delimited format) in the output file with the given name.
+
 
 #### Download gencode.vM10.annotation.gff3.gz 
 
@@ -43,19 +56,6 @@ cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genc
 
 gunzip mm10/gencode.vM10.annotation.gff3.gz
 ```
-
-#### Option parameters for Stringtie
-
-> - Reference annotation transcripts (-G)
-
-> - Expression estimation mode (-e)
-
-* When the -e option is used, the reference annotation file -G is a required input and StringTie will not attempt to assemble the input read alignments but instead it will only estimate the expression levels of the "reference" transcripts provided in the -G file.
-
-* With this option, no "novel" transcript assemblies (isoforms) will be produced, and read alignments not overlapping any of the given reference transcripts will be ignored, which may provide a considerable speed boost when the given set of reference transcripts is limited to a set of target genes for example.
-
-> - gene_abund.tab (-A)	Gene abundances will be reported (tab delimited format) in the output file with the given name.
-
 ---------
 
 ```

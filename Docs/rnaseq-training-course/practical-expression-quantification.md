@@ -8,7 +8,6 @@
 
 
 ``` 
-
 #check the directory you are in by pwd command
 [jl19@spectre13 Data_DC]$ pwd
 /scratch/bbash/jl19/Data_QC
@@ -19,7 +18,6 @@ cd /scratch/bbash/jl19/Data_QC
 ``` 
 ``` 
 [jl19@spectre13 Data_QC]$ mkdir stringtie_output
-
 ``` 
 
 #### Input files
@@ -43,7 +41,6 @@ The file also can be copied from the server and unzip the file
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/gencode.vM10.annotation.gff3.gz ./mm10
 
 gunzip mm10/gencode.vM10.annotation.gff3.gz
-
 ```
 > - Reference annotation transcripts (-G)
 
@@ -62,24 +59,21 @@ With this option, no "novel" transcript assemblies (isoforms) will be produced, 
 ##!/usr/bin/env bash
 
 module load stringtie/2.1.1
-
+#24 hours
 stringtie SRR7457551_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457552_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457561_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457562_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf -A SRR7457562_24_hours-trimmed_gene_abund.tab;
-
-
+#2 hours
 stringtie SRR7457553_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf -A SRR7457553_2_hours-trimmed_gene_abund.tab;
 stringtie SRR7457554_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf -A SRR7457554_2_hours-trimmed_gene_abund.tab;
 stringtie SRR7457555_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf -A SRR7457555_2_hours-trimmed_gene_abund.tab;
 stringtie SRR7457556_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf -A SRR7457556_2_hours-trimmed_gene_abund.tab;
-
+#Control
 stringtie SRR7457557_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457557_control-trimmed.transcripts.gtf -A SRR7457557_control-trimmed_gene_abund.tab;
 stringtie SRR7457558_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457558_control-trimmed.transcripts.gtf -A SRR7457558_control-trimmed_gene_abund.tab;
 stringtie SRR7457559_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457559_control-trimmed.transcripts.gtf -A SRR7457559_control-trimmed_gene_abund.tab;
 stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457560_control-trimmed.transcripts.gtf -A SRR7457560_control-trimmed_gene_abund.tab;
-
-
 ```
 #### Output files
 

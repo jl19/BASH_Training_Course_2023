@@ -17,11 +17,7 @@ BiocManager::install("rhdf5")
 BiocManager::install("tximport")
 BiocManager::install("haven")
 
-#################################
-##Import from Kallisto Output##
-#################################
-
-
+#Install required library
 library(dplyr) # data wrangling
 library(ggplot2) # plotting
 library(DESeq2) # rna-seq

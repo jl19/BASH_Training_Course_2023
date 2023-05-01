@@ -236,11 +236,11 @@ summary(txi_kallisto)
 # countsFromAbundance      1 -none- character
 
 #Take the counts data from the output from tximport
-countData <- txi_kallisto$counts
+countData_kallisto <- txi_kallisto$counts
 
-countData
+countData_kallisto
 # SRR7457551_24_hours SRR7457552_24_hours SRR7457553_2_hours SRR7457554_2_hours
-                  9.899398e+05        9.752320e+05       8.422768e+05       6.823460e+05
+#               9.899398e+05        9.752320e+05       8.422768e+05       6.823460e+05
 # 100009600        1.903941e+01        2.174964e+01       1.623218e+01       2.352240e+00
 # 100009609        1.138890e+01        4.314980e+00       7.382950e+00       7.280110e+00
 # 100009614        0.000000e+00        0.000000e+00       0.000000e+00       0.000000e+00
@@ -249,5 +249,9 @@ countData
 # 100019           2.076546e+03        2.019474e+03       1.960450e+03       1.199829e+03
 
 #Write the counts to a file
-write.csv(countData,file="countData_kallisto.csv")
+write.csv(countData_kallisto,file="countData_kallisto.csv")
+
+
 ``` 
+
+

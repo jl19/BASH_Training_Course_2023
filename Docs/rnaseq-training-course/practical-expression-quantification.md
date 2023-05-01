@@ -178,7 +178,9 @@ awk '{FS= " "}BEGIN{ print "TXNAME,GENEID"};{print substr($1,2) "," substr($4,6)
 ```
 ```
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10 ./
-
+```
+```
+sh extract_transcriptname_genename.sh
 ```
 Output file: tx2gene.mm.GRCm38.cdna.csv which contains TXNAME, GENEID
 

@@ -164,7 +164,7 @@ Please following the instruction from Research Computing of University of Leices
 
 ### Pre-processing
 
-> :boom: [Practical 1: Pre-processing](pre-processing-rna.md) 
+>  [Practical 1: Pre-processing](pre-processing-rna.md) 
 
 In this practical you will learn :
 
@@ -176,7 +176,7 @@ In this practical you will learn :
 
 > Alignment to a reference genome using HISAT2
 
-> :boom: [Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
+>  [Practical 2: Align reads to a reference genome using HISAT2](align-reads-to-reference-genome.md)
 
 In this practical you will learn to align reads to a reference genome using HISAT2, an alignment tool.
 
@@ -184,7 +184,7 @@ In this practical you will learn to align reads to a reference genome using HISA
 
 > Alignment to transcriptome using pseudoaligner: Kallisto 
 
-> :boom: [Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
+>  [Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
 
 In this practical you will learn to use a pseudoalinger tool Kallistol to align and quantify.
 

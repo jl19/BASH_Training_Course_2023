@@ -25,7 +25,7 @@ Read counting is an important setp in quantifying gene expression levels from RN
 
 >  Here we use StringTie as an example for quantification.
 
-> :boom: [Practical 4a: Quantification using StringTie](practical-expression-quantification.md)
+>  [Practical 4a: Quantification using StringTie](practical-expression-quantification.md)
 
 
 
@@ -58,7 +58,7 @@ There are several software tools available for differential gene expression anal
 
 > Differential Expression analysis using DESeq2
 
-> :boom: [Practical 5: Differential Expression analysis using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
+>  [Practical 5: Differential Expression analysis using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
 
 Compare sample groups: differential expression analysis
 
@@ -78,6 +78,6 @@ Visualization of differential gene expression (DE) analysis output is an essenti
 Visualization can be acheived using various software tools such as R/Bioconductor packages (e.g., ggplot2, pheatmap, PCAtools), Python packages (e.g., Matplotlib, Seaborn), and web-based tools (e.g., WEBGestalt GSEA, DAVID). 
 
 
-> :boom: [Practical 6: Visualization of DE Output](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
+>  [Practical 6: Visualization of DE Output](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 
 ## [Go to Day1 Data Analysis](rna-seq-wes-data-analysis-day1.md)

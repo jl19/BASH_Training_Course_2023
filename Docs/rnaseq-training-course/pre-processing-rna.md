@@ -1,6 +1,6 @@
 # RNA-Seq Data Pre-processing
 
-> :boom: Example data Used:
+>  Example data Used:
 
 > Bioproject PRJNA450151
 > SRA Study Number: SRP151689

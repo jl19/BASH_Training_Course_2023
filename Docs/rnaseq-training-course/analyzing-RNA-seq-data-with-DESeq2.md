@@ -436,7 +436,7 @@ library("RColorBrewer")
 sampleDistMatrix <- as.matrix(sampleDists)
 ```
 #### Add names based on condition
-
+```
 rownames(sampleDistMatrix) <- paste(vsd$condition)
 colnames(sampleDistMatrix) <- NULL
 ## Define colors to use for the heatmap
@@ -447,25 +447,18 @@ pheatmap(sampleDistMatrix,
          clustering_distance_rows=sampleDists,
          clustering_distance_cols=sampleDists,
          col=colors)
+```
+![Heatmap_sample_distribution_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_distribution_vsd.jpeg)
+
+This plot shows how samples are clustered based on their euclidean distance using the regularized log transformed count data. This figure gives an overview of how the samples are hierarchically clustered. It is a complementary figure to the PCA plot.
 
 
-# This plot shows how samples are clustered based on their euclidean distance using 
-# the regularized log transformed count data. This figure gives an overview of how the 
-# samples are hierarchically clustered. It is a complementary figure to the PCA plot.
-# This plot shows how samples are clustered based on their euclidean distance using the 
-# regularized log transformed count data. This figure gives an overview of how the samples are 
-# hierarchically clustered. It is a complementary figure to the PCA plot.
+### Principal component plot of the samples
 
+Related to the distance matrix is the PCA plot, which shows the samples in the 2D plane spanned by their first two principal components. This type of plot is useful for visualizing the overall effect of experimental covariates and batch effects.
 
-######################################################
-#######Principal component plot of the samples########
-######################################################
-
-#Related to the distance matrix is the PCA plot, which shows the samples in the 2D plane spanned by their first two principal components. This type of plot is useful for visualizing the overall effect of experimental covariates and batch effects.
-
-
+```
 plotPCA(vsd, intgroup=c("condition"))
-
 
 pcaData <- plotPCA(vsd, intgroup=c("condition"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
@@ -475,62 +468,24 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
   coord_fixed()
 
+```
+####  Box plot of the samples
 
-######################################################
-#######       Box plot of the samples         ########
-######################################################
-#The DESeq function calculates, for every gene and for every sample, a diagnostic test for outliers called Cook’s distance. 
-#Cook’s distance is a measure of how much a single sample is influencing the fitted coefficients for a gene, 
-#and a large value of Cook’s distance is intended to indicate an outlier count. The Cook’s distances are stored as a 
-#matrix available in assays(dds)[["cooks"]].
+The DESeq function calculates, for every gene and for every sample, a diagnostic test for outliers called Cook’s distance. Cook’s distance is a measure of how much a single sample is influencing the fitted coefficients for a gene, and a large value of Cook’s distance is intended to indicate an outlier count. The Cook’s distances are stored as a matrix available in assays(dds)[["cooks"]].
 
-
+```
 colnames(dds_txi_stringtie)
-
 par(mar=c(8,5,2,2))
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_stringtie), range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 
-# Write to plot to jpeg file.
+```
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condition_PC1_PC2.jpeg)
+```
+### Write to plot to jpeg file
+
 jpeg(file="Rplot_boxplot.jpeg", width = 400, height = 600, res = 100)
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= names= colnames(dds_txi_stringtie), , range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 dev.off()
-
-
-count_txi_stringtie <- log10(assays(dds_txi_stringtie)[["cooks"]])
-
-count_txi_stringtie
-
-# SRR7457557_control SRR7457558_control SRR7457559_control SRR7457560_control
-# 0610006L08Rik                    NA                 NA                 NA                 NA
-# 0610007P14Rik          -1.987082639      -1.605071e+00      -2.8278338548      -3.4975827592
-# 0610009B22Rik          -2.528224326      -1.798049e+00      -1.5668683993      -3.6003504162
-# 0610009E02Rik          -0.461129544      -1.434456e+00      -1.3059455971      -1.3634079865
-
-
-
-
-
-
-#Heatmap of the sample-to-sample distances
-#Another use of the transformed data is sample clustering. Here, we apply the dist function
-#to the transpose of the transformed count matrix to get sample-to-sample distances.
-
-sampleDists <- dist(t(assay(vsd)))
-
-#A heatmap of this distance matrix gives us an overview over similarities and dissimilarities 
-#between samples. We have to provide a hierarchical clustering hc to the heatmap function based on 
-#the sample distances, or else the heatmap function would calculate a clustering based on the 
-#distances between 
-library("RColorBrewer")
-sampleDistMatrix <- as.matrix(sampleDists)
-#rownames(sampleDistMatrix) <- paste(vsd$condition, vsd$type, sep="-")
-rownames(sampleDistMatrix) <- paste(vsd$condition)
-colnames(sampleDistMatrix) <- NULL
-colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
-pheatmap(sampleDistMatrix,
-         clustering_distance_rows=sampleDists,
-         clustering_distance_cols=sampleDists,
-         col=colors)
 
 ```
 

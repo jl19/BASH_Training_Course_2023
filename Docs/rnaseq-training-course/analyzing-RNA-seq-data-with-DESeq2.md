@@ -397,7 +397,7 @@ rownames(df_stringtie) <- colnames(dds_txi_stringtie)
 pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df_stringtie)
 ```
-![Heatmap_Condition_ntd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.jpeg)
+![Heatmap_Condition_ntd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_ntd.png)
 ```
 ```
 pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
@@ -405,7 +405,7 @@ pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
 
 ```
 ```
-![Heatmap_Condition_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.jpeg)
+![Heatmap_Condition_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_vsd.png)
 
 
 ```
@@ -414,7 +414,7 @@ pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df_stringtie)
 ```
 ```
-![Heatmap_Condition_rld](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.jpeg)
+![Heatmap_Condition_rld](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.png)
 
 ```
 ```

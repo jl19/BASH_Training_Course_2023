@@ -1,9 +1,13 @@
 # RNA-Seq Data Pre-processing
 
 >  Example data Used:
+
 > Bioproject PRJNA450151
+
 > SRA Study Number: SRP151689
+
 > Title: Mus musculus Transcriptome or Gene expression
+
 > Abstract:Alveolar macrophages were isolated in a murine model of lung transplant to study their role in ischemia reperfusion injury and primary graft dysfunction.
 
 ### Step 1 - Import/Copy and check the read data files

@@ -2,7 +2,7 @@
 
 
 ## [Day1](rna-seq-wes-data-analysis-day1.md)
-:memo:
+
 > -  Understand the basics of the NGS technologies     
 > -  RNA-seq Data Analysis: Steps, Tools and File formats
 > -  RNA-seq applications
@@ -78,7 +78,7 @@ Use Trimmomatic/Skewer to trim/remove poor quality bases/reads
 
 Use Trimmomatic/Skewer to remove 3' adapter sequences from reads
 
->:bulb: Pre-processing Tools:
+> Pre-processing Tools:
 
 |Tool Name  | Description   |
 |--------------------|-----------------------|
@@ -119,7 +119,7 @@ RNA-Seq alignment is the process of aligning the short reads genearted from RNA 
 
 The output of RNA-Seq alignment is a file that lists the location and quality of each read which can be used for downstream analysis e.g. gene expression quatification and differential gene expression analysis etc.
 
->:bulb: Commonly Used Alignment Tools
+> Commonly Used Alignment Tools
 
 |Alignment Tool Name| Description|
 | ----------- | ------------------------------------ |

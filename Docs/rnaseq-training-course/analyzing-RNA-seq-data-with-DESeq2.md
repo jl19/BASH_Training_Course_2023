@@ -232,8 +232,6 @@ plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
 
 ### Plot Counts    
 
-#Plot Counts
-
 It can also be useful to examine the counts of reads for a single gene across the groups. A simple function for making this plot is plotCounts, which normalizes counts by the estimated size factors (or normalization factors if these were used) and adds a pseudocount of 1/2 to allow for log scale plotting. The counts are grouped by the variables in intgroup, where more than one variable can be specified. Here we specify the gene which had the smallest p value from the results table created above. You can select the gene to plot by rowname or by numeric index.
 
 ```
@@ -294,7 +292,6 @@ resSig_24h_vs_Control_Ordered
 # Rrm1             2486.12        2.17967 0.0737897   29.5390 9.10047e-192 5.53248e-188
 # Rrm2             2041.04        2.58360 0.0891632   28.9760 1.31903e-184 6.01413e-181
 # Nusap1            984.91        2.29597 0.0834374   27.5173 1.09074e-166 3.97860e-163
-
 ```
 
 ####  Box plot of the samples
@@ -308,7 +305,6 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 ```
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_BoxPlot_12Samples.png)
 
-
 ```
 ### Write to plot to jpeg file
 
@@ -316,7 +312,6 @@ jpeg(file="Rplot_boxplot.jpeg", width = 400, height = 600, res = 100)
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= names= colnames(dds_txi_stringtie), , range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 dev.off()
 ```
-
 ### Tests of log2 fold change above or below a threshold
 
 It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results function allow for threshold-based Wald tests: lfcThreshold, which takes a numeric of a non-negative threshold value, and altHypothesis, which specifies the kind of test. Note that the alternative hypothesis is specified by the user, i.e. those genes which the user is interested in finding, and the test provides p values for the null hypothesis, the complement of the set defined by the alternative. The altHypothesis argument can take one of the following four values, 
@@ -325,7 +320,7 @@ It is also possible to provide thresholds for constructing Wald tests of signifi
 greaterAbs - |β|>x - tests are two-tailed
 lessAbs - |β|<x - p values are the maximum of the upper and lower tests
 greater - β>x
-ess - β<−x
+less - β<−x
 The four possible values of altHypothesis are demonstrated in the following code and visually by MA-plots in the following figures.
 ```
 par(mfrow=c(2,2),mar=c(2,2,1,1))

@@ -26,7 +26,7 @@
 * Select corresponding study
 * Select required data/samples to download
 
-> :boom: [Offline HOW To download data can be found here](how-to-SRA-Explorer.md)
+>  [Offline HOW To download data can be found here](how-to-SRA-Explorer.md)
 
 ***********
 

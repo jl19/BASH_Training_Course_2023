@@ -309,7 +309,7 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_BoxPlot_12Samples.png)
 
 ```
-![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.png)
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condition_PC1_PC2.png)
 
 ```
 ### Write to plot to jpeg file

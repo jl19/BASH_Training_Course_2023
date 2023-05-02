@@ -15,7 +15,7 @@ First, the genome needed to be indexed before using Hisat2-build or created usin
 ```
 cd /scratch/bbash/jl19/Data_QC/
 ``` 
-### create a diretory /mm10
+### Create a diretory /mm10
 ``` 
 mkdir mm10
 ``` 
@@ -24,7 +24,7 @@ mkdir mm10
 cd /scratch/bbash/jl19/Data_QC/mm10/
 ``` 
 
-### copy the genome.fa in the mm10 directory
+### Copy the genome.fa in the mm10 directory
 ``` 
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
 ``` 

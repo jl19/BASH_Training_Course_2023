@@ -218,7 +218,7 @@ sum(res_24h_vs_Control_Ordered$padj < 0.01, na.rm=TRUE)
 In DESeq2, the function plotMA shows the log2 fold changes attributable to a given variable over the mean of normalized counts for all the samples in the DESeqDataSet. Points will be colored red if the adjusted p value is less than 0.1. Points which fall out of the window are plotted as open triangles pointing either up or down.
 
 ```
-plotMA(res_24h_vs_Naive, ylim=c(-2,2))
+plotMA(res_24h_vs_Conto, ylim=c(-2,2))
 ```
 ![plotMA](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
 
@@ -226,10 +226,10 @@ plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 It is more useful visualize the MA-plot for the shrunken log2 fold changes, which remove the noise associated with log2 fold changes from low count genes without requiring arbitrary filtering thresholds.
 ```
 plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
-
+```
 
 ![MA_plot_LFC](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
-```
+
 
 ### Plot Counts    
 

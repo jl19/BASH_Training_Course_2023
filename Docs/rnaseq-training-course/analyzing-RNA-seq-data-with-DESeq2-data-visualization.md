@@ -166,7 +166,7 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   coord_fixed()
 
 ```
-
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condition_PC1_PC2.png)
 
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)
 

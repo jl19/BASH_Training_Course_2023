@@ -444,7 +444,7 @@ pheatmap(sampleDistMatrix,
          clustering_distance_cols=sampleDists,
          col=colors)
 ```
-![Heatmap_sample_distribution_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_distribution_vsd.jpeg)
+![Heatmap_sample_distribution_vsd](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_distribution_vsd.png)
 
 This plot shows how samples are clustered based on their euclidean distance using the regularized log transformed count data. This figure gives an overview of how the samples are hierarchically clustered. It is a complementary figure to the PCA plot.
 
@@ -476,11 +476,11 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 
 
 ```
-![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.png)
 
 
 ```
-![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.png)
 
 ```
 ### Write to plot to jpeg file

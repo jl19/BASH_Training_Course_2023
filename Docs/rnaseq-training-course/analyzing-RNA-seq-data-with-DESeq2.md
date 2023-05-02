@@ -476,7 +476,7 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 
 
 ```
-![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.png)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot_12Samples.png)
 
 
 ```

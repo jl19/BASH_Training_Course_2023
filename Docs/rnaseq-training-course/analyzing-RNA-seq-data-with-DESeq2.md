@@ -320,11 +320,7 @@ head(assay(vsd), 3)
 ```
 ### Effects of transformations on the variance
 
-#the vertical axis in such plots is the square root of the variance over all samples, 
-#so including the variance due to the experimental conditions. While a flat curve of the square 
-#root of variance over the mean may seem like the goal of such transformations, this may be 
-#unreasonable in the case of datasets with many true differences due to the experimental conditions.
-# this gives log2(n + 1)
+The vertical axis in such plots is the square root of the variance over all samples, so including the variance due to the experimental conditions. While a flat curve of the square root of variance over the mean may seem like the goal of such transformations, this may be unreasonable in the case of datasets with many true differences due to the experimental conditions. this gives log2(n + 1)
 ```
 ntd <- normTransform(dds_txi)
 

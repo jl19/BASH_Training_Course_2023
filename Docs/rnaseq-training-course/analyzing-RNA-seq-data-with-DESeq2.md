@@ -478,8 +478,14 @@ colnames(dds_txi_stringtie)
 par(mar=c(8,5,2,2))
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_stringtie), range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 
+
 ```
-![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condition_PC1_PC2.jpeg)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
+
+
+```
+![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
+
 ```
 ### Write to plot to jpeg file
 
@@ -491,37 +497,7 @@ dev.off()
 
 ![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
 
-### Principal component plot of the samples
-```
-#Related to the distance matrix is the PCA plot, which shows the samples in the 2D plane spanned by their first two principal components. This type of plot is useful for visualizing the overall effect of experimental covariates and batch effects.
 
-#plotPCA(vsd, intgroup=c("condition", "type"))
-plotPCA(vsd, intgroup=c("condition"))
-
-
-pcaData <- plotPCA(vsd, intgroup=c("condition"), returnData=TRUE)
-percentVar <- round(100 * attr(pcaData, "percentVar"))
-ggplot(pcaData, aes(PC1, PC2, color=condition)) +
-  geom_point(size=3) +
-  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
-  ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
-  coord_fixed()
-
-```
-![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.jpeg)
-
-
-
-### Box plot of the samples 
-
-```
-par(mar=c(8,5,2,2))
-boxplot(log10(assays(dds_txi)[["cooks"]]), range=0, las=2)
-
-```
-![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_boxplot.jpeg)
-
-```
 ```
 
 ### Tests of log2 fold change above or below a threshold

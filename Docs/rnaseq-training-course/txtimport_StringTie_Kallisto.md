@@ -405,3 +405,9 @@ countData_stringtie
 write.csv(countData_stringtie,file="countData_stringtie.csv")
 
 ``` 
+### Analyzing RNA-Seq using DESeq2
+
+[Go to Day2 Practical 5: Analyzing RNA-Seq using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
+
+## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md)
+

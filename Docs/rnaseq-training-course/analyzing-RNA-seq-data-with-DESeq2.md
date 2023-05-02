@@ -414,7 +414,7 @@ pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
          cluster_cols=FALSE, annotation_col=df_stringtie)
 ```
 ```
-![Heatmap_Condition_rld](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.png)
+![Heatmap_Condition_rld](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_heatmap_sample_condition_rld.png)
 
 ```
 ```
@@ -474,7 +474,7 @@ colnames(dds_txi_stringtie)
 par(mar=c(8,5,2,2))
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_stringtie), range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 ```
-![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plot/Rplot_BoxPlot_12Samples.png)
+![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_BoxPlot_12Samples.png)
 
 
 ```

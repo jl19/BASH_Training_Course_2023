@@ -362,7 +362,7 @@ plotMA(resL, ylim=ylim); drawLines()
 ```
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 
-[Go to Day2 Practical 6](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
+[Go to Day2 Practical 6:Data Visualization](analyzing-RNA-seq-data-with-DESeq2-data-visualization.md)
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md/#quantification)
 
 

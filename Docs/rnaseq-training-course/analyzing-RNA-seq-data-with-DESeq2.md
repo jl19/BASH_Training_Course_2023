@@ -169,7 +169,6 @@ resControl_vs_24h_LFC
 # Zyx             4717.40      0.9078606 0.0929471 2.58102e-23 9.76610e-22
 # Zzef1           2310.02      0.0687265 0.0771193 3.72295e-01 5.38625e-01
 # Zzz3            1141.16      0.3352972 0.1200833 3.29055e-03 1.14792e-02
-
 ```
 
 ### Ordering results using p-values and adjusted p-values 
@@ -256,13 +255,13 @@ It can also be useful to examine the counts of reads for a single gene across th
 plotCounts(dds_txi_stringtie, gene=which.min(res_24h_vs_Control$padj), intgroup="condition")
 
 #Use gene ID "2810417H13Rik" to plot the counts
+
 plotCounts(dds_txi_stringtie, "2810417H13Rik", intgroup="condition")
+
 #Use gene name Pcna to plot the counts
 plotCounts(dds_txi_stringtie, "Pcna", intgroup="condition")
 
-#customized plotting
-
-#Save plotCounts to a data frame object
+#Save plotCounts to a dataframe object
 
 df_Pcna <- plotCounts(dds_txi_stringtie,"Pcna" , intgroup="condition", returnData=TRUE)
 
@@ -321,11 +320,6 @@ dev.off()
 
 ```
 
-![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_sample_distribution_matrix.png)
-
-
-```
-
 ### Tests of log2 fold change above or below a threshold
 ```
 # It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results 
@@ -341,9 +335,6 @@ dev.off()
 # greater - β>x
 # less - β<−x
 # The four possible values of altHypothesis are demonstrated in the following code and visually by MA-plots in the following figures.
-# 
-
-
 
 par(mfrow=c(2,2),mar=c(2,2,1,1))
 ylim <- c(-2.5,2.5)
@@ -356,8 +347,6 @@ plotMA(resGA, ylim=ylim); drawLines()
 plotMA(resLA, ylim=ylim); drawLines()
 plotMA(resG, ylim=ylim); drawLines()
 plotMA(resL, ylim=ylim); drawLines()
-
-
 ```
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 

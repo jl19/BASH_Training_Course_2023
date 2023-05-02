@@ -315,12 +315,6 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 jpeg(file="Rplot_boxplot.jpeg", width = 400, height = 600, res = 100)
 boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= names= colnames(dds_txi_stringtie), , range=0, las=2,main = "Boxplot for all samples",col="light blue") 
 dev.off()
-
-```
-```
-![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_sample_distribution_matrix.png)
-
-
 ```
 
 ### Tests of log2 fold change above or below a threshold

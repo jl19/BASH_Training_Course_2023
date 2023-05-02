@@ -1,5 +1,7 @@
 # Analyzing RNA-seq data with DESeq2 using R
 
+## Data Input and Analysis in R
+
 ### Install required R packages
 ```
 if (!require("BiocManager", quietly = TRUE))
@@ -13,7 +15,7 @@ library("ggplot2")
 library("reshape2")
 library("vsn")
 ```
-### set directory
+### Set directory
 ```
 dir <- "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583"
 
@@ -41,6 +43,8 @@ samples$condition
 #[1] [1] Control Control Control Control 2h      2h      2h      2h      24h     24h     24h     24h     
 #Levels: 24h 2h Control
 ```
+
+
 ### Loading data from previous step tximport output
 
 Construct a DESeqDataSEt from the txi_stringtie object created in txtimport.R and sample information in samples.
@@ -52,10 +56,10 @@ dds_txi_stringtie <- DESeqDataSetFromTximport(txi_stringtie,
                               colData = samples,
                               design = ~ condition)
 ```
-### Differential expression analysis
+## Differential expression analysis
 
 ```
-dds_txi <- DESeq(dds_txi)
+dds_txi_stringtie <- DESeq(dds_txi_stringtie)
 
 # estimating size factors
 # using 'avgTxLength' from assays(dds), correcting for library size
@@ -65,16 +69,13 @@ dds_txi <- DESeq(dds_txi)
 # final dispersion estimates
 # fitting model and testing
 ```
-### Result for Navie vs 24h
+
+### Result for Control vs 24h
 
 ```
 res_stringtie <- results(dds_txi_stringtie)
 
 res_stringtie
-
-#########################
-#Result for Control vs 24h
-#########################
 
 # log2 fold change (MLE): condition Control vs 24h 
 # Wald test p-value: condition Control vs 24h 
@@ -140,19 +141,16 @@ Shrinkage of effect size (LFC estimates) is useful for visualization and ranking
 To shrink the LFC, we pass the dds object to the function lfcShrink. Below we specify to use the apeglm method for effect size shrinkage (Zhu, Ibrahim, and Love 2018), which improves on the previous estimator.
 
 DESeq2 provides the dds object and the name or number of the coefficient we want to shrink, where the number refers to the order of the coefficient as it appears in resultsNames(dds_txi_stringtie)
+
 ### List resultsNames
 ```
 resultsNames(dds_txi_stringtie)
 ## [1] "Intercept"                     "condition_2h_vs_24h"    "condition_Control_vs_24h"
 
 resControl_vs_24h_LFC <- lfcShrink(dds_txi_stringtie, coef="condition_Control_vs_24h", type="apeglm")
-
-#using 'apeglm' for LFC shrinkage. If used in published research, please cite:
-# Zhu, A., Ibrahim, J.G., Love, M.I. (2018) Heavy-tailed prior distributions for
-#sequence count data: removing the noise and preserving large differences.
-#Bioinformatics. https://doi.org/10.1093/bioinformatics/bty895
-
-
+```
+Using 'apeglm' for LFC shrinkage. If used in published research, please cite:Zhu, A., Ibrahim, J.G., Love, M.I. (2018) Heavy-tailed prior distributions for sequence count data: removing the noise and preserving large differences. Bioinformatics. https://doi.org/10.1093/bioinformatics/bty895
+```
 resControl_vs_24h_LFC
 
 # log2 fold change (MAP): condition Control vs 24h 
@@ -224,56 +222,83 @@ plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 ```
 ![plotMA](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
 
-```
-#It is more useful visualize the MA-plot for the shrunken log2 fold changes, which 
-#remove the noise associated with log2 fold changes from low count genes without requiring 
-#arbitrary filtering thresholds.
 
-plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
+It is more useful visualize the MA-plot for the shrunken log2 fold changes, which remove the noise associated with log2 fold changes from low count genes without requiring arbitrary filtering thresholds.
 ```
+plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
+
 
 ![MA_plot_LFC](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
 ```
 
+### Plot Counts    
 
+#Plot Counts
 
-#### Plot counts    
+It can also be useful to examine the counts of reads for a single gene across the groups. A simple function for making this plot is plotCounts, which normalizes counts by the estimated size factors (or normalization factors if these were used) and adds a pseudocount of 1/2 to allow for log scale plotting. The counts are grouped by the variables in intgroup, where more than one variable can be specified. Here we specify the gene which had the smallest p value from the results table created above. You can select the gene to plot by rowname or by numeric index.
 
-#It can also be useful to examine the counts of reads for a single gene across the 
-#groups. A simple function for making this plot is plotCounts, which normalizes c
-#ounts by the estimated size factors (or normalization factors if these were used) and adds a pseudocount of 1/2 to allow for log scale plotting. The counts are grouped by the variables in intgroup, where more than one variable can be specified. Here we specify the gene which had the smallest p value from the results table created above. You can select the gene to plot by rowname or by numeric index.
+```
+#The output below gives out the list of transcript/gene sorted according to adjusted p value
 
+# log2 fold change (MLE): condition 24h vs Control 
+# Wald test p-value: condition 24h vs Control 
+# DataFrame with 48321 rows and 6 columns
+# baseMean log2FoldChange     lfcSE      stat       pvalue         padj
+# <numeric>      <numeric> <numeric> <numeric>    <numeric>    <numeric>
+# 2810417H13Rik   1368.76        2.95878 0.0898318   32.9369 6.52038e-238 1.18919e-233
+# Pcna            4360.31        1.46259 0.0471930   30.9918 6.96217e-211 6.34880e-207
+# Rrm1            2486.12        2.17967 0.0737897   29.5390 9.10047e-192 5.53248e-188
+# Rrm2            2041.04        2.58360 0.0891632   28.9760 1.31903e-184 6.01413e-181
+# Nusap1           984.91        2.29597 0.0834374   27.5173 1.09074e-166 3.97860e-163
 
-plotCounts(dds_txi, gene=which.min(res_24h_vs_Naive$padj), intgroup="condition")
+# "which.min" gives gene with the lowest p-value
 
+plotCounts(dds_txi_stringtie, gene=which.min(res_24h_vs_Control$padj), intgroup="condition")
+
+#Use gene ID "2810417H13Rik" to plot the counts
+plotCounts(dds_txi_stringtie, "2810417H13Rik", intgroup="condition")
+#Use gene name Pcna to plot the counts
+plotCounts(dds_txi_stringtie, "Pcna", intgroup="condition")
 
 #customized plotting
 
+#Save plotCounts to a data frame object
 
-# Save plotcounts to a data frame object
-d <- plotCounts(dds_txi, gene=which.min(res_24h_vs_Naive$padj), intgroup="condition", returnData=TRUE)
+df_Pcna <- plotCounts(dds_txi_stringtie,"Pcna" , intgroup="condition", returnData=TRUE)
 
-# Plotting the normalized counts, using the samplenames (rownames of d as labels)
-ggplot(d, aes(x = condition, y = count, color = condition)) + 
+
+# Plotting the normalized counts
+ggplot(df_Pcna, aes(x = condition, y = count, color = condition)) + 
   geom_point(position=position_jitter(w = 0.1,h = 0)) +
-  #geom_text_repel(aes(label = rownames(d))) + 
   theme_bw() +
-  ggtitle("Comparision of 24h, 2h and Naive") +
+  ggtitle("Proliferating cell nuclear antigen (PCNA)") +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 ![24h_2h_Navie](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
 
 ### Exporting results to CSV files
 ```
-write.csv(as.data.frame(res_24h_vs_NaiveOrdered), 
-          file="res_24h_vs_NaiveOrdered_results.csv")
+write.csv(as.data.frame(res_24h_vs_Control_Ordered), 
+          file="res_24h_vs_Control_Ordered_results.csv")
 
+#Extract subset of the dataset
+resSig_24h_vs_Control_Ordered <- subset(res_24h_vs_Control_Ordered, padj < 0.05)
+resSig_24h_vs_Control_Ordered
 
-resSig_24h_vs_NaiveOrdered <- subset(res_24h_vs_NaiveOrdered, padj < 0.05)
-resSig_24h_vs_NaiveOrdered
+# log2 fold change (MLE): condition 24h vs Control 
+# Wald test p-value: condition 24h vs Control 
+# DataFrame with 6666 rows and 6 columns
+# baseMean log2FoldChange     lfcSE      stat       pvalue         padj
+# <numeric>      <numeric> <numeric> <numeric>    <numeric>    <numeric>
+#   2810417H13Rik    1368.76        2.95878 0.0898318   32.9369 6.52038e-238 1.18919e-233
+# Pcna             4360.31        1.46259 0.0471930   30.9918 6.96217e-211 6.34880e-207
+# Rrm1             2486.12        2.17967 0.0737897   29.5390 9.10047e-192 5.53248e-188
+# Rrm2             2041.04        2.58360 0.0891632   28.9760 1.31903e-184 6.01413e-181
+# Nusap1            984.91        2.29597 0.0834374   27.5173 1.09074e-166 3.97860e-163
+
 ```
-### Data transformations and visualization
-```
+## Data Transformations and Visualization
+
 #Count data transformations
 #In order to test for differential expression, we operate on raw counts and use discrete 
 #distributions as described in the previous section on differential expression. However for other 
@@ -291,10 +316,11 @@ resSig_24h_vs_NaiveOrdered
 #These transformation functions return an object of class DESeqTransform which is a subclass of 
 #RangedSummarizedExperiment. For ~20 samples, running on a newly created DESeqDataSet, rlog may take 30 seconds, while vst takes less than 1 second. The running times are shorter when using blind=FALSE and if the function DESeq has already been run, because then it is not necessary to re-estimate the dispersion values. The assay function is used to extract the matrix of normalized values.
 
+```
 vsd <- vst(dds_txi, blind=FALSE)
 rld <- rlog(dds_txi, blind=FALSE)
 head(assay(vsd), 3)
-
+```
 #Effects of transformations on the variance
 
 #the vertical axis in such plots is the square root of the variance over all samples, 
@@ -302,7 +328,7 @@ head(assay(vsd), 3)
 #root of variance over the mean may seem like the goal of such transformations, this may be 
 #unreasonable in the case of datasets with many true differences due to the experimental conditions.
 # this gives log2(n + 1)
-
+```
 ntd <- normTransform(dds_txi)
 library("vsn")
 meanSdPlot(assay(ntd))
@@ -313,11 +339,11 @@ meanSdPlot(assay(rld))
 
 ```
 ### Data quality assessment by sample clustering and visualization
-```
+
 #Heatmap of the count matrix
 #To explore a count matrix, it is often instructive to look at it as a heatmap. 
 #Below we show how to produce such a heatmap for various transformations of the data.
-
+```
 library("pheatmap")
 select <- order(rowMeans(counts(dds_txi,normalized=TRUE)),
                 decreasing=TRUE)[1:20]
@@ -373,8 +399,10 @@ colData(dds_txi)
 # SRR7457556     2h   
 # SRR7457559     Naive
 # SRR7457560     Naive
+```
+Just select condtion and tissue to from the dds_txi as data.frame
 
-#Just select condtion and tissue to from the dds_txi as data.frame
+```
 df <- as.data.frame(colData(dds_txi)[,c("condition","tissue")])
 
 #             condition tissue

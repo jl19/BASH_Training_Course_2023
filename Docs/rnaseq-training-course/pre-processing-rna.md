@@ -1,15 +1,11 @@
 # RNA-Seq Data Pre-processing
 
 >  Example data Used:
-
 > Bioproject PRJNA450151
 > SRA Study Number: SRP151689
-
 > Title: Mus musculus Transcriptome or Gene expression
-
 > Abstract:Alveolar macrophages were isolated in a murine model of lung transplant to study their role in ischemia reperfusion injury and primary graft dysfunction.
 
-  
 ### Step 1 - Import/Copy and check the read data files
 
 #### Importing raw data files
@@ -49,7 +45,6 @@ The example raw data (single end data) files can also be copied from SPECTRE at 
 > - SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 > - SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 
-
 ![Screenshot of NoMachine login screen](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/NoMachine_Scratchfolder.png)
 
 To copy the fastq data files to your scratch directory so you can use them.  Use the ‘cd’ (change directory) command to move to your scratch directory.  
@@ -57,15 +52,12 @@ To copy the fastq data files to your scratch directory so you can use them.  Use
 cd $SCRATCHDIR
 ```
 It takes you directly to your scratch directory, instead of having to type the full path which is in this format: /scratch/a/ab123.  
-
 Type ‘cd $SC’ and press the tab key which will auto-complete the full command 'cd $SCRATCHDIR'
-
 Use the command below, followed by pressing the tab key to auto-complete, then hit return to move to your scratch directory
 
 ```
 cd $SC 
 ```
-
 The command ‘pwd’ which stands for ‘print working directory’ will tell you the path of your current directory. 
 ```
 pwd
@@ -78,7 +70,6 @@ In order to keep things tidy in your scratch directory it is good practise to cr
 ```
 mkdir Data_QC
 ```
-
 Then ‘cd’ to the Data_QC directory you just created.
 
 ```
@@ -87,7 +78,6 @@ cd Data_QC
 Use the ‘cp’ command to copy the fastq data files from their current location (/data/bioinf/Teaching/2022_NGS_Course/Data_QC/) to your location (the Data_QC directory you just created).   
 
 Use the ‘ls’ (list) command to list the contents of your directory and check that the files have been copied to your directory.  
-
 
 ```
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/. ./
@@ -98,7 +88,6 @@ Time Requied: 20s
 > NOTE: The ‘.’ at the end of the command tells ‘cp’ to copy everything in the Data_QC directory.  The ‘.’ tells the ‘cp’ command to copy the fastq files to the current location i.e. your Data_QC directory.
 
 The ‘cp’ command copied 12 fastq.gz files as follow:
-
 
 ```
 [jl19@spectre12 Data_QC]$ls
@@ -115,7 +104,6 @@ SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_afte
 SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
-
 ```
 
 Checked the fastq files are copied correctly. 
@@ -125,18 +113,14 @@ Checked the fastq files are copied correctly.
 FastQC is written by Simon Andrews of Babraham Bioinformatics, is a very popular quality control tool used to provide an overview of basic quality control metrics for raw next generation sequencing data.
 
 To check software installed (available) on SPECTRE using the following command:
-
 ```
 module ava
 ```
-
 To load the specific software using the ‘module load’ command followed by the module name:
-
 
 ```
 module load 'modulename'
 ```
-
 The FastQC software can be accessed on SPECTRE by using the following command
 
 ```
@@ -182,23 +166,17 @@ Time taken around 2.5 mins
 
 ### Step 3. Trim the reads
 
-
 ```
 #make diretory for trimmed files
-
 mkdir trimmed
 
 #load module
-
 module load skewer/0.2.2
 
 #list skewer USAGE
 skewer --help
-
 ```
-
 > - Output:
-
 ```
 Skewer (A fast and accurate adapter trimmer for paired-end reads)
 Version 0.2.2 (updated in April 4, 2016), Author: Hongshan Jiang
@@ -291,10 +269,7 @@ Fri Apr 28 11:58:57 2023 >> done (659.910s)
 26318385 (90.41%) untrimmed reads available after processing
 log has been saved to "trimmed/SRR7457551_24_hours-trimmed.log".
 [jl19@spectre13 Data_QC_May2023]$ 
-
-
 ```
-
 Time Required:11 mins
 
 Continue to trim other raw data files using bash script.
@@ -322,7 +297,7 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trim
 
 > - Run FastQc on command line after trimming
 
->  [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours-trimmed.fastqc.html) will be generated in the folder after the run is completed
+> - [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours-trimmed.fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report
@@ -333,7 +308,6 @@ In many cases this will produce a simple graph showing a peak only at one size, 
 Warning: This module will raise a warning if all sequences are not the same length.
 
 > - Per Tile Sequence Quality
-
 
 Reasons for seeing warnings or errors on this plot could be transient problems such as bubbles going through the flowcell, or they could be more permanent problems such as smudges on the flowcell or debris inside the flow cell lane.
 

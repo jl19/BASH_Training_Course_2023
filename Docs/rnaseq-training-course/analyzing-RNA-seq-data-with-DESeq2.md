@@ -319,23 +319,22 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= names= colnames(dds_
 dev.off()
 
 ```
+![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_sample_distribution_matrix.png)
+
+
+```
 
 ### Tests of log2 fold change above or below a threshold
-```
-# It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results 
-#function allow for threshold-based Wald tests: lfcThreshold, which takes a numeric of a non-negative threshold value, 
-#and altHypothesis, which specifies the kind of test. Note that the alternative hypothesis is specified by the user, 
-#i.e. those genes which the user is interested in finding, and the test provides p values for the null hypothesis, 
-#the complement of the set defined by the alternative. The altHypothesis argument can take one of the following four values, 
+
+It is also possible to provide thresholds for constructing Wald tests of significance. Two arguments to the results function allow for threshold-based Wald tests: lfcThreshold, which takes a numeric of a non-negative threshold value, and altHypothesis, which specifies the kind of test. Note that the alternative hypothesis is specified by the user, i.e. those genes which the user is interested in finding, and the test provides p values for the null hypothesis, the complement of the set defined by the alternative. The altHypothesis argument can take one of the following four values, 
 #where β is the log2 fold change specified by the name argument, and x is the lfcThreshold.
 
-# 
-# greaterAbs - |β|>x - tests are two-tailed
-# lessAbs - |β|<x - p values are the maximum of the upper and lower tests
-# greater - β>x
-# less - β<−x
-# The four possible values of altHypothesis are demonstrated in the following code and visually by MA-plots in the following figures.
-
+greaterAbs - |β|>x - tests are two-tailed
+lessAbs - |β|<x - p values are the maximum of the upper and lower tests
+greater - β>x
+ess - β<−x
+The four possible values of altHypothesis are demonstrated in the following code and visually by MA-plots in the following figures.
+```
 par(mfrow=c(2,2),mar=c(2,2,1,1))
 ylim <- c(-2.5,2.5)
 resGA <- results(dds_txi, lfcThreshold=.5, altHypothesis="greaterAbs")

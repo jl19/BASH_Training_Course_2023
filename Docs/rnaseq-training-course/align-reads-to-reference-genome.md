@@ -14,23 +14,23 @@ module load hisat2/2.2.1
 First, the genome needed to be indexed before using Hisat2-build or created using the index generatering script:make_mm10.sh
 ```
 cd /scratch/bbash/jl19/Data_QC/
-
-# create a diretory /mm10
-
+``` 
+### create a diretory /mm10
+``` 
 mkdir mm10
-
-# Go to the mm10/ direcotry
+``` 
+### Go to the mm10/ direcotry
+``` 
 cd /scratch/bbash/jl19/Data_QC/mm10/
+``` 
 
-# copy the genome.fa in the mm10 directory
-
+### copy the genome.fa in the mm10 directory
+``` 
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
-
-# Creating index
-
+``` 
+### Creating index
+``` 
 hisat2-build -p 16 genome.fa genome
-
-
 ```
 Time Required: 27mins
 
@@ -218,7 +218,7 @@ Headers:
     reverse: 0
     linearFM: Yes
 Total time for call to driver() for forward index: 00:27:10
-[jl19@spectre14 mm10]$ 
+
 ```
 > - Output Files: A number of files with .ht2 extension would be created. They are the index files
 ```
@@ -235,9 +235,7 @@ Total time for call to driver() for forward index: 00:27:10
 
 [There are also prebuilt indexes on HISAT2's website ](ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/data)
 
-
 For alignment, only mm10/genome is required.
-
 ``` 
 [jl19@spectre13 Data_QC] 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
@@ -252,10 +250,8 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457557_control-trimmed.fastq.gz 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457558_control-trimmed.fastq.gz -S SRR7457558_control-trimmed.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559_control-trimmed.fastq.gz -S SRR7457559_control-trimmed.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz -S SRR7457560_control-trimmed.sam;
-
 ```  
 ```  
-
 [jl19@spectre13 Data_QC]$ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
 29108478 reads; of these:
   29108478 (100.00%) were unpaired; of these:
@@ -265,19 +261,15 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz 
 96.25% overall alignment rate
 [jl19@spectre13 Data_QC]$ 
 ```  
-
 > - Output files: sam files (e.g. SRR7457551_24_hours-trimmed.sam) are located under /scratch/bbash/jl19/Data_QC/
 
 Estimate run time is 20 mins for each run.  Here we only need to run one file.  The rest of the 11 sam files can be copied from the following location.
-
 ``` 
 cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/sam/. ./
 ``` 
-
 ## Samtools
 
 Samtools is a set of utilities that manipulate alignments in the SAM (Sequence Alignment/Map), BAM, and CRAM formats. It converts between the formats, does sorting, merging and indexing, and can retrieve reads in any regions swiftly.
-
 ``` 
 [jl19@spectre13 Data_QC_May2023]$ samtools
 
@@ -337,23 +329,17 @@ Commands:
      help [cmd]     display this help message or help for [cmd]
      version        detailed version information
 ``` 
-
-
-## Converting SAM to BAM using samtools "view"
+### Converting SAM to BAM using samtools "view"
 
 ``` 
 module load samtools/1.15
 ``` 
-
 ``` 
-
 Options:
  -b        Output in the BAM format.
  -o FILE   Output to FILE
-
- ```                 
-                 
- ``` 
+```                 
+``` 
 #24 hours
 samtools view --threads 8  -b SRR7457551_24_hours-trimmed.sam -o SRR7457551_24_hours-trimmed.bam;
 
@@ -375,7 +361,7 @@ samtools view --threads 8 -b SRR7457558_control-trimmed.sam -o SRR7457558_contro
 samtools view --threads 8 -b SRR7457559_control-trimmed.sam -o SRR7457559_control-trimmed.bam;
 samtools view --threads 8 -b SRR7457560_control-trimmed.sam -o SRR7457560_control-trimmed.bam;
 ``` 
-## Sort the bam files
+### Sort the bam files
 ``` 
 samtools sort SRR7457551_24_hours-trimmed.bam -o SRR7457551_24_hours-trimmed.sorted.bam;
 samtools sort SRR7457552_24_hours-trimmed.bam -o SRR7457552_24_hours-trimmed.sorted.bam;
@@ -391,16 +377,13 @@ samtools sort SRR7457557_control-trimmed.bam -o SRR7457557_control-trimmed.sorte
 samtools sort SRR7457558_control-trimmed.bam -o SRR7457558_control-trimmed.sorted.bam;
 samtools sort SRR7457559_control-trimmed.bam -o SRR7457559_control-trimmed.sorted.bam;
 samtools sort SRR7457560_control-trimmed.bam -o SRR7457560_control-trimmed.sorted.bam;
-
 ``` 
-
 Sorting output:
 ``` 
 [jl19@spectre13 Data_QC]$ samtools sort SRR7457551_24_hours-trimmed.bam -o SRR7457551_24_hours-trimmed.sorted.bam;
 [bam_sort_core] merging from 11 files and 1 in-memory blocks...
 ``` 
-
-## Index sorted bam files
+### Index sorted bam files
 ``` 
 #Time for index each bam file: 20s
 samtools index SRR7457551_24_hours-trimmed.sorted.bam;
@@ -418,7 +401,7 @@ samtools index SRR7457558_control-trimmed.sorted.bam;
 samtools index SRR7457559_control-trimmed.sorted.bam;
 samtools index SRR7457560_control-trimmed.sorted.bam;
 ``` 
-## Index files are generated
+### Index files are generated
 
 ``` 
 SRR7457551_24_hours-trimmed.sorted.bam.bai;
@@ -434,7 +417,7 @@ All *.bam, *.sorted.bam and *.bai files can be copied from server.
 cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/bam_files/. ./
 ``` 
 
-## Check Stats for a BAM file
+### Check Stats for a BAM file
 ``` 
 [jl19@spectre13 Data_QC]$ samtools flagstat SRR7457551_24_hours-trimmed.bam
 33862078 + 0 in total (QC-passed reads + QC-failed reads)
@@ -454,12 +437,11 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trim
 0 + 0 with mate mapped to a different chr
 0 + 0 with mate mapped to a different chr (mapQ>=5)
 ``` 
-## Check the BAM files
+### Check the BAM files
 
 ```
 samtools view SRR7457551.bam  | head
 ``` 
-
 ``` 
 [jl19@spectre13 trimmed]$ samtools view SRR7457551_24_hours-trimmed.fastq.gz | head 
 SRR7457551.1	4	*	0	0	*	*	0	0	CTGGGGAGCTGCTGCCATCCCTTAGTAAGCTCAGGTCAGTGGGAGGCACCGGGCAGGCAGGGCGGCCGGCACCTT	AAAAAEEAEE6EEEAE/EEEA/EEA/EEEEEEEEE/AEEEA//E//E6A/AEAEEEEEEEAEEE/<EAEEEE<AE
@@ -474,7 +456,7 @@ SRR7457551.9	4	*	0	0	*	*	0	0	GTGCTCCCCTCTGGGGTCTTGGGTCTCCCAGTGGATTGACTGGTGGAACCC
 SRR7457551.10	4	*	0	0	*	*	0	0	GGACAGGCGGAAGCTGAGAGCACAGAAATGACCAGGCCCTACATAAAGAGGCTGTCCTTCACCCTCCTGGACTCC	AAAAAEEEEEEEEEEEEEEEE/EEEEEEEE/EAEEEEEEEEEEEE6EEEEEEEEEEAEEEEE6EEEEEE6<AE/A
 [jl19@spectre13 trimmed]$ 
 ``` 
-## View BAM files using IGV
+### View BAM files using IGV
 
 The Integrative Genomics Viewer (IGC) is a high-performance, easy-to-use, intereactive tool for the visaul exploration of genomic data.
 
@@ -490,7 +472,6 @@ Loading requirement: java/1.8
 #run igv
 igv
 ``` 
-
 Here are the examples of bam files
 
 ![igv SRR747551.bam SRR7457556155.bam screenshot 1](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv001.jpg)
@@ -499,6 +480,5 @@ Here are the examples of bam files
 ![igv SRR747551.bam SRR7457556155.bam screenshot 4](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/igv004.jpg)
                                                               
 [Go to Day1 Practical 3: Pseudoaligner and RNA-Seq Quantification Tool:kallisto](kallisto_alignment.md)
-
 
 ## [Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)

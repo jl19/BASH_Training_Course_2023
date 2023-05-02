@@ -164,7 +164,6 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   xlab(paste0("PC1: ",percentVar[1],"% variance")) +
   ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
   coord_fixed()
-
 ```
 ![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condition_PC1_PC2.png)
 

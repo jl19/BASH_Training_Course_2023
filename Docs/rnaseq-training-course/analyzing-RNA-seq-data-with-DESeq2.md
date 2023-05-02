@@ -11,19 +11,46 @@ install.packages("reshape2")
 library("DESeq2")
 library("ggplot2")
 library("reshape2")
+library("vsn")
 ```
+### set directory
+```
+dir <- "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583"
 
+setwd("/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/DE_Analysis/")
+
+```
+### Read sample information
+
+```
+samples <- read.csv("sample_metadata_12samples_stringtie.csv", header = TRUE)
+```
+### Sample run information
+```
+samples$Run
+
+#[1] "SRR7457557_control"  "SRR7457558_control"  "SRR7457560_control"  "SRR7457559_control" 
+#[5] "SRR7457553_2_hours"  "SRR7457554_2_hours"  "SRR7457555_2_hours"  "SRR7457556_2_hours" 
+#[9] "SRR7457561_24_hours" "SRR7457551_24_hours" "SRR7457552_24_hours" "SRR7457562_24_hours"
+
+```
+### Set the factor as 24h, 2h and Control replicates 4
+```
+samples$condition <- factor(c("Control","Control","Control","Control","2h","2h","2h","2h","24h","24h","24h","24h"))
+samples$condition
+#[1] [1] Control Control Control Control 2h      2h      2h      2h      24h     24h     24h     24h     
+#Levels: 24h 2h Control
+```
 ### Loading data from previous step tximport output
 
+Construct a DESeqDataSEt from the txi_stringtie object created in txtimport.R and sample information in samples.
+txi is matrices which contain the transcript-level abundance, estimated counts and transcript lengthes etc.
+
+DESeq2 require the dataset has replicates
 ```
-##Construct a DESeqDataSEt from the txi object created in txtimport.R and sample information in samples.
-#txi is matrices which contain the transcript-level abundance, estimated counts and transcript lengthes etc.
-
-
-dds_txi<- DESeqDataSetFromTximport(txi,
+dds_txi_stringtie <- DESeqDataSetFromTximport(txi_stringtie,
                               colData = samples,
                               design = ~ condition)
-#using counts and average transcript lengths from tximport
 ```
 ### Differential expression analysis
 
@@ -41,170 +68,158 @@ dds_txi <- DESeq(dds_txi)
 ### Result for Navie vs 24h
 
 ```
-# Results
-res <- results(dds_txi)
+res_stringtie <- results(dds_txi_stringtie)
 
-res
+res_stringtie
 
-# log2 fold change (MLE): condition Naive vs 24h 
-# Wald test p-value: condition Naive vs 24h 
+#########################
+#Result for Control vs 24h
+#########################
+
+# log2 fold change (MLE): condition Control vs 24h 
+# Wald test p-value: condition Control vs 24h 
 # DataFrame with 48321 rows and 6 columns
 # baseMean log2FoldChange     lfcSE      stat      pvalue        padj
 # <numeric>      <numeric> <numeric> <numeric>   <numeric>   <numeric>
-#   0610006L08Rik   0.00000             NA        NA        NA          NA          NA
-# 0610007P14Rik 447.24265      -1.555441  0.226567 -6.865263 6.63688e-12 1.99161e-10
-# 0610009B22Rik 211.76994      -0.203472  0.242080 -0.840518 4.00618e-01 5.94800e-01
-# 0610009E02Rik   1.15551       0.471663  4.453707  0.105904 9.15659e-01          NA
-# 0610009L18Rik  19.00117       0.634050  0.746600  0.849250 3.95742e-01 5.90287e-01
-# ...                 ...            ...       ...       ...         ...         ...
-# Zyg11a             0.00             NA        NA        NA          NA          NA
-# Zyg11b          1242.07       0.344672  0.135832   2.53748 1.11654e-02 4.09594e-02
-# Zyx             5438.37       0.897308  0.127010   7.06486 1.60778e-12 5.24942e-11
-# Zzef1           2635.28       0.178422  0.113657   1.56983 1.16455e-01 2.54259e-01
-# Zzz3            1326.27       0.559339  0.154486   3.62064 2.93873e-04 1.92334e-03
-```
-
-### Compare two conditions using names
-```
-#Note that we could have specified the coefficient or contrast we want to build a results table for, 
-#using either of the following equivalent commands:
-
-#check existing names of the object dds_txi
-
-resultsNames(dds_txi)
-#[1] "Intercept"              "condition_2h_vs_24h"    "condition_Naive_vs_24h"
-
-#Compare two conditions using name above
-
-res_Naive_vs_24h <- results(dds_txi, name="condition_Naive_vs_24h")
-
-#Compare two conditions using contrast
-#Contrast is the factor set in tximport.R which are Navie, 2h and 24h
-
-res_Naive_vs_2h <- results(dds_txi, contrast=c("condition","Naive","2h"))
-```
-### Result for Navie vs 2h
+#        baseMean log2FoldChange     lfcSE        stat      pvalue        padj
+#<numeric>      <numeric> <numeric>   <numeric>   <numeric>   <numeric>
+# 0610006L08Rik   0.00000             NA        NA          NA          NA          NA
+#0610007P14Rik 373.64780     -1.4565690  0.133412 -10.9178450 9.47165e-28 4.61882e-26
+#0610009B22Rik 186.75776     -0.0907768  0.120443  -0.7536938 4.51033e-01 6.14060e-01
+#0610009E02Rik   1.52217     -0.1616363  2.198465  -0.0735224 9.41390e-01          NA
+#0610009L18Rik  16.35806      0.8412978  0.370995   2.2676778 2.33489e-02 6.16440e-02
+#...                 ...            ...       ...         ...         ...         ...
+#Zyg11a             0.00             NA        NA          NA          NA          NA
+#Zyg11b          1084.92      0.2755864 0.0645755    4.267661 1.97533e-05 1.13754e-04
+#Zyx             4717.40      0.9214825 0.0926328    9.947691 2.58102e-23 9.76610e-22
+#Zzef1           2310.02      0.0700811 0.0785500    0.892184 3.72295e-01 5.38625e-01
+#Zzz3            1141.16      0.3587183 0.1220460    2.939205 3.29055e-03 1.14792e-02
 
 ```
-# log2 fold change (MLE): condition Naive vs 2h 
-# Wald test p-value: condition Naive vs 2h 
-# DataFrame with 48321 rows and 6 columns
-# baseMean log2FoldChange     lfcSE       stat    pvalue      padj
-# <numeric>      <numeric> <numeric>  <numeric> <numeric> <numeric>
-#   0610006L08Rik   0.00000             NA        NA         NA        NA        NA
-# 0610007P14Rik 447.24265       0.289074  0.233415   1.238454 0.2155478  0.503634
-# 0610009B22Rik 211.76994       0.568372  0.248935   2.283212 0.0224179  0.107668
-# 0610009E02Rik   1.15551      -3.993491  4.248810  -0.939908 0.3472647        NA
-# 0610009L18Rik  19.00117       0.416083  0.746494   0.557383 0.5772655  0.838870
-# ...                 ...            ...       ...        ...       ...       ...
-# Zyg11a             0.00             NA        NA         NA        NA        NA
-# Zyg11b          1242.07     -0.1872923  0.135213 -1.3851664  0.166002  0.431721
-# Zyx             5438.37     -0.0872193  0.126580 -0.6890428  0.490796  0.781206
-# Zzef1           2635.28     -0.0630209  0.113731 -0.5541236  0.579494  0.840554
-# Zzz3            1326.27      0.0119787  0.154244  0.0776606  0.938098  0.986018
+Note that we could have specified the coefficient or contrast we want to build a results table for, using either of the following equivalent commands:
+
+### Check existing names of the object dds_txi_stringtie
+```
+resultsNames(dds_txi_stringtie)
+
+#[1] "Intercept"              "condition_2h_vs_24h"    "condition_Control_vs_24h"
+```
+### Compare two conditions using name
+```
+res_control_vs_24h <- results(dds_txi_stringtie, name=c("condition_Control_vs_24h")
+res_control_vs_24h
+
+#log2 fold change (MLE): condition Control vs 24h 
+#Wald test p-value: condition Control vs 24h 
+#DataFrame with 48321 rows and 6 columns
+#baseMean log2FoldChange     lfcSE        stat      pvalue        padj
+#<numeric>      <numeric> <numeric>   <numeric>   <numeric>   <numeric>
+# 0610006L08Rik   0.00000             NA        NA          NA          NA          NA
+#0610007P14Rik 373.64780     -1.4565690  0.133412 -10.9178450 9.47165e-28 4.61882e-26
+#0610009B22Rik 186.75776     -0.0907768  0.120443  -0.7536938 4.51033e-01 6.14060e-01
+#0610009E02Rik   1.52217     -0.1616363  2.198465  -0.0735224 9.41390e-01          NA
+#0610009L18Rik  16.35806      0.8412978  0.370995   2.2676778 2.33489e-02 6.16440e-02
+#...                 ...            ...       ...         ...         ...         ...
+#Zyg11a             0.00             NA        NA          NA          NA          NA
+#Zyg11b          1084.92      0.2755864 0.0645755    4.267661 1.97533e-05 1.13754e-04
+```
+### Compare two conditions using contrast
+Contrast is the factor set in txiimport.R which are Control, 2h and 24h
 
 ```
-
-### Result for 24 vs 2h
-
+res_control_vs_2h <- results(dds_txi_stringtie, contrast=c("condition","Control","2h")
+res_24h_vs_2h <- results(dds_txi_stringtie, contrast = c("condition", "24h", "2h"))
+res_24h_vs_Control <- results(dds_txi_stringtie, contrast=c("condition","24h", "Control"))
+res_2h_vs_Control <- results(dds_txi_stringtie, contrast=c("condition","2h", "Control"))
 ```
-res_24h_vs_2h <- results(dds_txi, contrast = c("condition", "24h", "2h"))
-
-```
-
-### Result for 24 vs Naive
-
-```
-res_24h_vs_Naive <- results(dds_txi, contrast=c("condition","24h", "Naive"))
-
-```
-
-### Result for 2h vs Navie
-
-```
-res_2h_vs_Naive <- results(dds_txi, contrast=c("condition","2h", "Naive"))
-```
-
 
 ### Log fold change shrinkage for visualization and ranking
 
+
+Shrinkage of effect size (LFC estimates) is useful for visualization and ranking of genes. 
+To shrink the LFC, we pass the dds object to the function lfcShrink. Below we specify to use the apeglm method for effect size shrinkage (Zhu, Ibrahim, and Love 2018), which improves on the previous estimator.
+
+DESeq2 provides the dds object and the name or number of the coefficient we want to shrink, where the number refers to the order of the coefficient as it appears in resultsNames(dds_txi_stringtie)
+### List resultsNames
 ```
-#Shrinkage of effect size (LFC estimates) is useful for visualization and ranking of genes. 
-#To shrink the LFC, we pass the dds object to the function lfcShrink. Below we specify to use the 
-#apeglm method for effect size shrinkage (Zhu, Ibrahim, and Love 2018), which improves on the
-#previous estimator.
+resultsNames(dds_txi_stringtie)
+## [1] "Intercept"                     "condition_2h_vs_24h"    "condition_Control_vs_24h"
 
-#We provide the dds object and the name or number of the coefficient we want to shrink,
-#where the number refers to the order of the coefficient as it appears in resultsNames(dds_txi)
-```
+resControl_vs_24h_LFC <- lfcShrink(dds_txi_stringtie, coef="condition_Control_vs_24h", type="apeglm")
 
-### List Results Names
+#using 'apeglm' for LFC shrinkage. If used in published research, please cite:
+# Zhu, A., Ibrahim, J.G., Love, M.I. (2018) Heavy-tailed prior distributions for
+#sequence count data: removing the noise and preserving large differences.
+#Bioinformatics. https://doi.org/10.1093/bioinformatics/bty895
 
-```
-#using resultsNames to list the names of the estimated effects (coefficents) of the model
-resultsNames(dds_txi)
 
-## [1] "Intercept"                     "condition_2h_vs_24h"    "condition_Naive_vs_24h"
+resControl_vs_24h_LFC
 
-resNaive_vs_24h_LFC <- lfcShrink(dds_txi, coef="condition_Naive_vs_24h", type="apeglm")
-resNaive_vs_24h_LFC
-
-# log2 fold change (MAP): condition Naive vs 24h 
-# Wald test p-value: condition Naive vs 24h 
-# DataFrame with 48321 rows and 5 columns
+# log2 fold change (MAP): condition Control vs 24h 
+#Wald test p-value: condition Control vs 24h 
+#DataFrame with 48321 rows and 5 columns
 # baseMean log2FoldChange     lfcSE      pvalue        padj
 # <numeric>      <numeric> <numeric>   <numeric>   <numeric>
 #   0610006L08Rik   0.00000             NA        NA          NA          NA
-# 0610007P14Rik 447.24265     -1.4960322  0.230078 6.63688e-12 1.99161e-10
-# 0610009B22Rik 211.76994     -0.1492869  0.211503 4.00618e-01 5.94800e-01
-# 0610009E02Rik   1.15551     -0.0019808  0.389710 9.15659e-01          NA
-# 0610009L18Rik  19.00117      0.1430094  0.373807 3.95742e-01 5.90287e-01
+# 0610007P14Rik 373.64780    -1.43484405  0.134099 9.47165e-28 4.61882e-26
+# 0610009B22Rik 186.75776    -0.08307114  0.115533 4.51033e-01 6.14060e-01
+# 0610009E02Rik   1.52217    -0.00747285  0.387772 9.41390e-01          NA
+# 0610009L18Rik  16.35806     0.59583003  0.375758 2.33489e-02 6.16440e-02
 # ...                 ...            ...       ...         ...         ...
 # Zyg11a             0.00             NA        NA          NA          NA
-# Zyg11b          1242.07       0.314919  0.132775 1.11654e-02 4.09594e-02
-# Zyx             5438.37       0.868430  0.127829 1.60778e-12 5.24942e-11
-# Zzef1           2635.28       0.165588  0.110122 1.16455e-01 2.54259e-01
-# Zzz3            1326.27       0.516176  0.154057 2.93873e-04 1.92334e-03
-```
-
-### Ordering results using p-values and adjusted p-values  
+# Zyg11b          1084.92      0.2698079 0.0641510 1.97533e-05 1.13754e-04
+# Zyx             4717.40      0.9078606 0.0929471 2.58102e-23 9.76610e-22
+# Zzef1           2310.02      0.0687265 0.0771193 3.72295e-01 5.38625e-01
+# Zzz3            1141.16      0.3352972 0.1200833 3.29055e-03 1.14792e-02
 
 ```
-res_24h_vs_NaiveOrdered <- res_24h_vs_Naive[order(res_24h_vs_Naive$pvalue),]
 
+### Ordering results using p-values and adjusted p-values 
+```
+res_24h_vs_Control_Ordered <- res_24h_vs_Control[order(res_24h_vs_Control$pvalue),]
+res_24h_vs_Control_Ordered
 
-#summary of some basic tallies using the summary function
-
-# summary(res_24h_vs_NaiveOrdered)
-# out of 23499 with nonzero total read count
+# log2 fold change (MLE): condition 24h vs Control 
+# Wald test p-value: condition 24h vs Control 
+# DataFrame with 48321 rows and 6 columns
+# baseMean log2FoldChange     lfcSE      stat       pvalue         padj
+# <numeric>      <numeric> <numeric> <numeric>    <numeric>    <numeric>
+#   2810417H13Rik   1368.76        2.95878 0.0898318   32.9369 6.52038e-238 1.18919e-233
+# Pcna            4360.31        1.46259 0.0471930   30.9918 6.96217e-211 6.34880e-207
+# Rrm1            2486.12        2.17967 0.0737897   29.5390 9.10047e-192 5.53248e-188
+# Rrm2            2041.04        2.58360 0.0891632   28.9760 1.31903e-184 6.01413e-181
+# Nusap1           984.91        2.29597 0.0834374   27.5173 1.09074e-166 3.97860e-163
+# ...                 ...            ...       ...       ...          ...          ...
+# Zscan4e               0             NA        NA        NA           NA           NA
+# Zscan4f               0             NA        NA        NA           NA           NA
+# Zscan5b               0             NA        NA        NA           NA           NA
+```
+### Summary of some basic tallies using the summary function
+```
+summary(res_24h_vs_Control_Ordered)
+# out of 25261 with nonzero total read count
 # adjusted p-value < 0.1
-# LFC > 0 (up)       : 2661, 11%
-# LFC < 0 (down)     : 2286, 9.7%
-# outliers [1]       : 0, 0%
-# low counts [2]     : 9035, 38%
-# (mean count < 12)
+# LFC > 0 (up)       : 3873, 15%
+# LFC < 0 (down)     : 3771, 15%
+# outliers [1]       : 30, 0.12%
+# low counts [2]     : 6993, 28%
+# (mean count < 2)
 # [1] see 'cooksCutoff' argument of ?results
 # [2] see 'independentFiltering' argument of ?results
-
-
-#How many adjusted p-values were less than 0.1?
-
-sum(res_24h_vs_NaiveOrdered$padj < 0.1, na.rm=TRUE)
-
-
-## 4947
 ```
 
-### Exploring and exporting results 
+### How many adjusted p-values were less than 0.05?
+```
+sum(res_24h_vs_Control_Ordered$padj < 0.01, na.rm=TRUE)
+
+#[1]5128
+```
+## Data transformations and visualization      
+
+### MA-plot
+In DESeq2, the function plotMA shows the log2 fold changes attributable to a given variable over the mean of normalized counts for all the samples in the DESeqDataSet. Points will be colored red if the adjusted p value is less than 0.1. Points which fall out of the window are plotted as open triangles pointing either up or down.
 
 ```
-
-## MA-plot
-#In DESeq2, the function plotMA shows the log2 fold changes attributable to a given variable 
-#over the mean of normalized counts for all the samples in the DESeqDataSet. Points will be colored 
-#red if the adjusted p value is less than 0.1. Points which fall out of the window are plotted as 
-#open triangles pointing either up or down.
-
 plotMA(res_24h_vs_Naive, ylim=c(-2,2))
 ```
 ![plotMA](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)

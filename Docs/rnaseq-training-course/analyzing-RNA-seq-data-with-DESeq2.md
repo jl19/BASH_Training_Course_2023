@@ -317,6 +317,7 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= names= colnames(dds_
 dev.off()
 
 ```
+```
 ![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_sample_distribution_matrix.png)
 
 

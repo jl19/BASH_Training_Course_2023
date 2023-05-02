@@ -42,10 +42,10 @@ samples <- read.csv("sample_metadata_12samples_kallisto.csv", header = TRUE)
 ``` 
 samples$Run
 
-#[1] "SRR7457551_24_hours-trimmed" "SRR7457552_24_hours-trimmed" "SRR7457553_2_hours-trimmed" 
-#[4] "SRR7457554_2_hours-trimmed"  "SRR7457555_2_hours-trimmed"  "SRR7457556_2_hours-trimmed" 
-#[7] "SRR7457557_control-trimmed"  "SRR7457558_control-trimmed"  "SRR7457560_control-trimmed" 
-#[10] "SRR7457562_24_hours-trimmed" "SRR7457559_control-trimmed"  "SRR7457561_24_hours-trimmed"
+# [1] "SRR7457557_control-trimmed"  "SRR7457558_control-trimmed"  "SRR7457559_control-trimmed" 
+# [4] "SRR7457560_control-trimmed"  "SRR7457553_2_hours-trimmed"  "SRR7457554_2_hours-trimmed" 
+# [7] "SRR7457555_2_hours-trimmed"  "SRR7457556_2_hours-trimmed"  "SRR7457551_24_hours-trimmed"
+# [10] "SRR7457552_24_hours-trimmed" "SRR7457561_24_hours-trimmed" "SRR7457562_24_hours-trimmed"
 ``` 
 ### Set the path
 ``` 
@@ -66,11 +66,18 @@ list.files(file_path_kallisto)
 ``` 
 files_kallisto <- file.path(dir, "kallisto_output", samples$Run, "abundance.tsv")
 files_kallisto
-# [1] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583//kallisto_output/SRR7457551_24_hours-trimmed/abundance.tsv"
-# [2] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583//kallisto_output/SRR7457552_24_hours-trimmed/abundance.tsv"
-#....
-# [11] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457559_control-trimmed/abundance.tsv" 
-# [12] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457561_24_hours-trimmed/abundance.tsv"
+# [1] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457557_control-trimmed/abundance.tsv" 
+# [2] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457558_control-trimmed/abundance.tsv" 
+# [3] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457559_control-trimmed/abundance.tsv" 
+# [4] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457560_control-trimmed/abundance.tsv" 
+# [5] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457553_2_hours-trimmed/abundance.tsv" 
+# [6] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457554_2_hours-trimmed/abundance.tsv" 
+# [7] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457555_2_hours-trimmed/abundance.tsv" 
+# [8] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457556_2_hours-trimmed/abundance.tsv" 
+# [9] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457551_24_hours-trimmed/abundance.tsv"
+# [10] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457552_24_hours-trimmed/abundance.tsv"
+# [11] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457561_24_hours-trimmed/abundance.tsv"
+# [12] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457562_24_hours-trimmed/abundance.tsv"
 
 ``` 
 ### Check if the files exist
@@ -81,10 +88,13 @@ file.exists(files_kallisto)
 ``` 
 ### Assign sample names to files
 ``` 
-names(files_kallisto) <- c('SRR7457551_24_hours','SRR7457552_24_hours','SRR7457553_2_hours','SRR7457554_2_hours','SRR7457555_2_hours','SRR7457556_2_hours','SRR7457557_control','SRR7457558_control','SRR7457560_control','SRR7457562_24_hours','SRR7457559_control','SRR7457561_24_hours')
+names(files_kallisto) <- c('SRR7457557_control','SRR7457558_control','SRR7457559_control','SRR7457560_control','SRR7457553_2_hours','SRR7457554_2_hours','SRR7457555_2_hours','SRR7457556_2_hours','SRR7457551_24_hours','SRR7457552_24_hours','SRR7457561_24_hours','SRR7457562_24_hours')
 
+names(files_kallisto)
+# [1] "SRR7457557_control"  "SRR7457558_control"  "SRR7457559_control"  "SRR7457560_control"  "SRR7457553_2_hours" 
+# [6] "SRR7457554_2_hours"  "SRR7457555_2_hours"  "SRR7457556_2_hours"  "SRR7457551_24_hours" "SRR7457552_24_hours"
+# [11] "SRR7457561_24_hours" "SRR7457562_24_hours"``` 
 ``` 
-
 ### List the sample information
 ``` 
 samples

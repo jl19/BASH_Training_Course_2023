@@ -25,7 +25,7 @@ Read counting is an important setp in quantifying gene expression levels from RN
 
 >  Here we use StringTie as an example for quantification.
 
-> :boom: [Practical 4: Quantification using StringTie](practical-expression-quantification.md)
+> :boom: [Practical 4a: Quantification using StringTie](practical-expression-quantification.md)
 
 
 

@@ -1,4 +1,4 @@
-## Import Transcript-level Estimates
+# Import Transcript-level Estimates
 
 > - Imports transcript-level abundance, estimated counts and transcript lengths, and summarizes into matrices for use with downstream gene-level analysis packages. 
 > - Average transcript length, weighted by sample-specific transcript abundance estimates, is provided as a matrix which can be used as an offset for different expression of gene-level counts.
@@ -15,8 +15,9 @@ BiocManager::install("ballgown")
 BiocManager::install("rhdf5")
 BiocManager::install("tximport")
 BiocManager::install("haven")
-
-#Install required library
+``` 
+### Install required library
+``` 
 library(dplyr) # data wrangling
 library(ggplot2) # plotting
 library(DESeq2) # rna-seq
@@ -24,28 +25,34 @@ library(edgeR) # rna-seq
 library(tximport) # importing kalisto transcript counts to geneLevels
 library(readr) # Fast readr of files.
 library(rhdf5) # read/convert kalisto output files.  
+``` 
 
-
-#set working directory
+### Set working directory
+``` 
 dir <- "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583"
 
 setwd("/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/DE_Analysis/")
 
-
-#Read sample information
+``` 
+### Read sample information
+``` 
 samples <- read.csv("sample_metadata_12samples_kallisto.csv", header = TRUE)
-#sample run information
+``` 
+### Sample run information
+``` 
 samples$Run
 
 #[1] "SRR7457551_24_hours-trimmed" "SRR7457552_24_hours-trimmed" "SRR7457553_2_hours-trimmed" 
 #[4] "SRR7457554_2_hours-trimmed"  "SRR7457555_2_hours-trimmed"  "SRR7457556_2_hours-trimmed" 
 #[7] "SRR7457557_control-trimmed"  "SRR7457558_control-trimmed"  "SRR7457560_control-trimmed" 
 #[10] "SRR7457562_24_hours-trimmed" "SRR7457559_control-trimmed"  "SRR7457561_24_hours-trimmed"
-#set the path
-
+``` 
+### Set the path
+``` 
 file_path_kallisto <- file.path(dir,"kallisto_output", samples$Run)
-
-#list files in the path
+``` 
+### List files in the path
+``` 
 list.files(file_path_kallisto)
 
 #[1] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5" 
@@ -54,7 +61,9 @@ list.files(file_path_kallisto)
 #[19] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv" "run_info.json" "run_info.json"
 #[25] "run_info.json" "run_info.json" "run_info.json" "run_info.json" "run_info.json" "run_info.json"
 #[31] "run_info.json" "run_info.json" "run_info.json"
-
+``` 
+### Assign files from kallisto output
+``` 
 files_kallisto <- file.path(dir, "kallisto_output", samples$Run, "abundance.tsv")
 files_kallisto
 # [1] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583//kallisto_output/SRR7457551_24_hours-trimmed/abundance.tsv"
@@ -63,18 +72,21 @@ files_kallisto
 # [11] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457559_control-trimmed/abundance.tsv" 
 # [12] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457561_24_hours-trimmed/abundance.tsv"
 
-
-#Check if the files exist
+``` 
+### Check if the files exist
+``` 
 file.exists(files_kallisto)
 
 #[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-
-#Assign sample names to files
+``` 
+### Assign sample names to files
+``` 
 names(files_kallisto) <- c('SRR7457551_24_hours','SRR7457552_24_hours','SRR7457553_2_hours','SRR7457554_2_hours','SRR7457555_2_hours','SRR7457556_2_hours','SRR7457557_control','SRR7457558_control','SRR7457560_control','SRR7457562_24_hours','SRR7457559_control','SRR7457561_24_hours')
 
+``` 
 
-
-#List the sample information
+### List the sample information
+``` 
 samples
 
 #          Run      Age Assay.Type AvgSpotLen      Bases  BioProject    BioSample
@@ -90,9 +102,9 @@ samples
 # 10 SRR7457562_24_hours-trimmed 14 weeks    RNA-Seq         75 1730344657 PRJNA450151 SAMN08949701
 # 11  SRR7457559_control-trimmed 14 weeks    RNA-Seq         75 1703298074 PRJNA450151 SAMN08949690
 # 12 SRR7457561_24_hours-trimmed 14 weeks    RNA-Seq         75 1786917960 PRJNA450151 SAMN08949700
-     
-#List the run names
-
+```      
+### List the run names
+``` 
 samples$Run
 
 #[1] "SRR7457551_24_hours-trimmed" "SRR7457552_24_hours-trimmed" "SRR7457553_2_hours-trimmed" 
@@ -100,22 +112,19 @@ samples$Run
 #[7] "SRR7457557_control-trimmed"  "SRR7457558_control-trimmed"  "SRR7457560_control-trimmed" 
 #[10] "SRR7457562_24_hours-trimmed" "SRR7457559_control-trimmed"  "SRR7457561_24_hours-trimmed"
 
+``` 
+## Creating tx2gene dataframe
 
+Transcripts need to be associated with gene IDs for gene-level summarization. If that information is present in the files, we can skip this step. For Salmon, Sailfish, and kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
 
-
-#Transcripts need to be associated with gene IDs for gene-level summarization. If that information is present in the files, we can skip this step. For Salmon, Sailfish, and kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
-
-#Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
+Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
   
+For kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
 
-#####################################################################################################################################
-#For kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
+Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
 
-#Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
-#####################################################################################################################################################
-
-#Load TxDb annotation package
-
+### Load TxDb annotation package
+``` 
 BiocManager::install("TxDb.Mmusculus.UCSC.mm10.knownGene", force = TRUE)
 #BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")
 
@@ -246,21 +255,15 @@ countData_kallisto
 # 100012           0.000000e+00        0.000000e+00       0.000000e+00       0.000000e+00
 # 100017           1.495003e+03        1.263000e+03       1.720005e+03       1.088000e+03
 # 100019           2.076546e+03        2.019474e+03       1.960450e+03       1.199829e+03
-
-#Write the counts to a file
+``` 
+### Write the counts to a file
+``` 
 write.csv(countData_kallisto,file="countData_kallisto.csv")
 ``` 
-### Import transcript-level estimates from Stringtie output
+## Import transcript-level estimates from Stringtie output
+
+Imports transcript-level abundance, estimated counts and transcript lengths, and summarizes into matrices for use with downstream gene-level analysis packages. Average transcript length, weighted by sample-specific transcript abundance estimates, is provided as a matrix which can be used as an offset for different expression of gene-level counts.
 ``` 
-#################################
-##Import from StringTie Output##
-#################################
-
-#Imports transcript-level abundance, estimated counts and transcript lengths, and 
-#summarizes into matrices for use with downstream gene-level analysis packages. 
-#Average transcript length, weighted by sample-specific transcript abundance estimates, 
-#is provided as a matrix which can be used as an offset for different expression of gene-level counts.
-
 if (!requireNamespace("BiocManager", quietly=TaRUE))
 install.packages("BiocManager")
 BiocManager::install("ballgown")
@@ -268,29 +271,31 @@ BiocManager::install("tximport")
 BiocManager::install("haven")
 
 library("tximport")
-
-#set directory
-
+``` 
+### Set directory
+``` 
 dir <- "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583"
 
 setwd("/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/DE_Analysis/")
-
-# Read sample information
+``` 
+### Read sample information
+``` 
 samples <- read.csv("sample_metadata_12samples_stringtie.csv", header = TRUE)
-
-#sample run information
-
+``` 
+### List sample run information
+``` 
 samples$Run
 
 #[1] "SRR7457551_24_hours" "SRR7457552_24_hours" "SRR7457553_2_hours"  "SRR7457554_2_hours" 
 #[5] "SRR7457555_2_hours"  "SRR7457556_2_hours"  "SRR7457557_control"  "SRR7457558_control" 
 #[9] "SRR7457560_control"  "SRR7457562_24_hours" "SRR7457559_control"  "SRR7457561_24_hours"
-
-#set the path
-
+``` 
+### Set the path
+``` 
 file_path_stringtie <- file.path(dir,"stringtie_output", samples$Run)
-
-#list files in the path
+``` 
+### List files in the path
+``` 
 list.files(file_path_stringtie)
 
 #[1] "e_data.ctab"                                 "e_data.ctab"                                
@@ -300,33 +305,36 @@ list.files(file_path_stringtie)
 #[9] "e_data.ctab"                                 "e_data.ctab"                                
 #[11] "e_data.ctab"                                 "e_data.ctab"                                
 #[13] "e2t.ctab"                                    "e2t.ctab"       
+``` 
 
-
+### Assign the files from the stringtie_output
+``` 
 files_stringtie <- file.path(dir, "stringtie_output", samples$Run, "t_data.ctab")
 files_stringtie
 
 #[1] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/stringtie_output/SRR7457551_24_hours/t_data.ctab"
 #[2] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/stringtie_output/SRR7457552_24_hours/t_data.ctab"
-
-#Check if the files exist
+``` 
+### Check if the files exist
+``` 
 file.exists(files_stringtie)
 
 #[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-
-#Assign sample names to files
-#Assign sample names to files
+``` 
+### Assign sample names to files
+``` 
 names(files_stringtie) <- c('SRR7457551_24_hours','SRR7457552_24_hours','SRR7457553_2_hours','SRR7457554_2_hours','SRR7457555_2_hours','SRR7457556_2_hours','SRR7457557_control','SRR7457558_control','SRR7457560_control','SRR7457562_24_hours','SRR7457559_control','SRR7457561_24_hours')
-
-#Read t_data.ctab as tmp
-
+``` 
+### Read t_data.ctab as tmp
+``` 
 tmp <- read.table("/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/stringtie_output/SRR7457556_2_hours/t_data.ctab",header = TRUE)
-#list head of tmp
-
+``` 
+### List head of tmp
 
 head(tmp)
 
-#Extract the two columns (t_name and gene_id) from data.frame contain transcripts ID and gene name information
-
+### Extract the two columns (t_name and gene_id) from data.frame contain transcripts ID and gene name information
+``` 
 #Assign tx2gene 
 tx2gene <- tmp[, c("t_name", "gene_name")]
 
@@ -341,11 +349,13 @@ tx2gene
 # 6    ENSMUST00000192857.1       Gm18956
 # 7    ENSMUST00000195335.1       Gm37180
 # 8    ENSMUST00000192336.1       Gm37363
+``` 
+### Import transcript-level abundance and counts for transcript
 
-#Import transcript-level abundance and counts for transcript
-#Different type of data generated by different software can be imported ("none", "salmon", "sailfish", "alevin", "kallisto", "rsem", "stringtie")
+Different type of data generated by different software can be imported ("none", "salmon", "sailfish", "alevin", "kallisto", "rsem", "stringtie")
 
-#Here is the import type is stringtie
+Here is the import type is stringtie
+``` 
 txi_stringtie <- tximport(files_stringtie, type = "stringtie",importer = NULL, tx2gene = tx2gene)
 
 # reading in files with read_tsv
@@ -354,8 +364,9 @@ txi_stringtie <- tximport(files_stringtie, type = "stringtie",importer = NULL, t
 # summarizing counts
 # summarizing length
 
-
-#Summary of the txi_stringtie
+``` 
+### Summary of the txi_stringtie
+``` 
 summary(txi_stringtie)
 
 # Length Class  Mode     
@@ -363,8 +374,9 @@ summary(txi_stringtie)
 # counts              579852 -none- numeric  
 # length              579852 -none- numeric  
 # countsFromAbundance      1 -none- character
-
-#Take the counts data from the output from tximport
+``` 
+### Take the counts data from the output from tximport
+``` 
 countData_stringtie <- txi_stringtie$counts
 countData_stringtie
 
@@ -377,8 +389,9 @@ countData_stringtie
 #0610009O20Rik           7.348667e+02        6.308400e+02       2.011602e+02       1.842728e+02
 #0610010F05Rik           9.282868e+02        9.261133e+02       5.951334e+02       5.092534e+02
 #0610010K14Rik           1.881463e+02        1.352396e+02       5.598808e+01       2.391762e+02
-
-#Write the counts to a file
+``` 
+### Write the counts to a file
+``` 
 write.csv(countData_stringtie,file="countData_stringtie.csv")
 
 ``` 

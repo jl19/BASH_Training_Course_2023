@@ -274,7 +274,7 @@ ggplot(df_Pcna, aes(x = condition, y = count, color = condition)) +
   ggtitle("Proliferating cell nuclear antigen (PCNA)") +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-![24h_2h_Navie](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_Counts_24h_2h_Naive.jpeg)
+![countPlot for PCNA](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_plotCounts_PCNA.png)
 
 ### Exporting results to CSV files
 ```
@@ -309,7 +309,6 @@ boxplot(log10(assays(dds_txi_stringtie)[["cooks"]]), names= colnames(dds_txi_str
 ```
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_BoxPlot_12Samples.png)
 
-
 ```
 ![PCA_PC1_2](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_PCA_vsd_condtion_PC1_PC2.png)
 
@@ -322,7 +321,7 @@ dev.off()
 
 ```
 
-![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_distance_matrix.jpeg)
+![Samples_Distance_Matrix](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_sample_distribution_matrix.png)
 
 
 ```

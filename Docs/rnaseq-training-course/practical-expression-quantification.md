@@ -201,10 +201,10 @@ ENSMUST00000180001.1,ENSMUSG00000095656.1
 
 Import transcript-level estimates of StringTie and Kallisto output for DE analysis
 
-[Go to Day2 Practical 5: Tximport from StringTie and Kallisto Output](txtimport_StringTie_Kallisto.md)
+[Go to Day2 Practical 4b: Tximport from StringTie and Kallisto Output](txtimport_StringTie_Kallisto.md)
 
 ### Analyzing RNA-Seq using DESeq2
 
-[Go to Day2 Practical 6: Analyzing RNA-Seq using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
+[Go to Day2 Practical 5: Analyzing RNA-Seq using DESeq2](analyzing-RNA-seq-data-with-DESeq2.md)
 
 ## [Go to Day2 Practicals](rna-seq-wes-data-analysis-day2.md)

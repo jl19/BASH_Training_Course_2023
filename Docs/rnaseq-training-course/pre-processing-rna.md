@@ -315,7 +315,6 @@ skewer -m any -q 25 -Q 20 -n -z  SRR7457551_RNA-Seq_of_mus_musculus_adult_male_a
 skewer -m any -q 25 -Q 20 -n -z  SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457552_24_hours;
 skewer -m any -q 25 -Q 20 -n -z  SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457561_24_hours;
 skewer -m any -q 25 -Q 20 -n -z  SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457562_24_hours;
-
 ```
 All trimmed files can be copied from server.
 
@@ -323,7 +322,7 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trim
 
 > - Run FastQc on command line after trimming
 
-> :bulb: [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours-trimmed.fastqc.html) will be generated in the folder after the run is completed
+>  [SRR7457551_24_hours.fastq-trimmed_fastqc.html](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/SRR7457551_24_hours-trimmed.fastqc.html) will be generated in the folder after the run is completed
 -------------------
 
 ### Step 4. Understanding the FastQC Report

@@ -4,12 +4,11 @@
 > - Average transcript length, weighted by sample-specific transcript abundance estimates, is provided as a matrix which can be used as an offset for different expression of gene-level counts.
 
 
-``` 
-#################################
-##Import from Kallisto Output##
-#################################
+## Import from Kallisto Output
 
-#Install required R packages
+### Install required R packages
+
+``` 
 if (!requireNamespace("BiocManager", quietly=TRUE))
 install.packages("BiocManager")
 BiocManager::install("ballgown")

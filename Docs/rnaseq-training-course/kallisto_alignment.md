@@ -16,7 +16,7 @@ cd /scratch/bbash/jl19/Data_QC/mm10/
 
 #Command wget stands for web get, use it to download cDNA ref from a ftp server
 
-wget ftp://ftp.ensembl.org/pub/release-101/fasta/mus_musculus/cdna/Mus_musculus.GRCm39.cdna.all.fa.gz
+wget ftp://ftp.ensembl.org/pub/release-101/fasta/mus_musculus/cdna/Mus_musculus.GRCm38.cdna.all.fa.gz
 ```
 ### Load the kallisto module
 ```

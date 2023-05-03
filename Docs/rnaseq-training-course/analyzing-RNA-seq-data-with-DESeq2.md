@@ -1,6 +1,6 @@
 # Analyzing RNA-seq data with DESeq2 using R
 
-## Load R mould
+## Load R module
 ```
 module load R/4.2.1
 ```

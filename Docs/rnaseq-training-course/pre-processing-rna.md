@@ -181,7 +181,7 @@ module load skewer/0.2.2
 #list skewer USAGE
 skewer --help
 ```
-> - Output:
+#### Output:
 
 ```
 Skewer (A fast and accurate adapter trimmer for paired-end reads)
@@ -239,7 +239,8 @@ EXAMPLES:
           skewer -m ap --cut 0,6 --qiime -x forward-primers.fa -y reverse-primers.fa mix-pair1.fastq mix-pair2.fastq
 ```
 
-> - Perform Trimming
+#### Perform Trimming
+
 
 ```
 skewer -m any -q 25 -Q 20 -n -z SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz -o trimmed/SRR7457551_24_hours

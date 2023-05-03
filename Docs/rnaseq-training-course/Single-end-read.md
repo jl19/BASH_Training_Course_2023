@@ -1,9 +1,9 @@
 # DNA Library Preparation
 
+
 A DNA library is a collection of DNA fragments that are specially prepared for sequencing. We are not going to get into the gory details of how libraries are prepared. All you need to know is that the end result of library prep is a bunch of DNA fragments that are made up of DNA from the organism you’re working with flanked by artificial DNA, which is added by you during library prep, which allows your DNA to stick to a solid surface and be sequenced on a sequencing machine. These artificial pieces of DNA are called adapters. 
 
 ## Single-End Read
-
 
 ![Single-End Read](https://jl19.github.io/BASH_Training_Course_2023/Docs/assets/Single-End-Read.jpg)
 

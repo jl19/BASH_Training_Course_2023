@@ -1,5 +1,16 @@
 # Analyzing RNA-seq data with DESeq2 using R
 
+## Load R mould
+```
+module load R/4.2.1
+```
+```
+Loading R/4.2.1
+  Loading requirement: gcc/9.3
+```
+```
+[jl19@spectre13 ~]$ rstudio
+```
 ## Data Input and Analysis in R
 
 ### Install required R packages

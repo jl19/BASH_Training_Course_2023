@@ -166,6 +166,7 @@ Analysis complete for SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_mac
 #output file: SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant_fastqc.zip
 ```
 Time taken around 2.5 mins
+
 > - FastQC has a really well documented [manual page](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) with detailed explanations about every plot in the report
 
 ### Step 3. Trim the reads

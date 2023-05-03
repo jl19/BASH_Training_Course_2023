@@ -26,7 +26,7 @@ cd /scratch/bbash/jl19/Data_QC/mm10/
 
 ### Copy the genome.fa in the mm10 directory
 ``` 
-cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/*.* ./
 ``` 
 ### Creating index
 ``` 
@@ -265,7 +265,7 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz 
 
 Estimate run time is 20 mins for each run.  Here we only need to run one file.  The rest of the 11 sam files can be copied from the following location.
 ``` 
-cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/sam/. ./
+cp -r  /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/raw_data/trimmed/sam_files/. ./
 ``` 
 ## Samtools
 

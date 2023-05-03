@@ -39,6 +39,30 @@ setwd("/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/DE_Analys
 samples <- read.csv("sample_metadata_12samples_kallisto.csv", header = TRUE)
 ``` 
 ### Sample run information
+
+``` 
+samples
+                           Run      Age Assay.Type AvgSpotLen
+1   SRR7457557_control-trimmed 14 weeks    RNA-Seq         75
+2   SRR7457558_control-trimmed 14 weeks    RNA-Seq         75
+3   SRR7457559_control-trimmed 14 weeks    RNA-Seq         75
+4   SRR7457560_control-trimmed 14 weeks    RNA-Seq         75
+5   SRR7457553_2_hours-trimmed 14 weeks    RNA-Seq         75
+6   SRR7457554_2_hours-trimmed 14 weeks    RNA-Seq         75
+7   SRR7457555_2_hours-trimmed 14 weeks    RNA-Seq         75
+8   SRR7457556_2_hours-trimmed 14 weeks    RNA-Seq         75
+9  SRR7457551_24_hours-trimmed 14 weeks    RNA-Seq         75
+10 SRR7457552_24_hours-trimmed 14 weeks    RNA-Seq         75
+11 SRR7457561_24_hours-trimmed 14 weeks    RNA-Seq         75
+12 SRR7457562_24_hours-trimmed 14 weeks    RNA-Seq         75
+        Bases  BioProject    BioSample           BioSampleModel
+1  1441343365 PRJNA450151 SAMN08949692 Model organism or animal
+2  1178449406 PRJNA450151 SAMN08949693 Model organism or animal
+3  1703298074 PRJNA450151 SAMN08949690 Model organism or animal
+4  1511125335 PRJNA450151 SAMN08949691 Model organism or animal
+5  1705376082 PRJNA450151 SAMN08949696 Model organism or animal
+``` 
+To access one variable in a dataset, use the dollar sign “$”. For example, $Run returns the Run variable (the Run column).
 ``` 
 samples$Run
 
@@ -50,17 +74,34 @@ samples$Run
 ### Set the path
 ``` 
 file_path_kallisto <- file.path(dir,"kallisto_output", samples$Run)
+file_path_kallisto 
+
+#[1] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457557_control-trimmed" 
+# [2] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457558_control-trimmed" 
+# [3] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457559_control-trimmed" 
+# [4] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457560_control-trimmed" 
+# [5] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457553_2_hours-trimmed" 
+# [6] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457554_2_hours-trimmed" 
+# [7] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457555_2_hours-trimmed" 
+# [8] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457556_2_hours-trimmed" 
+# [9] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457551_24_hours-trimmed"
+#[10] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457552_24_hours-trimmed"
+#[11] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457561_24_hours-trimmed"
+#[12] "/data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/SRR7457562_24_hours-trimmed"
 ``` 
 ### List files in the path
 ``` 
 list.files(file_path_kallisto)
 
-#[1] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5" 
-#[7] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.tsv"
-#[13] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv"
-#[19] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv" "run_info.json" "run_info.json"
-#[25] "run_info.json" "run_info.json" "run_info.json" "run_info.json" "run_info.json" "run_info.json"
-#[31] "run_info.json" "run_info.json" "run_info.json"
+#[1] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5" 
+#[5] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5" 
+#[9] "abundance.h5"  "abundance.h5"  "abundance.h5"  "abundance.h5" 
+#[13] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv"
+#[17] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv"
+#[21] "abundance.tsv" "abundance.tsv" "abundance.tsv" "abundance.tsv"
+#[25] "run_info.json" "run_info.json" "run_info.json" "run_info.json"
+#[29] "run_info.json" "run_info.json" "run_info.json" "run_info.json"
+#[33] "run_info.json" "run_info.json" "run_info.json" "run_info.json"
 ``` 
 ### Assign files from kallisto output
 ``` 
@@ -93,7 +134,7 @@ names(files_kallisto) <- c('SRR7457557_control','SRR7457558_control','SRR7457559
 names(files_kallisto)
 # [1] "SRR7457557_control"  "SRR7457558_control"  "SRR7457559_control"  "SRR7457560_control"  "SRR7457553_2_hours" 
 # [6] "SRR7457554_2_hours"  "SRR7457555_2_hours"  "SRR7457556_2_hours"  "SRR7457551_24_hours" "SRR7457552_24_hours"
-# [11] "SRR7457561_24_hours" "SRR7457562_24_hours"``` 
+# [11] "SRR7457561_24_hours" "SRR7457562_24_hours"
 ``` 
 ### List the sample information
 ``` 
@@ -137,8 +178,18 @@ Creating this tx2gene data.frame can be accomplished from a TxDb object and the 
 ``` 
 BiocManager::install("TxDb.Mmusculus.UCSC.mm10.knownGene", force = TRUE)
 #BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")
+#It is R interface to the databases
 
-library(TxDb.Mmusculus.UCSC.mm10.knownGene)
+##load thel ibrary
+library(TxDb.Mmusculus.UCSC.mm10.knownGene) 
+
+##list the contents that areloaded intomemory 
+ls('package:TxDb.Mmusculus.UCSC.mm10.knownGene') 
+
+##show the db object that is loaded by calling it's name 
+TxDb.Mmusculus.UCSC.mm10.knownGene
+
+##assign the db object to txdb
 txdb <- TxDb.Mmusculus.UCSC.mm10.knownGene
 
 txdb
@@ -164,6 +215,19 @@ txdb
 # RSQLite version at creation time: 2.1.2
 # DBSCHEMAVERSION: 1.2
 
+Count the number of genes and transcripts
+
+``` 
+genelen <- length(genes(TxDb.Mmusculus.UCSC.mm10.knownGene))
+
+#66 genes were dropped because they have exons located on both strands of the
+#same reference sequence or on more than one reference sequence, so cannot be
+#represented by a single genomic range.
+#Use 'single.strand.genes.only=FALSE' to get all the genes in a GRangesList
+#object, or use suppressMessages() to suppress this message.
+#[1] 24528
+
+``` 
 
 columns(txdb)
 # [1] "CDSCHROM"   "CDSEND"     "CDSID"      "CDSNAME"    "CDSPHASE"   "CDSSTART"   "CDSSTRAND"  "EXONCHROM"  "EXONEND"    "EXONID"     "EXONNAME"  
@@ -173,6 +237,7 @@ keytypes(txdb)
 
 ## [1] "CDSID"    "CDSNAME"  "EXONID"   "EXONNAME" "GENEID"   "TXID"     "TXNAME"  
 
+# using ‘exonsBy’ or ‘cdsBy’ with ‘by = "tx"’, the returned exons or CDS are ordered by ascending rank for each transcript,
 
 mm10_transcripts <- exonsBy(txdb, by="tx", use.names=TRUE) 
 mm10_transcripts 

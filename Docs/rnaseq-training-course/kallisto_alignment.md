@@ -59,6 +59,7 @@ mkdir kallisto_output
 cd kallisto_output
 ```
 ```
+# Replace /bbash/jl19/ with your own directory name
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457551_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/trimmed/SRR7457551_24_hours-trimmed.fastq.gz;
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457552_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/trimmed/SRR7457552_24_hours-trimmed.fastq.gz;
 kallisto quant -i /scratch/bbash/jl19/Data_QC/mm10/mm_10_genome.idx -o /scratch/bbash/jl19/Data_QC/kallisto_output/SRR7457561_24_hours-trimmed -b 100 --single -l 100 -s 20  /scratch/bbash/jl19/Data_QC/trimmed/SRR7457561_24_hours-trimmed.fastq.gz;

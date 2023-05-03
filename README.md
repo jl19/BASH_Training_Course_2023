@@ -6,7 +6,7 @@ The mission of Bioinformatics Analysis Support Hub (BASH) is to support the impl
 ## 2022-2023 Training Courses
 
 
-
+### [Introduction to Linux](Docs/introduction-to-linux/introduction-to-linux.md
 ### [RNA-Seq Data Analysis](Docs/rnaseq-training-course/rna-seq-course-schedule.md)
 
 

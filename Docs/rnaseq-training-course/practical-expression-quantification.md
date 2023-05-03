@@ -159,9 +159,6 @@ ENSMUST00000032272.12,23612,18864,19833,15290,19824,23624,15909,13396,19213,1887
 ...
 ```
 
-https://nasqar.abudhabi.nyu.edu/deseq2shiny/
-
-
 ### Extract Transcripts and Gene Information
 
 The information can be found on public avalable databases: e.g. ensembl database.  Extract the two columns transcripts ID and gene name information.  

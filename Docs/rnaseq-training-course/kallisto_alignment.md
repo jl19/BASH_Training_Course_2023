@@ -120,6 +120,6 @@ ENSMUST00000219277.2    5052    4953         40.1902 0.514569
 
 All the output files can be copied from:
 ```
-cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/. ./
+cp -r /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/kallisto_output/. ./
 ```
 ## [Back to Day 1 Practicals](rna-seq-wes-data-analysis-day1.md/#day-1-practicals)

@@ -4,10 +4,12 @@
 ```
 module load R/4.2.1
 ```
+Output:
 ```
 Loading R/4.2.1
   Loading requirement: gcc/9.3
 ```
+### Rund Rstudio
 ```
 [jl19@spectre13 ~]$ rstudio
 ```

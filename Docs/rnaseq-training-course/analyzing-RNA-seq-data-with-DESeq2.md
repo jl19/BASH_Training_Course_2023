@@ -237,7 +237,7 @@ DESeq2::(res_24h_vs_Control, ylim=c(-2,2))
 
 It is more useful visualize the MA-plot for the shrunken log2 fold changes, which remove the noise associated with log2 fold changes from low count genes without requiring arbitrary filtering thresholds.
 ```
-DESeq2::plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
+DESeq2::plotMA(resControl_vs_24h_LFC, ylim=c(-2,2))
 ```
 
 ![MA_plot_LFC](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)

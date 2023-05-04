@@ -63,7 +63,7 @@ gunzip mm10/gencode.vM10.annotation.gff3.gz
 
 module load stringtie/2.1.1
 #24 hours
-stringtie SRR7457551_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457551_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457552_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457561_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
 stringtie SRR7457562_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3.gz -e -o stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf -A SRR7457562_24_hours-trimmed_gene_abund.tab;

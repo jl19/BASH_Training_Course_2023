@@ -9,7 +9,7 @@ Output:
 Loading R/4.2.1
   Loading requirement: gcc/9.3
 ```
-### Rund Rstudio
+### Run Rstudio
 ```
 [jl19@spectre13 ~]$ rstudio
 ```

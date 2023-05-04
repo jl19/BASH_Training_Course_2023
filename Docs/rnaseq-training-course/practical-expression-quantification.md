@@ -119,7 +119,7 @@ SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
 
 ### Using Python script to process sample list to combine information from all samples
 ```
-cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.pye  ./stringtie_output
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.py3  ./stringtie_output
 
 cd stringtie_output
 ```

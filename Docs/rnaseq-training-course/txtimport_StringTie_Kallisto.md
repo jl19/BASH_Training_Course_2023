@@ -168,11 +168,7 @@ samples$Run
 
 Transcripts need to be associated with gene IDs for gene-level summarization. If that information is present in the files, we can skip this step. For Salmon, Sailfish, and kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
 
-Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
-  
-For kallisto the files only provide the transcript ID. We first make a data.frame called tx2gene with two columns: 1) transcript ID and 2) gene ID. The column names do not matter but this column order must be used. The transcript ID must be the same one used in the abundance files.
-
-Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
+For kallisto the files only provide the transcript ID. Creating this tx2gene data.frame can be accomplished from a TxDb object and the select function from the AnnotationDbi package. The following code could be used to construct such a table:
 
 ### Load TxDb annotation package
 ``` 

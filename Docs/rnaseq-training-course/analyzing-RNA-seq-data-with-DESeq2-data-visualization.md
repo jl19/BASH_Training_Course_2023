@@ -65,7 +65,7 @@ SRR7457561_24_hours SRR7457562_24_hours    14 weeks     RNA-Seq         75 17303
 ### Just select condition and tissue to from the dds_txi_stringtie as data.frame
 
 ```
-df <- as.data.frame(colData(dds_txi_stringtie)[,c("condition","TISSUE")])
+df_stringtie <- as.data.frame(colData(dds_txi_stringtie)[,c("condition","TISSUE")])
 
 # condition TISSUE
 # SRR7457557_control    Control   Lung

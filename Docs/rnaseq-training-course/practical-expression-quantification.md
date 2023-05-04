@@ -124,7 +124,7 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.py3  .
 cd stringtie_output
 ```
 ```
-python prepDE.py3 sample_list.txt
+python prepDE.py3 Sample_list.txt
 ```
 
 Two files are generated after running the script:

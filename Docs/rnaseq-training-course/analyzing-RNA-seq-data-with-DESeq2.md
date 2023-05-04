@@ -22,7 +22,10 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("DESeq2")
 BiocManager::install("ggplot2")
-install.packages("reshape2")
+BiocManager::install("reshape2")
+BiocManager::install("apeglm")
+
+
 library("DESeq2")
 library("ggplot2")
 library("reshape2")

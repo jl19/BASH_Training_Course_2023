@@ -123,7 +123,7 @@ resultsNames(dds_txi_stringtie)
 ```
 ### Compare two conditions using name
 ```
-res_control_vs_24h <- results(dds_txi_stringtie, name=c("condition_Control_vs_24h")
+res_control_vs_24h <- results(dds_txi_stringtie, name=c("condition_Control_vs_24h"))
 res_control_vs_24h
 
 #log2 fold change (MLE): condition Control vs 24h 

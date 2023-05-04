@@ -6,6 +6,19 @@
 
 ## Import from Kallisto Output
 
+## Load R module
+```
+module load R/4.2.1
+```
+Output:
+```
+Loading R/4.2.1
+  Loading requirement: gcc/9.3
+```
+### Run Rstudio
+```
+[jl19@spectre13 ~]$ rstudio
+```
 ### Install required R packages
 
 ``` 

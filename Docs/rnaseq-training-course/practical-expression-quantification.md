@@ -174,7 +174,7 @@ grep '>' |
 awk '{FS= " "}BEGIN{ print "TXNAME,GENEID"};{print substr($1,2) "," substr($4,6)};' > tx2gene.mm.GRCm38.cdna.csv 
 ```
 ```
-cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10 ./
+cp -r /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10 ./
 ```
 ```
 sh extract_transcriptname_genename.sh

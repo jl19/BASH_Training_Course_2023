@@ -230,14 +230,14 @@ sum(res_24h_vs_Control_Ordered$padj < 0.01, na.rm=TRUE)
 In DESeq2, the function plotMA shows the log2 fold changes attributable to a given variable over the mean of normalized counts for all the samples in the DESeqDataSet. Points will be colored red if the adjusted p value is less than 0.1. Points which fall out of the window are plotted as open triangles pointing either up or down.
 
 ```
-plotMA(res_24h_vs_Control, ylim=c(-2,2))
+DESeq2::(res_24h_vs_Control, ylim=c(-2,2))
 ```
 ![plotMA](https://jl19.github.io/BASH_Training_Course_2023/Docs/R_Scripts/R_Plots/Rplot_MA_Plot_res_24h_vs_Naive.jpeg)
 
 
 It is more useful visualize the MA-plot for the shrunken log2 fold changes, which remove the noise associated with log2 fold changes from low count genes without requiring arbitrary filtering thresholds.
 ```
-plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
+DESeq2::plotMA(resNaive_vs_24h_LFC, ylim=c(-2,2))
 ```
 
 ![MA_plot_LFC](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/R_Plots/Rplot_MA_plot_resNaive_vs_24h_LFC.jpeg)
@@ -343,10 +343,10 @@ resLA <- results(dds_txi, lfcThreshold=.5, altHypothesis="lessAbs")
 resG <- results(dds_txi, lfcThreshold=.5, altHypothesis="greater")
 resL <- results(dds_txi, lfcThreshold=.5, altHypothesis="less")
 drawLines <- function() abline(h=c(-.5,.5),col="dodgerblue",lwd=2)
-plotMA(resGA, ylim=ylim); drawLines()
-plotMA(resLA, ylim=ylim); drawLines()
-plotMA(resG, ylim=ylim); drawLines()
-plotMA(resL, ylim=ylim); drawLines()
+DESeq2::plotMA(resGA, ylim=ylim); drawLines()
+DESeq2::plotMA(resLA, ylim=ylim); drawLines()
+DESeq2::plotMA(resG, ylim=ylim); drawLines()
+DESeq2::plotMA(resL, ylim=ylim); drawLines()
 ```
 ![Samples_Boxplot](https://jl19.github.io/BASH_Training_Course_2023//Docs/R_Scripts/Results/Rplot_Test_Log2_fc_threshold.jpeg)
 

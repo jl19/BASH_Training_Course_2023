@@ -12,8 +12,10 @@ module load hisat2/2.2.1
 ### Creating HISAT2 indexes
 
 First, the genome needed to be indexed before using Hisat2-build or created using the index generatering script:make_mm10.sh
+
+Go to the $SCRATCHDIR/Data_QC/
 ```
-cd /scratch/bbash/jl19/Data_QC/
+cd $SCRATCHDIR/Data_QC/
 ``` 
 ### Create a diretory /mm10
 ``` 
@@ -21,14 +23,14 @@ mkdir mm10
 ``` 
 ### Go to the mm10/ direcotry
 ``` 
-cd /scratch/bbash/jl19/Data_QC/mm10/
+cd mm10
 ``` 
 
 ### Copy the genome.fa in the mm10 directory
 ``` 
-cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/*.* ./
+cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10/genome.fa ./
 ``` 
-### Creating index
+### Creating index for genome.fa
 ``` 
 hisat2-build -p 16 genome.fa genome
 ```
@@ -233,9 +235,20 @@ Total time for call to driver() for forward index: 00:27:10
 ```
 [The script](hisat2-creating-index-script.txt) for download MM10 and build and index the genome.fa.
 
-[There are also prebuilt indexes on HISAT2's website ](ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/data)
+[There are also prebuilt indexes on HISAT2's website for many model organisms](ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/data)
 
 For alignment, only mm10/genome is required.
+
+### hisat2 flags
+
+|-------|-------|------------|
+|Flag|Description|More Info|
+|-------|-------|------------|
+|-p|--threads| Run on multiple processors/cores|
+|--dta|--downstream-transcriptome-assembly|Report alignments for transcript assembly with StringTie|
+|-U|indicates it is for single end reads alignment| |
+|-S| indicates the output file is sam file||
+
 ``` 
 [jl19@spectre13 Data_QC] 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
@@ -251,6 +264,8 @@ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457558_control-trimmed.fastq.gz 
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457559_control-trimmed.fastq.gz -S SRR7457559_control-trimmed.sam;
 hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457560_control-trimmed.fastq.gz -S SRR7457560_control-trimmed.sam;
 ```  
+
+
 ```  
 [jl19@spectre13 Data_QC]$ hisat2 -p 4 --dta -x mm10/genome -U trimmed/SRR7457551_24_hours-trimmed.fastq.gz -S SRR7457551_24_hours-trimmed.sam;
 29108478 reads; of these:

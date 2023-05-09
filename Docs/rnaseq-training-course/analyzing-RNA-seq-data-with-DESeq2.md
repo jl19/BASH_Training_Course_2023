@@ -23,12 +23,14 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("DESeq2")
 BiocManager::install("ggplot2")
 BiocManager::install("reshape2")
+BiocManager::install("pheatmap")
 BiocManager::install("apeglm")
 
 
 library("DESeq2")
 library("ggplot2")
 library("reshape2")
+library("pheatmap")
 library("vsn")
 ```
 ### Set directory

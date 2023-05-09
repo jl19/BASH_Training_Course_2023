@@ -8,11 +8,11 @@
 
 
 ``` 
-#check the directory you are in by pwd command
+#check the directory you are in by pwd command, it should be in the /Data_QC under your own scratch directory
 [jl19@spectre13 Data_DC]$ pwd
 /scratch/bbash/jl19/Data_QC
 ```
-If it is already in /scratch/bbash/jl19/Data_QC and make "stringtie_output" directory, if not 
+If it is already in your /Data_QC under your own scratch diretory e.g./scratch/bbash/jl19/Data_QC and then make "stringtie_output" directory, if not cd to the directory and then perform the command.
 ``` 
 cd /scratch/bbash/jl19/Data_QC
 ``` 

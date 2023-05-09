@@ -243,10 +243,12 @@ For alignment, only mm10/genome is required.
 
 |Flag|Description|
 |-------|-------|
+|-x|The basename of the index for the reference genome|
 |-p/--threads| Run on multiple processors/cores|
 |--dta/--downstream-transcriptome-assembly|Report alignments for transcript assembly with StringTie|
 |-U|Comma-separated list of files/or single containing unpaired reads to be aligned| |
 |-S| File to write SAM alignments to||
+
 
 ``` 
 [jl19@spectre13 Data_QC] 

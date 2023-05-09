@@ -241,10 +241,10 @@ For alignment, only mm10/genome is required.
 
 ### hisat2 flags
 
-|Flag|Description|More Info|
-|-------|-------|------------|
-|-p|--threads| Run on multiple processors/cores|
-|--dta|--downstream-transcriptome-assembly|Report alignments for transcript assembly with StringTie|
+|Flag|Description|
+|-------|-------|
+|-p/--threads| Run on multiple processors/cores|
+|--dta/--downstream-transcriptome-assembly|Report alignments for transcript assembly with StringTie|
 |-U|Comma-separated list of files/or single containing unpaired reads to be aligned| |
 |-S| File to write SAM alignments to||
 

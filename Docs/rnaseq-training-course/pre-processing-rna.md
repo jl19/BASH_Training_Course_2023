@@ -89,9 +89,9 @@ ls
 ```
 Time Requied: 20s
 
-> NOTE: The ‘.’ at the end of the command tells ‘cp’ to copy everything in the Data_QC directory.  The ‘.’ tells the ‘cp’ command to copy the fastq files to the current location i.e. your Data_QC directory.
+> NOTE: The ‘.’ at the end of the command tells ‘cp’ to copy everything in the Data_QC directory.  The ‘.’ tells the ‘cp’ command to copy the fastq files to the current location i.e. your Data_QC directory. -r option indicates to  include all its files and subdirectories.
 
-The ‘cp’ command copied 12 fastq.gz files as follow:
+The ‘cp’ command copied 12 fastq.gz files and /trimmed folder as follow:
 
 ```
 [jl19@spectre12 Data_QC]$ls
@@ -108,6 +108,7 @@ SRR7457551_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_afte
 SRR7457552_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 SRR7457561_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
 SRR7457562_RNA-Seq_of_mus_musculus_adult_male_alveolar_macrophages_24_hours_after_lung_transplant.fastq.gz
+trimmed
 ```
 
 Checked the fastq files are copied correctly. 

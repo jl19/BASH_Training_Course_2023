@@ -63,20 +63,20 @@ gunzip mm10/gencode.vM10.annotation.gff3.gz
 
 module load stringtie/2.1.1
 #24 hours
-stringtie trimmed/bam_files/SRR7457551_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
-stringtie trimmed/bam_files/SRR7457552_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
-stringtie trimmed/bam_files/SRR7457561_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
-stringtie SRR7457562_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf -A SRR7457562_24_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457551_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457551_24_hours/SRR7457551_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457552_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457552_24_hours/SRR7457552_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457561_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457561_24_hours/SRR7457561_24_hours-trimmed.transcripts.gtf -A SRR7457551_24_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457562_24_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457562_24_hours/SRR7457562_24_hours-trimmed.transcripts.gtf -A SRR7457562_24_hours-trimmed_gene_abund.tab;
 #2 hours
-stringtie SRR7457553_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf -A SRR7457553_2_hours-trimmed_gene_abund.tab;
-stringtie SRR7457554_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf -A SRR7457554_2_hours-trimmed_gene_abund.tab;
-stringtie SRR7457555_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf -A SRR7457555_2_hours-trimmed_gene_abund.tab;
-stringtie SRR7457556_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf -A SRR7457556_2_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457553_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457553_2_hours/SRR7457553_2_hours-trimmed.transcripts.gtf -A SRR7457553_2_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457554_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457554_2_hours/SRR7457554_2_hours-trimmed.transcripts.gtf -A SRR7457554_2_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457555_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457555_2_hours/SRR7457555_2_hours-trimmed.transcripts.gtf -A SRR7457555_2_hours-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457556_2_hours-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457556_2_hours/SRR7457556_2_hours-trimmed.transcripts.gtf -A SRR7457556_2_hours-trimmed_gene_abund.tab;
 #Control
-stringtie SRR7457557_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457557_control-trimmed.transcripts.gtf -A SRR7457557_control-trimmed_gene_abund.tab;
-stringtie SRR7457558_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457558_control-trimmed.transcripts.gtf -A SRR7457558_control-trimmed_gene_abund.tab;
-stringtie SRR7457559_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457559_control-trimmed.transcripts.gtf -A SRR7457559_control-trimmed_gene_abund.tab;
-stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457560_control-trimmed.transcripts.gtf -A SRR7457560_control-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457557_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457557_control/SRR7457557_control-trimmed.transcripts.gtf -A SRR7457557_control-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457558_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457558_control/SRR7457558_control-trimmed.transcripts.gtf -A SRR7457558_control-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457559_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457559_control/SRR7457559_control-trimmed.transcripts.gtf -A SRR7457559_control-trimmed_gene_abund.tab;
+stringtie trimmed/bam_files/SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotation.gff3 -e -o stringtie_output/SRR7457560_control/SRR7457560_control-trimmed.transcripts.gtf -A SRR7457560_control-trimmed_gene_abund.tab;
 ```
 ### Output files
 
@@ -91,7 +91,7 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
     * i2t.ctab
     * t_data.ctab
 
-> - stringtie_output/SRR7457552_24_hours-trimmed_gene_abund.tab
+> - stringtie_output/SRR7457551_24_hours-trimmed_gene_abund.tab
 
 ### Time Required to run each file
 
@@ -101,20 +101,20 @@ stringtie SRR7457560_control-trimmed.sorted.bam -B -G  mm10/gencode.vM10.annotat
 ```
 #Sample_list.txt
 
-SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours-trimmed.transcripts.gtf
-SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours-trimmed.transcripts.gtf
-SRR7457561_24_hours	stringtie_output/SRR7457561_24_hours-trimmed.transcripts.gtf
-SRR7457562_24_hours	stringtie_output/SRR7457562_24_hours-trimmed.transcripts.gtf
+SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours/SRR7457551_24_hours-trimmed.transcripts.gtf
+SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours/SRR7457552_24_hours-trimmed.transcripts.gtf
+SRR7457561_24_hours	stringtie_output/SRR7457561_24_hours/SRR7457561_24_hours-trimmed.transcripts.gtf
+SRR7457562_24_hours	stringtie_output/SRR7457562_24_hours/SRR7457562_24_hours-trimmed.transcripts.gtf
 
-SRR7457553_2_hours	stringtie_output/SRR7457553_2_hours-trimmed.transcripts.gtf
-SRR7457554_2_hours	stringtie_output/SRR7457554_2_hours-trimmed.transcripts.gtf
-SRR7457555_2_hours	stringtie_output/SRR7457555_2_hours-trimmed.transcripts.gtf
-SRR7457556_2_hours	stringtie_output/SRR7457556_2_hours-trimmed.transcripts.gtf
+SRR7457553_2_hours	stringtie_output/SRR7457553_2_hours/SRR7457553_2_hours-trimmed.transcripts.gtf
+SRR7457554_2_hours	stringtie_output/SRR7457554_2_hours/SRR7457554_2_hours-trimmed.transcripts.gtf
+SRR7457555_2_hours	stringtie_output/SRR7457555_2_hours/SRR7457555_2_hours-trimmed.transcripts.gtf
+SRR7457556_2_hours	stringtie_output/SRR7457556_2_hours/SRR7457556_2_hours-trimmed.transcripts.gtf
 
-SRR7457557_control	stringtie_output/SRR7457557_control-trimmed.transcripts.gtf
-SRR7457558_control	stringtie_output/SRR7457558_control-trimmed.transcripts.gtf
-SRR7457559_control	stringtie_output/SRR7457559_control-trimmed.transcripts.gtf
-SRR7457560_control	stringtie_output/SRR7457560_control-trimmed.transcripts.gtf
+SRR7457557_control	stringtie_output/SRR7457557_control/SRR7457557_control-trimmed.transcripts.gtf
+SRR7457558_control	stringtie_output/SRR7457558_control/SRR7457558_control-trimmed.transcripts.gtf
+SRR7457559_control	stringtie_output/SRR7457559_control/SRR7457559_control-trimmed.transcripts.gtf
+SRR7457560_control	stringtie_output/SRR7457560_control/SRR7457560_control-trimmed.transcripts.gtf
 ```
 
 ### Using Python script to process sample list to combine information from all samples
@@ -162,7 +162,7 @@ ENSMUST00000032272.12,23612,18864,19833,15290,19824,23624,15909,13396,19213,1887
 ### Extract Transcripts and Gene Information
 
 The information can be found on public avalable databases: e.g. ensembl database.  Extract the two columns transcripts ID and gene name information.  
-> Extract the two columns from the Mus_musculus.GRCm38.cdna.all.fa.gz which located at /scratch/bbash/jl19/Data_QC_May2023/mm10
+> Extract the two columns from the Mus_musculus.GRCm38.cdna.all.fa.gz which located at $SCRATCHDIR/mm10
 > Extract all transcriptnames (1st) and genenames (4th) from  sequence names and write to a file.   
 
 Here is short script to exact the above information from Mus_musculus.GRCm38.cdna.all.fa.gz:

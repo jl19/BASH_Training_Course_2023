@@ -97,9 +97,9 @@ stringtie trimmed/bam_files/SRR7457560_control-trimmed.sorted.bam -B -G  mm10/ge
 
 1.5min
 
-### Prepare Sample list file as follow:
+### Prepare Sample list file as follow:  Copy the following info to a file and save as sample_list.txt
 ```
-#Sample_list.txt
+#sample_list.txt
 
 SRR7457551_24_hours	stringtie_output/SRR7457551_24_hours/SRR7457551_24_hours-trimmed.transcripts.gtf
 SRR7457552_24_hours	stringtie_output/SRR7457552_24_hours/SRR7457552_24_hours-trimmed.transcripts.gtf
@@ -124,7 +124,7 @@ cp /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/prepDE.py3  .
 cd stringtie_output
 ```
 ```
-python prepDE.py3 Sample_list.txt
+python prepDE.py3 sample_list.txt
 ```
 
 Two files are generated after running the script:
@@ -165,7 +165,7 @@ The information can be found on public avalable databases: e.g. ensembl database
 > Extract the two columns from the Mus_musculus.GRCm38.cdna.all.fa.gz which located at $SCRATCHDIR/mm10
 > Extract all transcriptnames (1st) and genenames (4th) from  sequence names and write to a file.   
 
-Here is short script to exact the above information from Mus_musculus.GRCm38.cdna.all.fa.gz:
+Here is short script to exact the above information from Mus_musculus.GRCm38.cdna.all.fa.gz: copy the following script and save as a file named "extract_transcriptname_genename.sh"
 
 ```
 #extract_transcriptname_genename.sh
@@ -173,13 +173,16 @@ gunzip -c Mus_musculus.GRCm38.cdna.all.fa.gz| \
 grep '>' |
 awk '{FS= " "}BEGIN{ print "TXNAME,GENEID"};{print substr($1,2) "," substr($4,6)};' > tx2gene.mm.GRCm38.cdna.csv 
 ```
+#### Copy the files under mm10 diretory
 ```
 cp -r /data/bioinf/Teaching/2023_NGS_Course/Data_QC/RNA-Seq-GSE116583/mm10 ./
 ```
+
+#### Run the extract_transcriptname_genename.sh 
 ```
 sh extract_transcriptname_genename.sh
 ```
-Output file: tx2gene.mm.GRCm38.cdna.csv which contains TXNAME, GENEID
+#### Output file: tx2gene.mm.GRCm38.cdna.csv which contains TXNAME, GENEID
 
 ```
 TXNAME,GENEID

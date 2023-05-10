@@ -14,7 +14,7 @@
 ```
 If it is already in your /Data_QC under your own scratch diretory e.g./scratch/bbash/jl19/Data_QC and then make "stringtie_output" directory, if not cd to the directory and then perform the command.
 ``` 
-cd /scratch/bbash/jl19/Data_QC
+cd $SCRATCHDIR/Data_QC
 ``` 
 ``` 
 [jl19@spectre13 Data_QC]$ mkdir stringtie_output
